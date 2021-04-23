@@ -1,7 +1,7 @@
 ﻿
 namespace Spielesammlung
 {
-    partial class Form2
+    partial class Form_Highscore
     {
         /// <summary>
         /// Required designer variable.

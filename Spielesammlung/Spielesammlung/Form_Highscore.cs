@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Spielesammlung
 {
-    public partial class Form2 : Form
+    public partial class Form_Highscore : Form
     {
-        public Form2()
+        public Form_Highscore()
         {
             InitializeComponent();
         }
