@@ -9,19 +9,18 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
     
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
     - name: Setup MSBuild Path
-      uses: warrenbuckley/Setup-MSBuild@v1
+      uses: microsoft/Setup-MSBuild@v1
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.2
     - name: Restore NuGet Packages
       run: nuget restore Spielesammlung/Spielesammlung.sln
     - name: Setup MSBuild
-      uses: warrenbuckley/Setup-MSBuild@v1
+      uses: microsoft/Setup-MSBuild@v1
     - name: Build with MSBuild
-      run: msbuild Spielesammlung/Spielesammlung.sln -p:Configuration=Release
+      run: msbuild Spielesammlung/Spielesammlung.sln
