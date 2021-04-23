@@ -13,8 +13,8 @@ jobs:
     runs-on: windows-latest
     
     steps:
-    - uses: actions/checkout@v1
     - name: Checkout Code
+      uses: actions/checkout@v1
     - name: Setup MSBuild Path
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Setup NuGet
