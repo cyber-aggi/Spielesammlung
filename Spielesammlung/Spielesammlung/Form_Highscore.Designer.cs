@@ -1,7 +1,7 @@
 ﻿
 namespace Spielesammlung
 {
-    partial class Form2
+    partial class Form_Highscore
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,8 @@ namespace Spielesammlung
         private void InitializeComponent()
         {
             this.btn_load = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lB_Highscore = new System.Windows.Forms.ListBox();
+            this.btn_export = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_load
@@ -41,23 +42,35 @@ namespace Spielesammlung
             this.btn_load.TabIndex = 0;
             this.btn_load.Text = "Highscore laden";
             this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
-            // listBox1
+            // lB_Highscore
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(25, 52);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(563, 264);
-            this.listBox1.TabIndex = 1;
+            this.lB_Highscore.FormattingEnabled = true;
+            this.lB_Highscore.Location = new System.Drawing.Point(25, 52);
+            this.lB_Highscore.Name = "lB_Highscore";
+            this.lB_Highscore.Size = new System.Drawing.Size(563, 264);
+            this.lB_Highscore.TabIndex = 1;
             // 
-            // Form2
+            // btn_export
+            // 
+            this.btn_export.Location = new System.Drawing.Point(452, 415);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(136, 23);
+            this.btn_export.TabIndex = 2;
+            this.btn_export.Text = "Daten als CSV exportieren";
+            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
+            // Form_Highscore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 450);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btn_export);
+            this.Controls.Add(this.lB_Highscore);
             this.Controls.Add(this.btn_load);
-            this.Name = "Form2";
+            this.Name = "Form_Highscore";
             this.Text = "Highscore";
             this.ResumeLayout(false);
 
@@ -66,6 +79,7 @@ namespace Spielesammlung
         #endregion
 
         private System.Windows.Forms.Button btn_load;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lB_Highscore;
+        private System.Windows.Forms.Button btn_export;
     }
 }
