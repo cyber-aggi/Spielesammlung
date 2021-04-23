@@ -12,7 +12,7 @@ namespace Spielesammlung
 {
     public partial class Form1 : Form
     {
-        private Form2 Childform;
+        private Form_Highscore Childform;
         
         public Form1()
         {
@@ -21,7 +21,7 @@ namespace Spielesammlung
 
         private void HighscoreButton_Click(object sender, EventArgs e)
         {
-            Childform = new Form2();
+            Childform = new Form_Highscore();
             Childform.Show();
         }
     }
