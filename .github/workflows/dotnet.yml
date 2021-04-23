@@ -9,7 +9,9 @@ on:
 
 jobs:
   build:
-
+    env:
+      working-directory: ./Spielesammlung/Spielesammlung
+    
     #runs-on: ubuntu-latest
     runs-on: windows-latest
     
