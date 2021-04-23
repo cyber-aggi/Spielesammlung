@@ -16,5 +16,19 @@ namespace Spielesammlung
         {
             InitializeComponent();
         }
+
+        private void btn_load_Click(object sender, EventArgs e)
+        {
+            //Leert die Listbox bevor neue Einträge aus der Datenbank geholt werden
+            lB_Highscore.Items.Clear();
+
+            //Holen der Einträge aus der Datenbank
+
+
+
+            //Eintragen der Datensätze in die Listbox
+            lB_Highscore.Items.Add("");
+
+        }
     }
 }
