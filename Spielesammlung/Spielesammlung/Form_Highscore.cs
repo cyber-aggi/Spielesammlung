@@ -29,6 +29,24 @@ namespace Spielesammlung
             //Eintragen der Datensätze in die Listbox
             lB_Highscore.Items.Add("");
 
+            MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
+        }
+
+        //Möglichkeit zum exportieren von  den Highscore Datensätzen
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            //Öffnet Dateiexplorer zum Speichern dieser Datei
+            SaveFileDialog sFD = new SaveFileDialog();
+
+            sFD.Filter = "CSV-Datei (*.csv)|*.csv|TXT-Datei (*.txt)|*.txt";
+            sFD.FilterIndex = 1;
+            sFD.RestoreDirectory = true;
+
+            //Wenn auf Speichern geklickt wurde, wird die Datei geschrieben
+            if (sFD.ShowDialog() == DialogResult.OK)
+            {
+                //export_table(sFD.FileName + sFD.DefaultExt);
+            }
         }
     }
 }
