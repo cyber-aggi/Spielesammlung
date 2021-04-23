@@ -46,6 +46,7 @@ namespace Spielesammlung
             if (sFD.ShowDialog() == DialogResult.OK)
             {
                 //export_table(sFD.FileName + sFD.DefaultExt);
+                MessageBox.Show("Daten wurden erfolgreich exportiert!", "Information")
             }
         }
     }
