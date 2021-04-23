@@ -7,10 +7,12 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./Spielesammlung/Spielesammlung
+
 jobs:
   build:
-    env:
-      working-directory: ./Spielesammlung/Spielesammlung
     
     #runs-on: ubuntu-latest
     runs-on: windows-latest
