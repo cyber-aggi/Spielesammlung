@@ -1,4 +1,4 @@
-name: .NET
+name: .NET-Framework
 
 on:
   push:
@@ -9,19 +9,19 @@ on:
 
 jobs:
   build:
-    
-    #runs-on: ubuntu-latest
+
     runs-on: windows-latest
     
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 4.7.2
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - uses: actions/checkout@v1
+    - name: Checkout Code
+    - name: Setup MSBuild Path
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+    - name: Restore NuGet Packages
+      run: nuget restore Spielesammlung/Spielesammlung.sln
+    - name: Setup MSBuild
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Build with MSBuild
+      run: msbuild Spielesammlung/Spielesammlung.sln -p:Configuration=Release
