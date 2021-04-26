@@ -43,6 +43,10 @@ namespace Spielesammlung
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if(button3.Text == "X" || button3.Text == "O")
+            {
+
+            }
             if(zähler == 1)
             {
                 button3.Text = "X";
@@ -58,6 +62,10 @@ namespace Spielesammlung
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (button3.Text == "X" || button3.Text == "O")
+            {
+
+            }
             if (zähler == 1)
             {
                 button1.Text = "X";
@@ -73,6 +81,10 @@ namespace Spielesammlung
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (button3.Text == "X" || button3.Text == "O")
+            {
+
+            }
             if (zähler == 1)
             {
                 button2.Text = "X";
@@ -87,6 +99,10 @@ namespace Spielesammlung
 
         private void button6_Click(object sender, EventArgs e)
         {
+            if (button3.Text == "X" || button3.Text == "O")
+            {
+
+            }
             if (zähler == 1)
             {
                 button6.Text = "X";
@@ -101,6 +117,10 @@ namespace Spielesammlung
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (button3.Text == "X" || button3.Text == "O")
+            {
+
+            }
             if (zähler == 1)
             {
                 button5.Text = "X";
@@ -115,6 +135,10 @@ namespace Spielesammlung
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (button3.Text == "X" || button3.Text == "O")
+            {
+
+            }
             if (zähler == 1)
             {
                 button4.Text = "X";
@@ -129,6 +153,10 @@ namespace Spielesammlung
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (button3.Text == "X" || button3.Text == "O")
+            {
+
+            }
             if (zähler == 1)
             {
                 button9.Text = "X";
@@ -143,29 +171,39 @@ namespace Spielesammlung
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (zähler == 1)
+            if (button8.Text == "X" || button8.Text == "O")
             {
-                button8.Text = "X";
-                zähler = 2;
-            }
-            else if (zähler == 2)
-            {
-                button8.Text = "O";
-                zähler = 1;
+
+
+                if (zähler == 1)
+                {
+                    button8.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button8.Text = "O";
+                    zähler = 1;
+                }
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (zähler == 1)
+            if (button7.Text == "X" || button7.Text == "O")
             {
-                button7.Text = "X";
-                zähler = 2;
-            }
-            else if (zähler == 2)
-            {
-                button7.Text = "O";
-                zähler = 1;
+
+            
+                if (zähler == 1)
+                {
+                    button7.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button7.Text = "O";
+                    zähler = 1;
+                }
             }
         }
     }
