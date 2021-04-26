@@ -26,13 +26,12 @@ namespace Spielesammlung
             //Erzeugt ein neues Fenster um den Highscore anzuzeigen
             Childform = new Form_Highscore();
             Childform.Show();
-            MessageBox.Show("Hier ein neues Fenster!");
         }
 
         private void StartenButton_Click(object sender, EventArgs e)
         {
             //Erzeugt ein neues Fenster um das Spiel anzuzeigen
-            if (Convert.ToString(Spiele_Liste.SelectedItem) == "Vier gewinnt")
+            if (Convert.ToString(Spiele_Liste.SelectedItem) == "4-Gewinnt")
             {
                 Childform2 = new VierGewinntForm();
                 Childform2.Show();
@@ -43,14 +42,29 @@ namespace Spielesammlung
 
         private void LadenButton_Click(object sender, EventArgs e)
         {
-            //Schreibt die Spiele aus einer Datei in die ListBox
-            StreamReader dateipointer = new StreamReader("");
+            Spiele_Liste.Items.Clear();
+            //Lesen der Spieleliste aus der Properties / Settings Datei
+            string spiele = Properties.Settings.Default.spiele;
+            String[] value = null;
+            //Splitten der Informationen in ein Array
+            value = spiele.Split(';');
+            foreach (string v in value)
+            {
+                //Array zur Combobox hinzufügen, wenn der Arrayeintrag nicht leer ist
+                if (v != "")
+                {
+                    Spiele_Liste.Items.Add(v);
+                }
+            }
+
+            /*//Schreibt die Spiele aus einer Datei in die ListBox
+            /StreamReader dateipointer = new StreamReader("");
             for (int i = 0; i < 3; i++)
             {
                 string zeile = dateipointer.ReadLine();
 
                 Spiele_Liste.Items.Add(zeile);
-            }
+            }*/
             
         }
     }
