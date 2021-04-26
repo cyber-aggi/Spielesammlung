@@ -16,5 +16,22 @@ namespace Spielesammlung
         {
             InitializeComponent();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+            
+            
+
+            
+        }
+
+        private void tableLayoutPanel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+
+
+
+        }
     }
 }
