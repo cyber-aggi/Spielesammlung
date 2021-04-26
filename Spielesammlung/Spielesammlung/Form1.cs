@@ -31,7 +31,7 @@ namespace Spielesammlung
         private void StartenButton_Click(object sender, EventArgs e)
         {
             //Erzeugt ein neues Fenster um das Spiel anzuzeigen
-            if (Convert.ToString(Spiele_Liste.SelectedItem) == "4-Gewinnt")
+            if (Convert.ToString(Spiele_Liste.SelectedItem) == "Vier-Gewinnt")
             {
                 Childform2 = new VierGewinntForm();
                 Childform2.Show();
