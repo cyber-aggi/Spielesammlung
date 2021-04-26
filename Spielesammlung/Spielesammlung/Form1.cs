@@ -13,6 +13,8 @@ namespace Spielesammlung
     public partial class Form1 : Form
     {
         private Form_Highscore Childform;
+        private VierGewinntForm ViGeform;
+        
         
         public Form1()
         {
@@ -26,5 +28,6 @@ namespace Spielesammlung
             Childform.Show();
             MessageBox.Show("Hier ein neues Fenster!");
         }
+
     }
 }

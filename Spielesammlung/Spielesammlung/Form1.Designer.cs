@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.HighscoreButton = new System.Windows.Forms.Button();
+            this.VierGewinntButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HighscoreButton
@@ -41,11 +42,21 @@
             this.HighscoreButton.UseVisualStyleBackColor = true;
             this.HighscoreButton.Click += new System.EventHandler(this.HighscoreButton_Click);
             // 
+            // VierGewinntButton
+            // 
+            this.VierGewinntButton.Location = new System.Drawing.Point(574, 205);
+            this.VierGewinntButton.Name = "VierGewinntButton";
+            this.VierGewinntButton.Size = new System.Drawing.Size(153, 23);
+            this.VierGewinntButton.TabIndex = 1;
+            this.VierGewinntButton.Text = "Vier Gewinnt öffnen";
+            this.VierGewinntButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.VierGewinntButton);
             this.Controls.Add(this.HighscoreButton);
             this.Name = "Form1";
             this.Text = "Spielesammlung";
@@ -56,6 +67,7 @@
         #endregion
 
         private System.Windows.Forms.Button HighscoreButton;
+        private System.Windows.Forms.Button VierGewinntButton;
     }
 }
 

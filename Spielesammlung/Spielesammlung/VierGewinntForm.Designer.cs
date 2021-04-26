@@ -29,37 +29,40 @@ namespace Spielesammlung
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.VierGewinntTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Spalte1Button = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Spalte2Button = new System.Windows.Forms.Button();
+            this.Spalte3Button = new System.Windows.Forms.Button();
+            this.Spalte4Button = new System.Windows.Forms.Button();
+            this.Spalte5Button = new System.Windows.Forms.Button();
+            this.Spalte6Button = new System.Windows.Forms.Button();
+            this.Spalte7Button = new System.Windows.Forms.Button();
+            this.NewGameButton = new System.Windows.Forms.Button();
+            this.AnzeigeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // VierGewinntTableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(57, 78);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(687, 345);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.VierGewinntTableLayoutPanel.ColumnCount = 7;
+            this.VierGewinntTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.VierGewinntTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.VierGewinntTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.VierGewinntTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.VierGewinntTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.VierGewinntTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.VierGewinntTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.VierGewinntTableLayoutPanel.Location = new System.Drawing.Point(57, 63);
+            this.VierGewinntTableLayoutPanel.Name = "VierGewinntTableLayoutPanel";
+            this.VierGewinntTableLayoutPanel.RowCount = 6;
+            this.VierGewinntTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.VierGewinntTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.VierGewinntTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.VierGewinntTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.VierGewinntTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.VierGewinntTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.VierGewinntTableLayoutPanel.Size = new System.Drawing.Size(687, 345);
+            this.VierGewinntTableLayoutPanel.TabIndex = 0;
+            this.VierGewinntTableLayoutPanel.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.VierGewinntTableLayoutPanel_CellPaint);
             // 
             // Spalte1Button
             // 
@@ -69,89 +72,119 @@ namespace Spielesammlung
             this.Spalte1Button.TabIndex = 1;
             this.Spalte1Button.Text = "Klick";
             this.Spalte1Button.UseVisualStyleBackColor = true;
+            this.Spalte1Button.Click += new System.EventHandler(this.Spalte1Button_Click);
             // 
-            // button2
+            // Spalte2Button
             // 
-            this.button2.Location = new System.Drawing.Point(164, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Spalte2Button.Location = new System.Drawing.Point(164, 34);
+            this.Spalte2Button.Name = "Spalte2Button";
+            this.Spalte2Button.Size = new System.Drawing.Size(75, 23);
+            this.Spalte2Button.TabIndex = 2;
+            this.Spalte2Button.Text = "Klick";
+            this.Spalte2Button.UseVisualStyleBackColor = true;
+            this.Spalte2Button.Click += new System.EventHandler(this.Spalte2Button_Click);
             // 
-            // button3
+            // Spalte3Button
             // 
-            this.button3.Location = new System.Drawing.Point(264, 34);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Spalte3Button.Location = new System.Drawing.Point(264, 34);
+            this.Spalte3Button.Name = "Spalte3Button";
+            this.Spalte3Button.Size = new System.Drawing.Size(75, 23);
+            this.Spalte3Button.TabIndex = 3;
+            this.Spalte3Button.Text = "Klick";
+            this.Spalte3Button.UseVisualStyleBackColor = true;
+            this.Spalte3Button.Click += new System.EventHandler(this.Spalte3Button_Click);
             // 
-            // button4
+            // Spalte4Button
             // 
-            this.button4.Location = new System.Drawing.Point(365, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Spalte4Button.Location = new System.Drawing.Point(365, 34);
+            this.Spalte4Button.Name = "Spalte4Button";
+            this.Spalte4Button.Size = new System.Drawing.Size(75, 23);
+            this.Spalte4Button.TabIndex = 4;
+            this.Spalte4Button.Text = "Klick";
+            this.Spalte4Button.UseVisualStyleBackColor = true;
+            this.Spalte4Button.Click += new System.EventHandler(this.Spalte4Button_Click);
             // 
-            // button5
+            // Spalte5Button
             // 
-            this.button5.Location = new System.Drawing.Point(460, 34);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Spalte5Button.Location = new System.Drawing.Point(460, 34);
+            this.Spalte5Button.Name = "Spalte5Button";
+            this.Spalte5Button.Size = new System.Drawing.Size(75, 23);
+            this.Spalte5Button.TabIndex = 5;
+            this.Spalte5Button.Text = "Klick";
+            this.Spalte5Button.UseVisualStyleBackColor = true;
+            this.Spalte5Button.Click += new System.EventHandler(this.Spalte5Button_Click);
             // 
-            // button6
+            // Spalte6Button
             // 
-            this.button6.Location = new System.Drawing.Point(557, 34);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.Spalte6Button.Location = new System.Drawing.Point(557, 34);
+            this.Spalte6Button.Name = "Spalte6Button";
+            this.Spalte6Button.Size = new System.Drawing.Size(75, 23);
+            this.Spalte6Button.TabIndex = 6;
+            this.Spalte6Button.Text = "Klick";
+            this.Spalte6Button.UseVisualStyleBackColor = true;
+            this.Spalte6Button.Click += new System.EventHandler(this.Spalte6Button_Click);
             // 
-            // button7
+            // Spalte7Button
             // 
-            this.button7.Location = new System.Drawing.Point(660, 34);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.Spalte7Button.Location = new System.Drawing.Point(660, 34);
+            this.Spalte7Button.Name = "Spalte7Button";
+            this.Spalte7Button.Size = new System.Drawing.Size(75, 23);
+            this.Spalte7Button.TabIndex = 7;
+            this.Spalte7Button.Text = "Klick";
+            this.Spalte7Button.UseVisualStyleBackColor = true;
+            this.Spalte7Button.Click += new System.EventHandler(this.Spalte7Button_Click);
+            // 
+            // NewGameButton
+            // 
+            this.NewGameButton.Location = new System.Drawing.Point(57, 415);
+            this.NewGameButton.Name = "NewGameButton";
+            this.NewGameButton.Size = new System.Drawing.Size(126, 23);
+            this.NewGameButton.TabIndex = 8;
+            this.NewGameButton.Text = "Neues Spiel starten";
+            this.NewGameButton.UseVisualStyleBackColor = true;
+            // 
+            // AnzeigeLabel
+            // 
+            this.AnzeigeLabel.AutoSize = true;
+            this.AnzeigeLabel.Location = new System.Drawing.Point(554, 425);
+            this.AnzeigeLabel.Name = "AnzeigeLabel";
+            this.AnzeigeLabel.Size = new System.Drawing.Size(62, 13);
+            this.AnzeigeLabel.TabIndex = 9;
+            this.AnzeigeLabel.Text = "Es ist dran: ";
             // 
             // VierGewinntForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.AnzeigeLabel);
+            this.Controls.Add(this.NewGameButton);
+            this.Controls.Add(this.Spalte7Button);
+            this.Controls.Add(this.Spalte6Button);
+            this.Controls.Add(this.Spalte5Button);
+            this.Controls.Add(this.Spalte4Button);
+            this.Controls.Add(this.Spalte3Button);
+            this.Controls.Add(this.Spalte2Button);
             this.Controls.Add(this.Spalte1Button);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.VierGewinntTableLayoutPanel);
             this.Name = "VierGewinntForm";
             this.Text = "VierGewinntForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel VierGewinntTableLayoutPanel;
         private System.Windows.Forms.Button Spalte1Button;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Spalte2Button;
+        private System.Windows.Forms.Button Spalte3Button;
+        private System.Windows.Forms.Button Spalte4Button;
+        private System.Windows.Forms.Button Spalte5Button;
+        private System.Windows.Forms.Button Spalte6Button;
+        private System.Windows.Forms.Button Spalte7Button;
+        private System.Windows.Forms.Button NewGameButton;
+        private System.Windows.Forms.Label AnzeigeLabel;
     }
 }
