@@ -21,7 +21,7 @@ namespace Spielesammlung
 
         private void HighscoreButton_Click(object sender, EventArgs e)
         {
-            //Erzeugt ein neues Fenster
+            //Erzeugt ein neues Fenster um den Highscore anzuzeigen
             Childform = new Form_Highscore();
             Childform.Show();
             MessageBox.Show("Hier ein neues Fenster!");
