@@ -32,6 +32,7 @@ namespace Spielesammlung
             this.btn_load = new System.Windows.Forms.Button();
             this.lB_Highscore = new System.Windows.Forms.ListBox();
             this.btn_export = new System.Windows.Forms.Button();
+            this.cB_spieleliste = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_load
@@ -62,11 +63,20 @@ namespace Spielesammlung
             this.btn_export.UseVisualStyleBackColor = true;
             this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
+            // cB_spieleliste
+            // 
+            this.cB_spieleliste.FormattingEnabled = true;
+            this.cB_spieleliste.Location = new System.Drawing.Point(325, 14);
+            this.cB_spieleliste.Name = "cB_spieleliste";
+            this.cB_spieleliste.Size = new System.Drawing.Size(121, 21);
+            this.cB_spieleliste.TabIndex = 3;
+            // 
             // Form_Highscore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 450);
+            this.Controls.Add(this.cB_spieleliste);
             this.Controls.Add(this.btn_export);
             this.Controls.Add(this.lB_Highscore);
             this.Controls.Add(this.btn_load);
@@ -81,5 +91,6 @@ namespace Spielesammlung
         private System.Windows.Forms.Button btn_load;
         private System.Windows.Forms.ListBox lB_Highscore;
         private System.Windows.Forms.Button btn_export;
+        private System.Windows.Forms.ComboBox cB_spieleliste;
     }
 }
