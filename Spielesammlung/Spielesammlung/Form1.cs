@@ -26,5 +26,13 @@ namespace Spielesammlung
             Childform.Show();
             MessageBox.Show("Hier ein neues Fenster!");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           Tik_Tak_Toe toe   = new Tik_Tak_Toe();
+            toe.Show();
+
+
+        }
     }
 }
