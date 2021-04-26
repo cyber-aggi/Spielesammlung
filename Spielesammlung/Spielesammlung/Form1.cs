@@ -43,6 +43,7 @@ namespace Spielesammlung
 
         private void LadenButton_Click(object sender, EventArgs e)
         {
+            Spiele_Liste.Items.Clear();
             //Lesen der Spieleliste aus der Properties / Settings Datei
             string spiele = Properties.Settings.Default.spiele;
             String[] value = null;
