@@ -15,6 +15,17 @@ namespace Spielesammlung
         public Form_Highscore()
         {
             InitializeComponent();
+            string spiele = Properties.Settings.Default.spiele;
+            String[] value = null;
+            value = spiele.Split(';');
+            foreach(string v in value)
+            {
+                if (v != "")
+                {
+                    cB_spieleliste.Items.Add(v);
+                }
+            }
+
         }
 
         private void btn_load_Click(object sender, EventArgs e)
