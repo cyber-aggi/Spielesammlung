@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="spiele" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">4-Gewinnt;</Value>
+      <Value Profile="(Default)">4-Gewinnt;Tic-Tac-Toe</Value>
     </Setting>
   </Settings>
 </SettingsFile>
