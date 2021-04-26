@@ -26,13 +26,12 @@ namespace Spielesammlung
             //Erzeugt ein neues Fenster um den Highscore anzuzeigen
             Childform = new Form_Highscore();
             Childform.Show();
-            //MessageBox.Show("Hier ein neues Fenster!");
         }
 
         private void StartenButton_Click(object sender, EventArgs e)
         {
             //Erzeugt ein neues Fenster um das Spiel anzuzeigen
-            if (Convert.ToString(Spiele_Liste.SelectedItem) == "Vier gewinnt")
+            if (Convert.ToString(Spiele_Liste.SelectedItem) == "4-Gewinnt")
             {
                 Childform2 = new VierGewinntForm();
                 Childform2.Show();
