@@ -2,6 +2,7 @@
 
 ## Liste der Spiele
 - Vier Gewinnt
+- Tic-Tac-Toe
 
 
 ## Links
