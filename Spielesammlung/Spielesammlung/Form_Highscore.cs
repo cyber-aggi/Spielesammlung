@@ -107,7 +107,7 @@ namespace Spielesammlung
                                 }
                                 temp += 1;
                             }
-                            writer.WriteLine(item);
+                            writer.WriteLine(output);
                         }
                         //Schließen der Datei
                         writer.Close();
