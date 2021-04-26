@@ -30,22 +30,40 @@ namespace Spielesammlung
                 }
             }
 
+            //Hinzufügen von Tabellenüberschriften
+            lW_Highscore.Columns.Clear();
+            lW_Highscore.Columns.Add("Spielername");
+            lW_Highscore.Columns.Add("Datum");
+            lW_Highscore.Columns.Add("Punktestand");
+            lW_Highscore.View = View.Details;
         }
 
         private void btn_load_Click(object sender, EventArgs e)
         {
-            //Leert die Listbox bevor neue Einträge aus der Datenbank geholt werden
-            lW_Highscore.Items.Clear();
+            if (cB_spieleliste.Text == "")
+            {
+                MessageBox.Show("Bitte wähle zuerst ein Spiel aus, um dir den Highscore anzeigen zu lassen!", "Fehlermeldung");
+            }
+            else
+            {
+                //Leert die Listbox bevor neue Einträge aus der Datenbank geholt werden
+                lW_Highscore.Items.Clear();
 
-            //Holen der Einträge aus der Datenbank
-            //cB_spieleliste.Text
+                //Holen der Einträge aus der Datenbank
+                //cB_spieleliste.Text
 
 
+                //Eintragen der Datensätze in die ListView
+                ListViewItem item = new ListViewItem("Test Benutzer");
+                item.SubItems.Add("26.04.2021");
+                item.SubItems.Add("100");
+                lW_Highscore.Items.Add(item);
 
-            //Eintragen der Datensätze in die Listbox
-            lW_Highscore.Items.Add("Test Eintrag");
 
-            MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
+            
+                //Rückmeldung an den Benutzer
+                MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
+            }
         }
 
         //Möglichkeit zum exportieren von  den Highscore Datensätzen
