@@ -64,11 +64,11 @@
     <Compile Include="Highscore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tik-Tak-Toe.cs">
+    <Compile Include="TicTacToeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tik-Tak-Toe.Designer.cs">
-      <DependentUpon>Tik-Tak-Toe.cs</DependentUpon>
+    <Compile Include="TicTacToeForm.Designer.cs">
+      <DependentUpon>TicTacToeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VierGewinntForm.cs">
       <SubType>Form</SubType>
@@ -91,8 +91,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Tik-Tak-Toe.resx">
-      <DependentUpon>Tik-Tak-Toe.cs</DependentUpon>
+    <EmbeddedResource Include="TicTacToeForm.resx">
+      <DependentUpon>TicTacToeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VierGewinntForm.resx">
       <DependentUpon>VierGewinntForm.cs</DependentUpon>

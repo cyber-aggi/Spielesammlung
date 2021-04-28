@@ -14,7 +14,6 @@ namespace Spielesammlung
     public partial class Form1 : Form
     {
         private Form_Highscore Childform_Highscore;
-        private VierGewinntForm Childform_VierGewinnt;
         
         public Form1()
         {
@@ -35,13 +34,13 @@ namespace Spielesammlung
             //Erzeugt ein neues Fenster um das Spiel anzuzeigen
             if (Convert.ToString(Spiele_Liste.SelectedItem) == "Vier-Gewinnt")
             {
-                Childform_VierGewinnt = new VierGewinntForm();
+                VierGewinntForm Childform_VierGewinnt = new VierGewinntForm();
                 Childform_VierGewinnt.Show();
                 MessageBox.Show("Viel Spaß beim Spielen!");
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Tic-Tac-Toe")
             {
-                Tik_Tak_Toe Childform_TicTacToe = new Tik_Tak_Toe();
+                TicTacToeForm Childform_TicTacToe = new TicTacToeForm();
                 Childform_TicTacToe.Show();
                 MessageBox.Show("Viel Spaß beim Spielen!");
             }
@@ -97,6 +96,5 @@ namespace Spielesammlung
                 MessageBox.Show("Bitte wähle ein Spiel aus!");
             }
         }
-
     }
 }

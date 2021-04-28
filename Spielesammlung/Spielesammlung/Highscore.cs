@@ -11,7 +11,7 @@ namespace Spielesammlung
     {
         //Diese Methode liest in eine string[][] alle Scores der Spiel, welches übergeben wurde
         //Die Rückgabestruktur ist daten[i][0] = Benutzer; daten[i][1] = Score; daten[i][2] = Zeit(als string)
-        static string[][] datenLesen(string spiel)
+        internal static string[][] datenLesen(string spiel)
         {
             List<string[]> daten=new List<string[]>();
             List<string> zeile=new List<string>();
@@ -48,6 +48,11 @@ namespace Spielesammlung
 
             return daten.ToArray();
         }
+
+        /*internal static string[] datenLesen(string text)
+        {
+            throw new NotImplementedException();
+        }*/
 
         //Diese Methode fügt Daten in die Datenbank ein.
         //Es wird das Spiel, der Benutzer und der Score übergeben
