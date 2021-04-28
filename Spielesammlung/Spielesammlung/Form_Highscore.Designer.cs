@@ -29,31 +29,31 @@ namespace Spielesammlung
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_load = new System.Windows.Forms.Button();
-            this.btn_export = new System.Windows.Forms.Button();
+            this.Btn_load = new System.Windows.Forms.Button();
+            this.Btn_export = new System.Windows.Forms.Button();
             this.cB_spieleliste = new System.Windows.Forms.ComboBox();
             this.lW_Highscore = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // btn_load
+            // Btn_load
             // 
-            this.btn_load.Location = new System.Drawing.Point(452, 12);
-            this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(136, 23);
-            this.btn_load.TabIndex = 0;
-            this.btn_load.Text = "Highscore laden";
-            this.btn_load.UseVisualStyleBackColor = true;
-            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            this.Btn_load.Location = new System.Drawing.Point(452, 12);
+            this.Btn_load.Name = "Btn_load";
+            this.Btn_load.Size = new System.Drawing.Size(136, 23);
+            this.Btn_load.TabIndex = 0;
+            this.Btn_load.Text = "Highscore laden";
+            this.Btn_load.UseVisualStyleBackColor = true;
+            this.Btn_load.Click += new System.EventHandler(this.Btn_load_Click);
             // 
-            // btn_export
+            // Btn_export
             // 
-            this.btn_export.Location = new System.Drawing.Point(452, 415);
-            this.btn_export.Name = "btn_export";
-            this.btn_export.Size = new System.Drawing.Size(136, 23);
-            this.btn_export.TabIndex = 2;
-            this.btn_export.Text = "Daten als CSV exportieren";
-            this.btn_export.UseVisualStyleBackColor = true;
-            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            this.Btn_export.Location = new System.Drawing.Point(452, 415);
+            this.Btn_export.Name = "Btn_export";
+            this.Btn_export.Size = new System.Drawing.Size(136, 23);
+            this.Btn_export.TabIndex = 2;
+            this.Btn_export.Text = "Daten als CSV exportieren";
+            this.Btn_export.UseVisualStyleBackColor = true;
+            this.Btn_export.Click += new System.EventHandler(this.Btn_export_Click);
             // 
             // cB_spieleliste
             // 
@@ -79,8 +79,8 @@ namespace Spielesammlung
             this.ClientSize = new System.Drawing.Size(616, 450);
             this.Controls.Add(this.lW_Highscore);
             this.Controls.Add(this.cB_spieleliste);
-            this.Controls.Add(this.btn_export);
-            this.Controls.Add(this.btn_load);
+            this.Controls.Add(this.Btn_export);
+            this.Controls.Add(this.Btn_load);
             this.Name = "Form_Highscore";
             this.Text = "Highscore";
             this.ResumeLayout(false);
@@ -89,8 +89,8 @@ namespace Spielesammlung
 
         #endregion
 
-        private System.Windows.Forms.Button btn_load;
-        private System.Windows.Forms.Button btn_export;
+        private System.Windows.Forms.Button Btn_load;
+        private System.Windows.Forms.Button Btn_export;
         private System.Windows.Forms.ComboBox cB_spieleliste;
         private System.Windows.Forms.ListView lW_Highscore;
     }

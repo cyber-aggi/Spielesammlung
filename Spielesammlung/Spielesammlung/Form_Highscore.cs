@@ -13,14 +13,13 @@ namespace Spielesammlung
 {
     public partial class Form_Highscore : Form
     {
-        public Form_Highscore()
+        public Form_Highscore(string spielname = "")
         {
             InitializeComponent();
             //Lesen der Spieleliste aus der Properties / Settings Datei
             string spiele = Properties.Settings.Default.spiele;
-            String[] value = null;
             //Splitten der Informationen in ein Array
-            value = spiele.Split(';');
+            String[] value = spiele.Split(';');
             foreach(string v in value)
             {
                 //Array zur Combobox hinzufügen, wenn der Arrayeintrag nicht leer ist
@@ -30,15 +29,24 @@ namespace Spielesammlung
                 }
             }
 
+            if(spielname != "")
+            {
+                cB_spieleliste.Text = spielname;
+            } else
+            {
+                cB_spieleliste.Text = value[0];
+            }
+            
             //Hinzufügen von Tabellenüberschriften
             lW_Highscore.Columns.Clear();
             lW_Highscore.Columns.Add("Spielername");
             lW_Highscore.Columns.Add("Datum");
             lW_Highscore.Columns.Add("Punktestand");
             lW_Highscore.View = View.Details;
+            lW_Highscore.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        private void btn_load_Click(object sender, EventArgs e)
+        private void Btn_load_Click(object sender, EventArgs e)
         {
             if (cB_spieleliste.Text == "")
             {
@@ -50,24 +58,26 @@ namespace Spielesammlung
                 lW_Highscore.Items.Clear();
 
                 //Holen der Einträge aus der Datenbank
-                //cB_spieleliste.Text
-
-
+                //string[] list = Get-Highscore(cB_spieleliste.Text);
+                string[,] list = new string[,] { { "User 1", "26.04.2021", "100" }, { "User 2", "26.04.2021", "90" }, { "User 3", "26.04.2021", "95" } };
+                
                 //Eintragen der Datensätze in die ListView
-                ListViewItem item = new ListViewItem("Test Benutzer");
-                item.SubItems.Add("26.04.2021");
-                item.SubItems.Add("100");
-                lW_Highscore.Items.Add(item);
-
-
-            
+                for (int i = 0; i < list.Length/3; i++)
+                {
+                    ListViewItem item = new ListViewItem(list[i, 0]);
+                    item.SubItems.Add(list[i, 1]);
+                    item.SubItems.Add(list[i, 2]);
+                    
+                    lW_Highscore.Items.Add(item);
+                }
+                
                 //Rückmeldung an den Benutzer
                 MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
             }
         }
 
         //Möglichkeit zum exportieren von  den Highscore Datensätzen
-        private void btn_export_Click(object sender, EventArgs e)
+        private void Btn_export_Click(object sender, EventArgs e)
         {
             if (lW_Highscore.Items.Count == 0)
             {
@@ -76,11 +86,13 @@ namespace Spielesammlung
             else
             {
                 //Öffnet Dateiexplorer zum Speichern dieser Datei
-                SaveFileDialog sFD = new SaveFileDialog();
-
-                sFD.Filter = "CSV-Datei (*.csv)|*.csv|TXT-Datei (*.txt)|*.txt";
-                sFD.FilterIndex = 1;
-                sFD.RestoreDirectory = true;
+                SaveFileDialog sFD = new SaveFileDialog
+                {
+                    Filter = "CSV-Datei (*.csv)|*.csv|TXT-Datei (*.txt)|*.txt",
+                    FilterIndex = 1,
+                    RestoreDirectory = true,
+                    FileName = "Highscore_" + cB_spieleliste.Text
+                };
 
                 //Wenn auf Speichern geklickt wurde, wird die Datei geschrieben
                 if (sFD.ShowDialog() == DialogResult.OK)
