@@ -71,5 +71,31 @@ namespace Spielesammlung
                 }
             }
         }
+
+        private void RegelnButton_Click(object sender, EventArgs e)
+        {
+            //Fragt das Selected Item ab und zeigt dann die Spielregeln an
+            if (Convert.ToString(Spiele_Liste.SelectedItem) == "Vier-Gewinnt")
+            {
+                MessageBox.Show
+                    ("Spielregeln Vier-Gewinnt: \n\n" +
+                    "Vor Beginn: \n" +
+                    "1. Jeder Spieler hat 21 Spielchips zur Verfügung \n" +
+                    "2. Der Spieler mit der Farbe rot/gelb darf anfangen \n\n" +
+                    "So spielst du: \n" +
+                    "1. Wirf einen deiner Steine von oben in eine der Reihen, dazu klickst du über eine der Reihen, der Stein plaziert sich dann automatisch. \n" +
+                    "2. Jetzt ist dein Gegner dran. \n\n" +
+                    "Das Ziel: \n" +
+                    "1. Dein Spielziel ist es eine Viererreihe mit deinen Steinen zu erschaffen. Diese kann senkrecht, waagrecht oder diagonal liegen. \n\n" +
+                    "Ende des Spieles: \n" +
+                    "1. Einer der beiden Spieler hat eine viererreihe geschafft und damit gewonnen. \n" +
+                    "2. Ihr habt alle eure Spielsteine aufgebraucht, das Spiel ist ein Unentschieden. \n\n" +
+                    "Nachdem du jetzt die Regeln kennst, wünscht dir das ganze Team viel Spaß beim Spielen. \n");
+            }
+            else if (Convert.ToString(Spiele_Liste.SelectedItem) == "")
+            {
+                MessageBox.Show("Bitte wähle ein Spiel aus.");
+            }
+        }
     }
 }
