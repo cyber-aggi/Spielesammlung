@@ -15,11 +15,16 @@ namespace Spielesammlung
 
         private Color[,] bgColors = new Color[7, 6];
         private bool[,] TLPcolor = new bool[7, 6];
+        //False entspricht Spieler 1
+        //true entspricht Spieler 2
+        private bool spieler_bool = false;
+
 
         public VierGewinntForm()
         {
             InitializeComponent();
             Colorfill();
+            spieler_start();
         }
 
         private void Spalte1Button_Click(object sender, EventArgs e)
@@ -66,6 +71,7 @@ namespace Spielesammlung
 
         private void VierGewinntTableLayoutPanel_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
+            //Füllt die Rechtecke aus.
             using (var b = new SolidBrush(bgColors[e.Column, e.Row]))
             {
                 e.Graphics.FillRectangle(b, e.CellBounds);
@@ -96,11 +102,13 @@ namespace Spielesammlung
 
         private int Endstop_for_block(int col)
         {
+            //Schaut in der Spalte von unten nach oben nach ob ein Block schon gesetzt wurde
             for(int row = TLPcolor.GetLength(0)-2; row > 0; row--)
-            {
-                Control c = this.VierGewinntTableLayoutPanel.GetControlFromPosition(col, row);
+            {              
+                //gibt die unterste stelle aus der spalte zurück an der sich noch kein Block befindet
                 if (TLPcolor[col, row] == false)
                     {
+                    //setzt im array den wert auf true, dass dort nun ein Block ist
                         TLPcolor[col, row] = true;
                         return row; 
                     }
@@ -110,9 +118,63 @@ namespace Spielesammlung
 
         private void DrawBlock(int col)
         {
-            bgColors[col, Endstop_for_block(col)] = Color.Red;
-            VierGewinntTableLayoutPanel.Refresh();
+
+            /*Noch zu machen:
+             * 2 Spieler hinzufügen
+             * Abschwechseln zwischen Rot und Gelb
+             * Überprüfung welcher Spieler dran ist
+             */
+            //setzt für die Blöcke die Farbe Rot
+            //Wenn Spieler 1 dann Rot
+            if (spieler_bool == false)
+            {
+                bgColors[col, Endstop_for_block(col)] = Color.Red;
+                Spielerwechsel();
+                VierGewinntTableLayoutPanel.Refresh();
+                return;
+            }
+            //Wenn Spieler 2 dann Gelb
+            if (spieler_bool == true)
+            {
+                bgColors[col, Endstop_for_block(col)] = Color.Yellow;
+                Spielerwechsel();
+                VierGewinntTableLayoutPanel.Refresh();
+                return;
+            }
+            //Lädt das Grid neu
+            
         }
 
+        private void Spielerwechsel()
+        {
+            if (spieler_bool == false)
+            {
+                AnzeigeLabel.Text = "Es ist dran: Spieler 2";
+                spieler_bool = true;
+                return;
+            }
+
+            if (spieler_bool == true)
+            {
+                AnzeigeLabel.Text = "Es ist dran: Spieler 1";
+                spieler_bool = false;
+                return;
+            }
+        }
+
+        private int random_start(int i)
+        {
+            var rand = new Random();
+            return rand.Next(i);
+        }
+
+        private void spieler_start()
+        {
+            if (random_start(101)%2 == 0)
+            {
+                Spielerwechsel();
+            }
+
+        }
     }
 }

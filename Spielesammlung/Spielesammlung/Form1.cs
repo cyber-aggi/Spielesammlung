@@ -41,8 +41,8 @@ namespace Spielesammlung
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Tic-Tac-Toe")
             {
-                //TicTacToeForm Childform_TicTacToe = new TicTacToeForm();
-                //Childform_TicTacToe.Show();
+                Tik_Tak_Toe Childform_TicTacToe = new Tik_Tak_Toe();
+                Childform_TicTacToe.Show();
                 MessageBox.Show("Viel Spaß beim Spielen!");
             }
 
@@ -98,12 +98,5 @@ namespace Spielesammlung
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           Tik_Tak_Toe toe   = new Tik_Tak_Toe();
-            toe.Show();
-
-
-        }
     }
 }
