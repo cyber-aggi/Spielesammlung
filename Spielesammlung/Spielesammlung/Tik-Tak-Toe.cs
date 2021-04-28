@@ -43,130 +43,188 @@ namespace Spielesammlung
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(button3.Text == "X" || button3.Text == "O")
+
+            if (button3.Text == "X" || button3.Text == "O")
             {
 
             }
-            if(zähler == 1)
+            else
             {
-                button3.Text = "X";
-                zähler = 2;
+
+            
+              
+                if (zähler == 1)
+                {
+                    button3.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button3.Text = "O";
+                    zähler = 1;
+                }
+
+                textschreiben();
+                
             }
-            else if(zähler == 2)
-            {
-                button3.Text = "O";
-                zähler = 1;
-            }
+            
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button3.Text == "X" || button3.Text == "O")
+            if (button1.Text == "X" || button1.Text == "O")
             {
+               
+
+                
 
             }
-            if (zähler == 1)
+            else
             {
-                button1.Text = "X";
-                zähler = 2;
+                if (zähler == 1)
+                {
+                    button1.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button1.Text = "O";
+                    zähler = 1;
+                }
+                textschreiben();
             }
-            else if (zähler == 2)
-            {
-                button1.Text = "O";
-                zähler = 1;
-            }
+            
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (button3.Text == "X" || button3.Text == "O")
+            if (button2.Text == "X" || button2.Text == "O")
             {
+               
 
             }
-            if (zähler == 1)
+            else
             {
-                button2.Text = "X";
-                zähler = 2;
-            }
-            else if (zähler == 2)
-            {
-                button2.Text = "O";
-                zähler = 1;
+                if (zähler == 1)
+                {
+                    button2.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button2.Text = "O";
+                    zähler = 1;
+                }
+
+                textschreiben();
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (button3.Text == "X" || button3.Text == "O")
+            if (button6.Text == "X" || button6.Text == "O")
             {
+               
+            }
+            else
+            {
+                if (zähler == 1)
+                {
+                    button6.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button6.Text = "O";
+                    zähler = 1;
+                }
 
+
+                textschreiben();
             }
-            if (zähler == 1)
-            {
-                button6.Text = "X";
-                zähler = 2;
-            }
-            else if (zähler == 2)
-            {
-                button6.Text = "O";
-                zähler = 1;
-            }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (button3.Text == "X" || button3.Text == "O")
+            if (button5.Text == "X" || button5.Text == "O")
             {
 
             }
-            if (zähler == 1)
+            else
             {
-                button5.Text = "X";
-                zähler = 2;
+
+            
+                if (zähler == 1)
+                {
+                    button5.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button5.Text = "O";
+                    zähler = 1;
+                }
+
+                textschreiben();
+
             }
-            else if (zähler == 2)
-            {
-                button5.Text = "O";
-                zähler = 1;
-            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (button3.Text == "X" || button3.Text == "O")
+            if (button4.Text == "X" || button4.Text == "O")
             {
 
             }
-            if (zähler == 1)
+            else
             {
-                button4.Text = "X";
-                zähler = 2;
-            }
-            else if (zähler == 2)
-            {
-                button4.Text = "O";
-                zähler = 1;
+
+            
+                if (zähler == 1)
+                {
+                    button4.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button4.Text = "O";
+                    zähler = 1;
+                }
+
+                textschreiben();
+
             }
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (button3.Text == "X" || button3.Text == "O")
+            if (button9.Text == "X" || button9.Text == "O")
             {
 
             }
-            if (zähler == 1)
+            else
             {
-                button9.Text = "X";
-                zähler = 2;
+
+            
+                if (zähler == 1)
+                {
+                    button9.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    button9.Text = "O";
+                    zähler = 1;
+                }
+
+
+                textschreiben();
             }
-            else if (zähler == 2)
-            {
-                button9.Text = "O";
-                zähler = 1;
-            }
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -174,7 +232,11 @@ namespace Spielesammlung
             if (button8.Text == "X" || button8.Text == "O")
             {
 
+            }
+            else
+            {
 
+            
                 if (zähler == 1)
                 {
                     button8.Text = "X";
@@ -185,12 +247,20 @@ namespace Spielesammlung
                     button8.Text = "O";
                     zähler = 1;
                 }
+
+
+                textschreiben();
+
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             if (button7.Text == "X" || button7.Text == "O")
+            {
+
+            }
+            else
             {
 
             
@@ -204,7 +274,52 @@ namespace Spielesammlung
                     button7.Text = "O";
                     zähler = 1;
                 }
+
+                textschreiben();
+
             }
         }
+
+        private void textschreiben()
+        {
+            if (zähler == 1)
+            {
+                textBox1.Text = "Spieler 1 ist dran!";
+            }
+            else if (zähler == 2)
+            {
+                textBox1.Text = "Spieler 2 ist dran!";
+            }
+        }
+
+        //private bool gewonnen()
+        //{
+        //    if()
+        //    {
+
+        //    }
+
+
+        //    return true;
+
+
+        //    return false;
+
+
+
+        //}
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
