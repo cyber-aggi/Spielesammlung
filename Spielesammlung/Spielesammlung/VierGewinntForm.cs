@@ -14,6 +14,7 @@ namespace Spielesammlung
     {
 
         private Color[,] bgColors = new Color[7, 6];
+        private bool[,] TLPcolor = new bool[7, 6];
 
         public VierGewinntForm()
         {
@@ -24,38 +25,43 @@ namespace Spielesammlung
         private void Spalte1Button_Click(object sender, EventArgs e)
         {
             //column: 0 ,row: 1
-            bgColors[0, 1] = Color.Red;
-            VierGewinntTableLayoutPanel.Refresh();
+            DrawBlock(0);
         }
 
         private void Spalte2Button_Click(object sender, EventArgs e)
         {
-
+            //column: 1 ,row: 1
+            DrawBlock(1);
         }
 
         private void Spalte3Button_Click(object sender, EventArgs e)
         {
-
+            //column: 2 ,row: 1
+            DrawBlock(2);
         }
 
         private void Spalte4Button_Click(object sender, EventArgs e)
         {
-
+            //column: 3 ,row: 1
+            DrawBlock(3);
         }
 
         private void Spalte5Button_Click(object sender, EventArgs e)
         {
-
+            //column: 4 ,row: 1
+            DrawBlock(4);
         }
 
         private void Spalte6Button_Click(object sender, EventArgs e)
         {
-
+            //column: 5 ,row: 1
+            DrawBlock(5);
         }
 
         private void Spalte7Button_Click(object sender, EventArgs e)
         {
-
+            //column: 6 ,row: 1
+            DrawBlock(6);
         }
 
         private void VierGewinntTableLayoutPanel_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
@@ -77,6 +83,35 @@ namespace Spielesammlung
                     bgColors[depth, width] = SystemColors.Control;
                 }
             }
+
+            //Füllt das Boolean Feld
+            for (int i = 0; i < TLPcolor.GetLength(0); i++)
+            {
+                for(int j = 0; j < TLPcolor.GetLength(1); j++)
+                {
+                    TLPcolor[i, j] = false;
+                }
+            }
+        }
+
+        private int Endstop_for_block(int col)
+        {
+            for(int row = TLPcolor.GetLength(0)-2; row > 0; row--)
+            {
+                Control c = this.VierGewinntTableLayoutPanel.GetControlFromPosition(col, row);
+                if (TLPcolor[col, row] == false)
+                    {
+                        TLPcolor[col, row] = true;
+                        return row; 
+                    }
+            }
+            return 0;            
+        }
+
+        private void DrawBlock(int col)
+        {
+            bgColors[col, Endstop_for_block(col)] = Color.Red;
+            VierGewinntTableLayoutPanel.Refresh();
         }
 
     }
