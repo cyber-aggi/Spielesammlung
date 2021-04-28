@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Spielesammlung.Highscore;
 
 namespace Spielesammlung
 {
@@ -58,16 +59,12 @@ namespace Spielesammlung
                 lW_Highscore.Items.Clear();
 
                 //Holen der Einträge aus der Datenbank
-                //string[] list = Get-Highscore(cB_spieleliste.Text);
-                string[,] list = new string[,] { { "User 1", "26.04.2021", "100" }, { "User 2", "26.04.2021", "90" }, { "User 3", "26.04.2021", "95" } };
-                
-                //Eintragen der Datensätze in die ListView
-                for (int i = 0; i < list.Length/3; i++)
+                string[][] list = datenLesen(cB_spieleliste.Text);
+                foreach (string[] row in list)
                 {
-                    ListViewItem item = new ListViewItem(list[i, 0]);
-                    item.SubItems.Add(list[i, 1]);
-                    item.SubItems.Add(list[i, 2]);
-                    
+                    ListViewItem item = new ListViewItem(row[0]);
+                    item.SubItems.Add(row[2]);
+                    item.SubItems.Add(row[1]);
                     lW_Highscore.Items.Add(item);
                 }
                 

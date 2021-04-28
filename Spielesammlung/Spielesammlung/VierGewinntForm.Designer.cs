@@ -168,7 +168,7 @@ namespace Spielesammlung
             this.Controls.Add(this.Spalte1Button);
             this.Controls.Add(this.VierGewinntTableLayoutPanel);
             this.Name = "VierGewinntForm";
-            this.Text = "VierGewinntForm";
+            this.Text = "Vier-Gewinnt";
             this.ResumeLayout(false);
             this.PerformLayout();
 

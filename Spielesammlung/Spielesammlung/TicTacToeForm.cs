@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Spielesammlung
 {
-    public partial class Tik_Tak_Toe : Form
+    public partial class TicTacToeForm : Form
     {
         public int zähler = 1;
         public int zug = 0;
-        public Tik_Tak_Toe()
+        public TicTacToeForm()
         {
             InitializeComponent();
             
