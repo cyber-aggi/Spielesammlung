@@ -25,7 +25,7 @@ namespace Spielesammlung.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4-Gewinnt;Tic-Tac-Toe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Vier-Gewinnt;Tic-Tac-Toe")]
         public string spiele {
             get {
                 return ((string)(this["spiele"]));

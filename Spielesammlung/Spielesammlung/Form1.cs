@@ -13,34 +13,48 @@ namespace Spielesammlung
 {
     public partial class Form1 : Form
     {
-        private Form_Highscore Childform;
-        private VierGewinntForm Childform2;
+        private Form_Highscore Childform_Highscore;
+        private VierGewinntForm Childform_VierGewinnt;
         
         public Form1()
         {
             InitializeComponent();
+            //Läd die Spiele direkt beim Start der Anwendung
+            LoadGames();
         }
 
         private void HighscoreButton_Click(object sender, EventArgs e)
         {
             //Erzeugt ein neues Fenster um den Highscore anzuzeigen
-            Childform = new Form_Highscore();
-            Childform.Show();
+            Childform_Highscore = new Form_Highscore();
+            Childform_Highscore.Show();
         }
 
         private void StartenButton_Click(object sender, EventArgs e)
         {
             //Erzeugt ein neues Fenster um das Spiel anzuzeigen
-            if (Convert.ToString(Spiele_Liste.SelectedItem) == "4-Gewinnt")
+            if (Convert.ToString(Spiele_Liste.SelectedItem) == "Vier-Gewinnt")
             {
-                Childform2 = new VierGewinntForm();
-                Childform2.Show();
+                Childform_VierGewinnt = new VierGewinntForm();
+                Childform_VierGewinnt.Show();
                 MessageBox.Show("Viel Spaß beim Spielen!");
             }
-            
+            else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Tic-Tac-Toe")
+            {
+                //TicTacToeForm Childform_TicTacToe = new TicTacToeForm();
+                //Childform_TicTacToe.Show();
+                MessageBox.Show("Viel Spaß beim Spielen!");
+            }
+
         }
 
         private void LadenButton_Click(object sender, EventArgs e)
+        {
+            LoadGames();
+        }
+
+        //Methode zum Laden der Spiele
+        private void LoadGames()
         {
             Spiele_Liste.Items.Clear();
             //Lesen der Spieleliste aus der Properties / Settings Datei
@@ -56,16 +70,6 @@ namespace Spielesammlung
                     Spiele_Liste.Items.Add(v);
                 }
             }
-
-            /*//Schreibt die Spiele aus einer Datei in die ListBox
-            /StreamReader dateipointer = new StreamReader("");
-            for (int i = 0; i < 3; i++)
-            {
-                string zeile = dateipointer.ReadLine();
-
-                Spiele_Liste.Items.Add(zeile);
-            }*/
-            
         }
     }
 }
