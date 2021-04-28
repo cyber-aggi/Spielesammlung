@@ -61,6 +61,7 @@
     <Compile Include="Form_Highscore.Designer.cs">
       <DependentUpon>Form_Highscore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Highscore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tik-Tak-Toe.cs">
@@ -68,6 +69,12 @@
     </Compile>
     <Compile Include="Tik-Tak-Toe.Designer.cs">
       <DependentUpon>Tik-Tak-Toe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VierGewinntForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VierGewinntForm.Designer.cs">
+      <DependentUpon>VierGewinntForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -86,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="Tik-Tak-Toe.resx">
       <DependentUpon>Tik-Tak-Toe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VierGewinntForm.resx">
+      <DependentUpon>VierGewinntForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

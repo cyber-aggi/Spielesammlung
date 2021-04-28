@@ -29,38 +29,73 @@
         private void InitializeComponent()
         {
             this.HighscoreButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Spiele_Liste = new System.Windows.Forms.ListBox();
+            this.StartenButton = new System.Windows.Forms.Button();
+            this.LadenButton = new System.Windows.Forms.Button();
+            this.RegelnButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HighscoreButton
             // 
-            this.HighscoreButton.Location = new System.Drawing.Point(760, 186);
-            this.HighscoreButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HighscoreButton.Location = new System.Drawing.Point(823, 277);
+            this.HighscoreButton.Margin = new System.Windows.Forms.Padding(6);
             this.HighscoreButton.Name = "HighscoreButton";
-            this.HighscoreButton.Size = new System.Drawing.Size(209, 32);
+            this.HighscoreButton.Size = new System.Drawing.Size(318, 67);
             this.HighscoreButton.TabIndex = 0;
             this.HighscoreButton.Text = "Highscore öffnen";
             this.HighscoreButton.UseVisualStyleBackColor = true;
             this.HighscoreButton.Click += new System.EventHandler(this.HighscoreButton_Click);
             // 
-            // button1
+            // Spiele_Liste
             // 
-            this.button1.Location = new System.Drawing.Point(138, 447);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 48);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Tik Tak Toe Spielen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Spiele_Liste.FormattingEnabled = true;
+            this.Spiele_Liste.ItemHeight = 25;
+            this.Spiele_Liste.Location = new System.Drawing.Point(136, 179);
+            this.Spiele_Liste.Name = "Spiele_Liste";
+            this.Spiele_Liste.Size = new System.Drawing.Size(628, 479);
+            this.Spiele_Liste.TabIndex = 1;
+            // 
+            // StartenButton
+            // 
+            this.StartenButton.Location = new System.Drawing.Point(821, 179);
+            this.StartenButton.Name = "StartenButton";
+            this.StartenButton.Size = new System.Drawing.Size(320, 63);
+            this.StartenButton.TabIndex = 2;
+            this.StartenButton.Text = "Spiel starten";
+            this.StartenButton.UseVisualStyleBackColor = true;
+            this.StartenButton.Click += new System.EventHandler(this.StartenButton_Click);
+            // 
+            // LadenButton
+            // 
+            this.LadenButton.Location = new System.Drawing.Point(530, 91);
+            this.LadenButton.Name = "LadenButton";
+            this.LadenButton.Size = new System.Drawing.Size(234, 57);
+            this.LadenButton.TabIndex = 3;
+            this.LadenButton.Text = "Spieleliste neuladen";
+            this.LadenButton.UseVisualStyleBackColor = true;
+            this.LadenButton.Click += new System.EventHandler(this.LadenButton_Click);
+            // 
+            // RegelnButton
+            // 
+            this.RegelnButton.Location = new System.Drawing.Point(823, 382);
+            this.RegelnButton.Name = "RegelnButton";
+            this.RegelnButton.Size = new System.Drawing.Size(317, 75);
+            this.RegelnButton.TabIndex = 4;
+            this.RegelnButton.Text = "Spielregeln";
+            this.RegelnButton.UseVisualStyleBackColor = true;
+            this.RegelnButton.Click += new System.EventHandler(this.RegelnButton_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1272, 865);
+            this.Controls.Add(this.RegelnButton);
+            this.Controls.Add(this.LadenButton);
+            this.Controls.Add(this.StartenButton);
+            this.Controls.Add(this.Spiele_Liste);
             this.Controls.Add(this.HighscoreButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Spielesammlung";
             this.ResumeLayout(false);
@@ -70,7 +105,10 @@
         #endregion
 
         private System.Windows.Forms.Button HighscoreButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox Spiele_Liste;
+        private System.Windows.Forms.Button StartenButton;
+        private System.Windows.Forms.Button LadenButton;
+        private System.Windows.Forms.Button RegelnButton;
     }
 }
 

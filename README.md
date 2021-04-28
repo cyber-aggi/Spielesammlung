@@ -1,12 +1,13 @@
 # Spielesammlung
 
 ## Liste der Spiele
-- Vier Gewinnt
+- Vier Gewinnt  (VierGewinntForm)
+- Tic-Tac-Toe  ()
 
 
 ## Links
 https://trello.com/b/1hZ6cLn7/spielesammlung
 
 
-## WICHTIG
-Für jedes Feature einen eigenen Branch -> wenn fertig direkt Pull Request in den master
+## Contribution
+Für jedes Feature einen eigenen Branch -> wenn fertig Pull-Request in den Main-Branch stellen

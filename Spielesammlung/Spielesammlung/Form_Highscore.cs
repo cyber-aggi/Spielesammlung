@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,41 +13,124 @@ namespace Spielesammlung
 {
     public partial class Form_Highscore : Form
     {
-        public Form_Highscore()
+        public Form_Highscore(string spielname = "")
         {
             InitializeComponent();
+            //Lesen der Spieleliste aus der Properties / Settings Datei
+            string spiele = Properties.Settings.Default.spiele;
+            //Splitten der Informationen in ein Array
+            String[] value = spiele.Split(';');
+            foreach(string v in value)
+            {
+                //Array zur Combobox hinzufügen, wenn der Arrayeintrag nicht leer ist
+                if (v != "")
+                {
+                    cB_spieleliste.Items.Add(v);
+                }
+            }
+
+            if(spielname != "")
+            {
+                cB_spieleliste.Text = spielname;
+            } else
+            {
+                cB_spieleliste.Text = value[0];
+            }
+            
+            //Hinzufügen von Tabellenüberschriften
+            lW_Highscore.Columns.Clear();
+            lW_Highscore.Columns.Add("Spielername");
+            lW_Highscore.Columns.Add("Datum");
+            lW_Highscore.Columns.Add("Punktestand");
+            lW_Highscore.View = View.Details;
+            lW_Highscore.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        private void btn_load_Click(object sender, EventArgs e)
+        private void Btn_load_Click(object sender, EventArgs e)
         {
-            //Leert die Listbox bevor neue Einträge aus der Datenbank geholt werden
-            lB_Highscore.Items.Clear();
+            if (cB_spieleliste.Text == "")
+            {
+                MessageBox.Show("Bitte wähle zuerst ein Spiel aus, um dir den Highscore anzeigen zu lassen!", "Fehlermeldung");
+            }
+            else
+            {
+                //Leert die Listbox bevor neue Einträge aus der Datenbank geholt werden
+                lW_Highscore.Items.Clear();
 
-            //Holen der Einträge aus der Datenbank
-
-
-
-            //Eintragen der Datensätze in die Listbox
-            lB_Highscore.Items.Add("");
-
-            MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
+                //Holen der Einträge aus der Datenbank
+                //string[] list = Get-Highscore(cB_spieleliste.Text);
+                string[,] list = new string[,] { { "User 1", "26.04.2021", "100" }, { "User 2", "26.04.2021", "90" }, { "User 3", "26.04.2021", "95" } };
+                
+                //Eintragen der Datensätze in die ListView
+                for (int i = 0; i < list.Length/3; i++)
+                {
+                    ListViewItem item = new ListViewItem(list[i, 0]);
+                    item.SubItems.Add(list[i, 1]);
+                    item.SubItems.Add(list[i, 2]);
+                    
+                    lW_Highscore.Items.Add(item);
+                }
+                
+                //Rückmeldung an den Benutzer
+                MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
+            }
         }
 
         //Möglichkeit zum exportieren von  den Highscore Datensätzen
-        private void btn_export_Click(object sender, EventArgs e)
+        private void Btn_export_Click(object sender, EventArgs e)
         {
-            //Öffnet Dateiexplorer zum Speichern dieser Datei
-            SaveFileDialog sFD = new SaveFileDialog();
-
-            sFD.Filter = "CSV-Datei (*.csv)|*.csv|TXT-Datei (*.txt)|*.txt";
-            sFD.FilterIndex = 1;
-            sFD.RestoreDirectory = true;
-
-            //Wenn auf Speichern geklickt wurde, wird die Datei geschrieben
-            if (sFD.ShowDialog() == DialogResult.OK)
+            if (lW_Highscore.Items.Count == 0)
             {
-                //export_table(sFD.FileName + sFD.DefaultExt);
-                MessageBox.Show("Daten wurden erfolgreich exportiert!", "Information");
+                MessageBox.Show("Bitte lade zuerst den aktuellen Highscore aus der Datenbank!", "Fehlermeldung");
+            }
+            else
+            {
+                //Öffnet Dateiexplorer zum Speichern dieser Datei
+                SaveFileDialog sFD = new SaveFileDialog
+                {
+                    Filter = "CSV-Datei (*.csv)|*.csv|TXT-Datei (*.txt)|*.txt",
+                    FilterIndex = 1,
+                    RestoreDirectory = true,
+                    FileName = "Highscore_" + cB_spieleliste.Text
+                };
+
+                //Wenn auf Speichern geklickt wurde, wird die Datei geschrieben
+                if (sFD.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        //Öffnen der Datei in der gespeichert werden soll
+                        StreamWriter writer = new StreamWriter(sFD.FileName + sFD.DefaultExt);
+
+                        //Füge jeden Eintrag in der Listbox zur Datei hinzu
+                        foreach (ListViewItem item in lW_Highscore.Items)
+                        {
+                            string output = "";
+                            int temp = 0;
+                            foreach (ListViewItem.ListViewSubItem row in item.SubItems)
+                            {
+                                if (temp == 0)
+                                {
+                                    output += row.Text.ToString();
+                                }
+                                else
+                                {
+                                    output += ";" + row.Text.ToString();
+                                }
+                                temp += 1;
+                            }
+                            writer.WriteLine(output);
+                        }
+                        //Schließen der Datei
+                        writer.Close();
+                    }
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Es gab einen Fehler: " + error.Message, "Fehlermeldung");
+                    }
+                    //Bestätigt den erfolgreichen Export der Daten aus dem ListView
+                    MessageBox.Show("Highscore wurde erfolgreich exportiert!", "Information");
+                }
             }
         }
     }
