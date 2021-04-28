@@ -97,5 +97,13 @@ namespace Spielesammlung
                 MessageBox.Show("Bitte wähle ein Spiel aus!");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           Tik_Tak_Toe toe   = new Tik_Tak_Toe();
+            toe.Show();
+
+
+        }
     }
 }
