@@ -94,7 +94,7 @@ namespace Spielesammlung
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "")
             {
-                MessageBox.Show("Bitte wähle ein Spiel aus.");
+                MessageBox.Show("Bitte wähle ein Spiel aus!");
             }
         }
     }
