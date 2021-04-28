@@ -13,6 +13,7 @@ namespace Spielesammlung
     public partial class Tik_Tak_Toe : Form
     {
         public int zähler = 1;
+        public int zug = 0;
         public Tik_Tak_Toe()
         {
             InitializeComponent();
@@ -290,24 +291,62 @@ namespace Spielesammlung
             {
                 textBox1.Text = "Spieler 2 ist dran!";
             }
+            zug++;
         }
 
-        //private bool gewonnen()
-        //{
-        //    if()
-        //    {
-
-        //    }
-
-
-        //    return true;
-
-
-        //    return false;
+        private void gewonnen()
+        {
 
 
 
-        //}
+            if (zug >= 5)
+            {
+                if(button1.Text == "X" && button2.Text == "X" && button3.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+
+                }
+                if (button6.Text == "X" && button5.Text == "X" && button4.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+                }
+                if (button9.Text == "X" && button8.Text == "X" && button7.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+                }
+                if (button1.Text == "X" && button5.Text == "X" && button7.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+                }
+                if (button9.Text == "X" && button5.Text == "X" && button3.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+                }
+                if (button2.Text == "X" && button5.Text == "X" && button8.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+                }
+                if (button3.Text == "X" && button4.Text == "X" && button7.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+                }
+
+
+
+
+
+
+            }
+
+            else
+            {
+
+            }
+
+
+
+        }
+           
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
