@@ -61,6 +61,7 @@
     <Compile Include="Form_Highscore.Designer.cs">
       <DependentUpon>Form_Highscore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Highscore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VierGewinntForm.cs">
