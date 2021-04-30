@@ -274,8 +274,6 @@ namespace Spielesammlung
                     }
                 }
             }
-            //Fürs testen
-            fertig = true;
 
             if(fertig)
             {
