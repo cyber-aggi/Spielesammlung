@@ -46,7 +46,7 @@ namespace Spielesammlung
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Kniffel")
             {
-                KniffelForm Childform_Kniffel = new KniffelForm(Convert.ToString(Spiele_Liste.SelectedItem), Spieler1Name_Textbox.Text, Spieler2Name_Textbox.Text);
+                KniffelForm Childform_Kniffel = new KniffelForm(Convert.ToString(Spiele_Liste.SelectedItem), Spieler1Name_TextBox.Text, Spieler2Name_TextBox.Text);
                 Childform_Kniffel.Show();
                 MessageBox.Show("Viel Spaß beim Spielen!");
             }
