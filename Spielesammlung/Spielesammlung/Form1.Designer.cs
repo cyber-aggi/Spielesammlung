@@ -37,10 +37,10 @@
             // 
             // HighscoreButton
             // 
-            this.HighscoreButton.Location = new System.Drawing.Point(823, 277);
-            this.HighscoreButton.Margin = new System.Windows.Forms.Padding(6);
+            this.HighscoreButton.Location = new System.Drawing.Point(549, 177);
+            this.HighscoreButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.HighscoreButton.Name = "HighscoreButton";
-            this.HighscoreButton.Size = new System.Drawing.Size(318, 67);
+            this.HighscoreButton.Size = new System.Drawing.Size(212, 43);
             this.HighscoreButton.TabIndex = 0;
             this.HighscoreButton.Text = "Highscore öffnen";
             this.HighscoreButton.UseVisualStyleBackColor = true;
@@ -49,17 +49,20 @@
             // Spiele_Liste
             // 
             this.Spiele_Liste.FormattingEnabled = true;
-            this.Spiele_Liste.ItemHeight = 25;
-            this.Spiele_Liste.Location = new System.Drawing.Point(136, 179);
+            this.Spiele_Liste.ItemHeight = 16;
+            this.Spiele_Liste.Location = new System.Drawing.Point(91, 115);
+            this.Spiele_Liste.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Spiele_Liste.Name = "Spiele_Liste";
-            this.Spiele_Liste.Size = new System.Drawing.Size(628, 479);
+            this.Spiele_Liste.Size = new System.Drawing.Size(420, 308);
             this.Spiele_Liste.TabIndex = 1;
+            this.Spiele_Liste.SelectedIndexChanged += new System.EventHandler(this.Spiele_Liste_SelectedIndexChanged);
             // 
             // StartenButton
             // 
-            this.StartenButton.Location = new System.Drawing.Point(821, 179);
+            this.StartenButton.Location = new System.Drawing.Point(547, 115);
+            this.StartenButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StartenButton.Name = "StartenButton";
-            this.StartenButton.Size = new System.Drawing.Size(320, 63);
+            this.StartenButton.Size = new System.Drawing.Size(213, 40);
             this.StartenButton.TabIndex = 2;
             this.StartenButton.Text = "Spiel starten";
             this.StartenButton.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // LadenButton
             // 
-            this.LadenButton.Location = new System.Drawing.Point(530, 91);
+            this.LadenButton.Location = new System.Drawing.Point(353, 58);
+            this.LadenButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LadenButton.Name = "LadenButton";
-            this.LadenButton.Size = new System.Drawing.Size(234, 57);
+            this.LadenButton.Size = new System.Drawing.Size(156, 36);
             this.LadenButton.TabIndex = 3;
             this.LadenButton.Text = "Spieleliste neuladen";
             this.LadenButton.UseVisualStyleBackColor = true;
@@ -77,9 +81,10 @@
             // 
             // RegelnButton
             // 
-            this.RegelnButton.Location = new System.Drawing.Point(823, 382);
+            this.RegelnButton.Location = new System.Drawing.Point(549, 244);
+            this.RegelnButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RegelnButton.Name = "RegelnButton";
-            this.RegelnButton.Size = new System.Drawing.Size(317, 75);
+            this.RegelnButton.Size = new System.Drawing.Size(211, 48);
             this.RegelnButton.TabIndex = 4;
             this.RegelnButton.Text = "Spielregeln";
             this.RegelnButton.UseVisualStyleBackColor = true;
@@ -87,15 +92,15 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 865);
+            this.ClientSize = new System.Drawing.Size(848, 554);
             this.Controls.Add(this.RegelnButton);
             this.Controls.Add(this.LadenButton);
             this.Controls.Add(this.StartenButton);
             this.Controls.Add(this.Spiele_Liste);
             this.Controls.Add(this.HighscoreButton);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Spielesammlung";
             this.ResumeLayout(false);
