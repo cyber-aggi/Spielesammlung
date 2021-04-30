@@ -60,6 +60,7 @@
             this.Spiele_Liste.Name = "Spiele_Liste";
             this.Spiele_Liste.Size = new System.Drawing.Size(628, 479);
             this.Spiele_Liste.TabIndex = 1;
+            this.Spiele_Liste.DoubleClick += new System.EventHandler(this.Spiele_Liste_DoubleClick);
             // 
             // StartenButton
             // 
