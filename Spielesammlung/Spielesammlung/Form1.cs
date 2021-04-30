@@ -66,6 +66,7 @@ namespace Spielesammlung
             String[] value = null;
             //Splitten der Informationen in ein Array
             value = spiele.Split(';');
+            Array.Sort(value);
             foreach (string v in value)
             {
                 //Array zur Combobox hinzufügen, wenn der Arrayeintrag nicht leer ist

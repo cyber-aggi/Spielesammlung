@@ -21,6 +21,7 @@ namespace Spielesammlung
             string spiele = Properties.Settings.Default.spiele;
             //Splitten der Informationen in ein Array
             String[] value = spiele.Split(';');
+            Array.Sort(value);
             foreach(string v in value)
             {
                 //Array zur Combobox hinzufügen, wenn der Arrayeintrag nicht leer ist
@@ -30,12 +31,10 @@ namespace Spielesammlung
                 }
             }
 
+            //Wenn ein Spielname übergeben wird, wird dieser direkt ausgewählt
             if(spielname != "")
             {
                 cB_spieleliste.Text = spielname;
-            } else
-            {
-                cB_spieleliste.Text = value[0];
             }
             
             //Hinzufügen von Tabellenüberschriften
