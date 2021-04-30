@@ -57,7 +57,7 @@ namespace Spielesammlung
         //Diese Methode fügt Daten in die Datenbank ein.
         //Es wird das Spiel, der Benutzer und der Score übergeben
         //Der Zeitpunkt wird durch einen Trigger innerhalb de Datenbank erstellt.
-        static void datenEinfuegen(string spiel, string benutzer, int score)
+        internal static void datenEinfuegen(string spiel, string benutzer, int score)
         {
             string befehl;
             try
