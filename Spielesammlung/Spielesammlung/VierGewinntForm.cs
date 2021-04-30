@@ -14,7 +14,10 @@ namespace Spielesammlung
     {
 
         private Color[,] bgColors = new Color[7, 6];
-        private bool[,] TLPcolor = new bool[7, 6];
+        //1 entspricht spieler 1
+        //2 entspricht spieler 2
+        //alles andere entspricht leer standard value = 0
+        private int[,] TLPcolor = new int[7, 6];
         //False entspricht Spieler 1
         //true entspricht Spieler 2
         private bool spieler_bool = false;
@@ -95,7 +98,7 @@ namespace Spielesammlung
             {
                 for(int j = 0; j < TLPcolor.GetLength(1); j++)
                 {
-                    TLPcolor[i, j] = false;
+                    TLPcolor[i, j] = 0;
                 }
             }
         }
@@ -106,11 +109,19 @@ namespace Spielesammlung
             for(int row = TLPcolor.GetLength(0)-2; row > 0; row--)
             {              
                 //gibt die unterste stelle aus der spalte zurück an der sich noch kein Block befindet
-                if (TLPcolor[col, row] == false)
+                if (TLPcolor[col, row] == 0)
                     {
-                    //setzt im array den wert auf true, dass dort nun ein Block ist
-                        TLPcolor[col, row] = true;
-                        return row; 
+                    //setzt im array den wert auf den Spieler der den Stein gelegt hat, dass dort nun ein Block ist
+                    if (spieler_bool == false)
+                    {
+                        TLPcolor[col, row] = 1;
+                        return row;
+                    }
+                    if (spieler_bool == true)
+                    {
+                        TLPcolor[col, row] = 2;
+                        return row;
+                    }
                     }
             }
             return 0;            
@@ -126,23 +137,21 @@ namespace Spielesammlung
              */
             //setzt für die Blöcke die Farbe Rot
             //Wenn Spieler 1 dann Rot
+            int tmp_endstop = Endstop_for_block(col);
             if (spieler_bool == false)
             {
-                bgColors[col, Endstop_for_block(col)] = Color.Red;
-                Spielerwechsel();
-                VierGewinntTableLayoutPanel.Refresh();
-                return;
-            }
+                bgColors[col, tmp_endstop] = Color.Red;
+            }else
             //Wenn Spieler 2 dann Gelb
             if (spieler_bool == true)
             {
-                bgColors[col, Endstop_for_block(col)] = Color.Yellow;
-                Spielerwechsel();
-                VierGewinntTableLayoutPanel.Refresh();
-                return;
+                bgColors[col, tmp_endstop] = Color.Yellow;
             }
-            //Lädt das Grid neu
-            
+            //Lädt das Grid neu udn wechselt spieler
+            Spielerwechsel();
+            VierGewinntTableLayoutPanel.Refresh();
+            gewinnen(col, tmp_endstop);
+
         }
 
         private void Spielerwechsel()
@@ -174,6 +183,93 @@ namespace Spielesammlung
             {
                 Spielerwechsel();
             }
+
+        }
+        private bool pruef_string(string temp)
+        {
+            if(temp == "1111")
+            {
+                MessageBox.Show("Spieler 1 hat gewonnen");
+                return true;
+            }
+            else if(temp == "2222")
+            {
+                MessageBox.Show("Spieler 2 hat gewonnen");
+                return true;
+            }
+            return false;
+        }
+
+        private void gewinnen(int ue_ver, int ue_hor)
+        {
+            string tmp_str = "";
+            int tmp_int = 0;
+            //vertikal
+            for (int vert = 0; vert < TLPcolor.GetLength(0); vert++)
+            {
+                for (int horz = 0; horz < TLPcolor.GetLength(1); horz++)
+                {
+                    // schaut ob der String leer ist falls das der Fall ist wird direkt ohne überprüfung reingeschrieben
+                    tmp_int = TLPcolor[vert, horz];
+                    if (tmp_str != "")
+                    {
+                        //wenn das letzte Zeichen des strings dem jetzigen Feld entspricht wird die zahl wieder eingesetzt
+                        int pruef_int = Convert.ToInt32(Char.GetNumericValue(tmp_str[(tmp_str.Length - 1)]));
+                        if ( pruef_int == tmp_int)
+                        {
+                            tmp_str += tmp_int;
+                        }
+                        else
+                        //leert den String um das neue Zeichen einzusetzten
+                        {
+                            tmp_str = "";
+                            tmp_str += tmp_int;
+                        }
+                    }
+                    else
+                    {
+                        tmp_str += tmp_int;
+                    }
+                    if(pruef_string(tmp_str))
+                    {
+                        return;
+                    }
+                }
+            }
+            tmp_str = "";
+            //vertikal
+            for (int horz = 0; horz < TLPcolor.GetLength(1); horz++)
+            {
+                for (int vert = 0; vert < TLPcolor.GetLength(0); vert++)
+                {
+                    // schaut ob der String leer ist falls das der Fall ist wird direkt ohne überprüfung reingeschrieben
+                    tmp_int = TLPcolor[vert, horz];
+                    if (tmp_str != "")
+                    {
+                        //wenn das letzte Zeichen des strings dem jetzigen Feld entspricht wird die zahl wieder eingesetzt
+                        int pruef_int = Convert.ToInt32(Char.GetNumericValue(tmp_str[(tmp_str.Length - 1)]));
+                        if (pruef_int == tmp_int)
+                        {
+                            tmp_str += tmp_int;
+                        }
+                        else
+                        //leert den String um das neue Zeichen einzusetzten
+                        {
+                            tmp_str = "";
+                            tmp_str += tmp_int;
+                        }
+                    }
+                    else
+                    {
+                        tmp_str += tmp_int;
+                    }
+                    if (pruef_string(tmp_str))
+                    {
+                        return;
+                    }
+                }
+            }
+
 
         }
     }
