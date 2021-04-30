@@ -3,6 +3,7 @@
 ## Liste der Spiele
 - Vier Gewinnt  (VierGewinntForm)
 - Tic-Tac-Toe  (TicTacToeForm)
+- Kniffel (KniffelForm)
 
 
 ## Links

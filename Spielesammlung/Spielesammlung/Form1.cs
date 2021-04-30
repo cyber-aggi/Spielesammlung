@@ -44,7 +44,12 @@ namespace Spielesammlung
                 Childform_TicTacToe.Show();
                 MessageBox.Show("Viel Spaß beim Spielen!");
             }
-
+            else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Kniffel")
+            {
+                KniffelForm Childform_Kniffel = new KniffelForm();
+                Childform_Kniffel.Show();
+                MessageBox.Show("Viel Spaß beim Spielen!");
+            }
         }
 
         private void LadenButton_Click(object sender, EventArgs e)
@@ -61,6 +66,7 @@ namespace Spielesammlung
             String[] value = null;
             //Splitten der Informationen in ein Array
             value = spiele.Split(';');
+            Array.Sort(value);
             foreach (string v in value)
             {
                 //Array zur Combobox hinzufügen, wenn der Arrayeintrag nicht leer ist
