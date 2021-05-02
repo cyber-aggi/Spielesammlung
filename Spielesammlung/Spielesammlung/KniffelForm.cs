@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Name: Paul Rosenberg
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -274,7 +275,6 @@ namespace Spielesammlung
                     }
                 }
             }
-
             if(fertig)
             {
                 string output = "";
@@ -299,19 +299,28 @@ namespace Spielesammlung
                 //Formular zur Eingabe von einem Namen für den Highscore
                 if (gewinner == "Spieler 1")
                 {
-                    
-                    
+                    //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
+                    HighscoreNameForm DialogHighscore = new HighscoreNameForm(gewinner);
+                    if(DialogHighscore.ShowDialog() == DialogResult.OK)
+                    {
+                        gewinner = DialogHighscore.tB_name.Text;
+                    }
+                    DialogHighscore.Dispose();
                 }
                 else if(gewinner == "Spieler 2")
                 {
-                    
-
+                    //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
+                    HighscoreNameForm DialogHighscore = new HighscoreNameForm(gewinner);
+                    if (DialogHighscore.ShowDialog() == DialogResult.OK)
+                    {
+                        gewinner = DialogHighscore.tB_name.Text;
+                    }
+                    DialogHighscore.Dispose();
                 }
-
                 //Wenn das Spiel Unendschieden ist, gibt wird kein Highscoreeintrag erstellt
                 if (gewinner == "")
                 {
-                    MessageBox.Show("Das Spiel ist zu Ende!\n\n" + output + "\n\nDer Punktestand wird in den Highscore eingetragen!", "Spiel beendet");
+                    MessageBox.Show("Das Spiel ist zu Ende!\n\n" + output + "\n\nEs wurde kein Punktestand in den Highscore eingetragen!", "Spiel beendet");
                 }
                 else
                 {
