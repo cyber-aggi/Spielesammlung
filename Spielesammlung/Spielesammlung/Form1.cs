@@ -102,10 +102,5 @@ namespace Spielesammlung
                 MessageBox.Show("Bitte wähle ein Spiel aus!");
             }
         }
-
-        private void Spiele_Liste_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
