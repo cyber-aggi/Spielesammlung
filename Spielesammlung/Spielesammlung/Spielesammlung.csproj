@@ -62,6 +62,12 @@
       <DependentUpon>Form_Highscore.cs</DependentUpon>
     </Compile>
     <Compile Include="Highscore.cs" />
+    <Compile Include="HighscoreNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HighscoreNameForm.Designer.cs">
+      <DependentUpon>HighscoreNameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="KniffelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Highscore.resx">
       <DependentUpon>Form_Highscore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HighscoreNameForm.resx">
+      <DependentUpon>HighscoreNameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KniffelForm.resx">
       <DependentUpon>KniffelForm.cs</DependentUpon>

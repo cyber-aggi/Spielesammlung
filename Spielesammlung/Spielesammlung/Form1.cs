@@ -31,6 +31,11 @@ namespace Spielesammlung
 
         private void StartenButton_Click(object sender, EventArgs e)
         {
+            StarteSpiel();
+        }
+
+        private void StarteSpiel()
+        {
             //Erzeugt ein neues Fenster um das Spiel anzuzeigen
             if (Convert.ToString(Spiele_Liste.SelectedItem) == "Vier-Gewinnt")
             {
@@ -46,7 +51,7 @@ namespace Spielesammlung
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Kniffel")
             {
-                KniffelForm Childform_Kniffel = new KniffelForm();
+                KniffelForm Childform_Kniffel = new KniffelForm(Convert.ToString(Spiele_Liste.SelectedItem), Spieler1Name_TextBox.Text, Spieler2Name_TextBox.Text);
                 Childform_Kniffel.Show();
                 MessageBox.Show("Viel Spaß beim Spielen!");
             }
@@ -101,6 +106,11 @@ namespace Spielesammlung
             {
                 MessageBox.Show("Bitte wähle ein Spiel aus!");
             }
+        }
+
+        private void Spiele_Liste_DoubleClick(object sender, EventArgs e)
+        {
+            StarteSpiel();
         }
     }
 }

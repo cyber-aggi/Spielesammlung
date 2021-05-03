@@ -63,6 +63,15 @@ namespace Spielesammlung
             this.label_punkte_oben = new System.Windows.Forms.Label();
             this.label_punkte_gesamt = new System.Windows.Forms.Label();
             this.gB_oben = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gB_unten = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,13 +80,9 @@ namespace Spielesammlung
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.gB_oben.SuspendLayout();
             this.gB_unten.SuspendLayout();
             this.SuspendLayout();
@@ -272,7 +277,7 @@ namespace Spielesammlung
             // label_punkte_oben_vorbonus
             // 
             this.label_punkte_oben_vorbonus.AutoSize = true;
-            this.label_punkte_oben_vorbonus.Location = new System.Drawing.Point(172, 297);
+            this.label_punkte_oben_vorbonus.Location = new System.Drawing.Point(173, 301);
             this.label_punkte_oben_vorbonus.Name = "label_punkte_oben_vorbonus";
             this.label_punkte_oben_vorbonus.Size = new System.Drawing.Size(70, 25);
             this.label_punkte_oben_vorbonus.TabIndex = 20;
@@ -281,7 +286,7 @@ namespace Spielesammlung
             // label_bonus
             // 
             this.label_bonus.AutoSize = true;
-            this.label_bonus.Location = new System.Drawing.Point(172, 330);
+            this.label_bonus.Location = new System.Drawing.Point(173, 334);
             this.label_bonus.Name = "label_bonus";
             this.label_bonus.Size = new System.Drawing.Size(19, 25);
             this.label_bonus.TabIndex = 21;
@@ -290,7 +295,7 @@ namespace Spielesammlung
             // label_punkte_oben_nachbonus
             // 
             this.label_punkte_oben_nachbonus.AutoSize = true;
-            this.label_punkte_oben_nachbonus.Location = new System.Drawing.Point(172, 363);
+            this.label_punkte_oben_nachbonus.Location = new System.Drawing.Point(173, 378);
             this.label_punkte_oben_nachbonus.Name = "label_punkte_oben_nachbonus";
             this.label_punkte_oben_nachbonus.Size = new System.Drawing.Size(70, 25);
             this.label_punkte_oben_nachbonus.TabIndex = 22;
@@ -298,7 +303,7 @@ namespace Spielesammlung
             // 
             // Btn_Unten_DreierPasch
             // 
-            this.Btn_Unten_DreierPasch.Location = new System.Drawing.Point(194, 39);
+            this.Btn_Unten_DreierPasch.Location = new System.Drawing.Point(221, 39);
             this.Btn_Unten_DreierPasch.Name = "Btn_Unten_DreierPasch";
             this.Btn_Unten_DreierPasch.Size = new System.Drawing.Size(116, 37);
             this.Btn_Unten_DreierPasch.TabIndex = 23;
@@ -307,7 +312,7 @@ namespace Spielesammlung
             // 
             // Btn_Unten_ViererPasch
             // 
-            this.Btn_Unten_ViererPasch.Location = new System.Drawing.Point(194, 82);
+            this.Btn_Unten_ViererPasch.Location = new System.Drawing.Point(221, 82);
             this.Btn_Unten_ViererPasch.Name = "Btn_Unten_ViererPasch";
             this.Btn_Unten_ViererPasch.Size = new System.Drawing.Size(116, 37);
             this.Btn_Unten_ViererPasch.TabIndex = 24;
@@ -316,7 +321,7 @@ namespace Spielesammlung
             // 
             // Btn_Unten_FullHouse
             // 
-            this.Btn_Unten_FullHouse.Location = new System.Drawing.Point(194, 125);
+            this.Btn_Unten_FullHouse.Location = new System.Drawing.Point(221, 125);
             this.Btn_Unten_FullHouse.Name = "Btn_Unten_FullHouse";
             this.Btn_Unten_FullHouse.Size = new System.Drawing.Size(116, 37);
             this.Btn_Unten_FullHouse.TabIndex = 25;
@@ -325,7 +330,7 @@ namespace Spielesammlung
             // 
             // Btn_Unten_KleineStrasse
             // 
-            this.Btn_Unten_KleineStrasse.Location = new System.Drawing.Point(194, 168);
+            this.Btn_Unten_KleineStrasse.Location = new System.Drawing.Point(221, 168);
             this.Btn_Unten_KleineStrasse.Name = "Btn_Unten_KleineStrasse";
             this.Btn_Unten_KleineStrasse.Size = new System.Drawing.Size(116, 37);
             this.Btn_Unten_KleineStrasse.TabIndex = 26;
@@ -334,7 +339,7 @@ namespace Spielesammlung
             // 
             // Btn_Unten_GrosseStrasse
             // 
-            this.Btn_Unten_GrosseStrasse.Location = new System.Drawing.Point(194, 211);
+            this.Btn_Unten_GrosseStrasse.Location = new System.Drawing.Point(221, 211);
             this.Btn_Unten_GrosseStrasse.Name = "Btn_Unten_GrosseStrasse";
             this.Btn_Unten_GrosseStrasse.Size = new System.Drawing.Size(116, 37);
             this.Btn_Unten_GrosseStrasse.TabIndex = 27;
@@ -343,7 +348,7 @@ namespace Spielesammlung
             // 
             // Btn_Unten_Kniffel
             // 
-            this.Btn_Unten_Kniffel.Location = new System.Drawing.Point(194, 254);
+            this.Btn_Unten_Kniffel.Location = new System.Drawing.Point(221, 254);
             this.Btn_Unten_Kniffel.Name = "Btn_Unten_Kniffel";
             this.Btn_Unten_Kniffel.Size = new System.Drawing.Size(116, 37);
             this.Btn_Unten_Kniffel.TabIndex = 28;
@@ -352,7 +357,7 @@ namespace Spielesammlung
             // 
             // Btn_Unten_Chance
             // 
-            this.Btn_Unten_Chance.Location = new System.Drawing.Point(194, 297);
+            this.Btn_Unten_Chance.Location = new System.Drawing.Point(221, 297);
             this.Btn_Unten_Chance.Name = "Btn_Unten_Chance";
             this.Btn_Unten_Chance.Size = new System.Drawing.Size(116, 37);
             this.Btn_Unten_Chance.TabIndex = 29;
@@ -362,29 +367,29 @@ namespace Spielesammlung
             // label_punkte_unten
             // 
             this.label_punkte_unten.AutoSize = true;
-            this.label_punkte_unten.Location = new System.Drawing.Point(742, 563);
+            this.label_punkte_unten.Location = new System.Drawing.Point(250, 348);
             this.label_punkte_unten.Name = "label_punkte_unten";
-            this.label_punkte_unten.Size = new System.Drawing.Size(70, 25);
+            this.label_punkte_unten.Size = new System.Drawing.Size(150, 25);
             this.label_punkte_unten.TabIndex = 30;
-            this.label_punkte_unten.Text = "label1";
+            this.label_punkte_unten.Text = "gesuntererTeil";
             // 
             // label_punkte_oben
             // 
             this.label_punkte_oben.AutoSize = true;
-            this.label_punkte_oben.Location = new System.Drawing.Point(742, 592);
+            this.label_punkte_oben.Location = new System.Drawing.Point(250, 378);
             this.label_punkte_oben.Name = "label_punkte_oben";
-            this.label_punkte_oben.Size = new System.Drawing.Size(70, 25);
+            this.label_punkte_oben.Size = new System.Drawing.Size(144, 25);
             this.label_punkte_oben.TabIndex = 31;
-            this.label_punkte_oben.Text = "label1";
+            this.label_punkte_oben.Text = "gesobererTeil";
             // 
             // label_punkte_gesamt
             // 
             this.label_punkte_gesamt.AutoSize = true;
-            this.label_punkte_gesamt.Location = new System.Drawing.Point(742, 621);
+            this.label_punkte_gesamt.Location = new System.Drawing.Point(250, 408);
             this.label_punkte_gesamt.Name = "label_punkte_gesamt";
-            this.label_punkte_gesamt.Size = new System.Drawing.Size(70, 25);
+            this.label_punkte_gesamt.Size = new System.Drawing.Size(119, 25);
             this.label_punkte_gesamt.TabIndex = 32;
-            this.label_punkte_gesamt.Text = "label1";
+            this.label_punkte_gesamt.Text = "Endsumme";
             // 
             // gB_oben
             // 
@@ -406,19 +411,106 @@ namespace Spielesammlung
             this.gB_oben.Controls.Add(this.label_punkte_oben_nachbonus);
             this.gB_oben.Location = new System.Drawing.Point(41, 124);
             this.gB_oben.Name = "gB_oben";
-            this.gB_oben.Size = new System.Drawing.Size(428, 426);
+            this.gB_oben.Size = new System.Drawing.Size(428, 460);
             this.gB_oben.TabIndex = 33;
             this.gB_oben.TabStop = false;
             this.gB_oben.Text = "Oben";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(30, 367);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(115, 50);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "gesamt\r\noberer Teil";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(30, 301);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(82, 25);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "gesamt";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(30, 334);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(73, 25);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Bonus";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 260);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 25);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Sechser";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 25);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Fünfer";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 174);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 25);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Vierer";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 25);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Dreier";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Zweier";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 25);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Einser";
+            // 
             // gB_unten
             // 
+            this.gB_unten.Controls.Add(this.label19);
             this.gB_unten.Controls.Add(this.label13);
+            this.gB_unten.Controls.Add(this.label18);
+            this.gB_unten.Controls.Add(this.label17);
             this.gB_unten.Controls.Add(this.label12);
             this.gB_unten.Controls.Add(this.label11);
             this.gB_unten.Controls.Add(this.label10);
+            this.gB_unten.Controls.Add(this.label_punkte_gesamt);
             this.gB_unten.Controls.Add(this.label9);
+            this.gB_unten.Controls.Add(this.label_punkte_oben);
             this.gB_unten.Controls.Add(this.label8);
+            this.gB_unten.Controls.Add(this.label_punkte_unten);
             this.gB_unten.Controls.Add(this.label7);
             this.gB_unten.Controls.Add(this.Btn_Unten_GrosseStrasse);
             this.gB_unten.Controls.Add(this.Btn_Unten_DreierPasch);
@@ -429,7 +521,7 @@ namespace Spielesammlung
             this.gB_unten.Controls.Add(this.Btn_Unten_Kniffel);
             this.gB_unten.Location = new System.Drawing.Point(553, 124);
             this.gB_unten.Name = "gB_unten";
-            this.gB_unten.Size = new System.Drawing.Size(360, 426);
+            this.gB_unten.Size = new System.Drawing.Size(424, 460);
             this.gB_unten.TabIndex = 34;
             this.gB_unten.TabStop = false;
             this.gB_unten.Text = "Unten";
@@ -497,79 +589,40 @@ namespace Spielesammlung
             this.label7.TabIndex = 30;
             this.label7.Text = "Dreier Pasch";
             // 
-            // label8
+            // label17
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(135, 25);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Vierer Pasch";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 25);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Full House";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 174);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(142, 25);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Kleine Straße";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 217);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 25);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "Große Straße";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 260);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 25);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Kniffel";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 348);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(168, 25);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "ges. unterer Teil";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(28, 303);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 25);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Chance";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 378);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(162, 25);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "ges. oberer Teil";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(30, 330);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 25);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Bonus";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(40, 408);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(119, 25);
+            this.label19.TabIndex = 37;
+            this.label19.Text = "Endsumme";
             // 
             // KniffelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 767);
+            this.ClientSize = new System.Drawing.Size(1193, 731);
             this.Controls.Add(this.gB_unten);
             this.Controls.Add(this.gB_oben);
-            this.Controls.Add(this.label_punkte_gesamt);
-            this.Controls.Add(this.label_punkte_oben);
-            this.Controls.Add(this.label_punkte_unten);
             this.Controls.Add(this.label_info_behalten);
             this.Controls.Add(this.label_Wuerfel5);
             this.Controls.Add(this.label_Wuerfel4);
