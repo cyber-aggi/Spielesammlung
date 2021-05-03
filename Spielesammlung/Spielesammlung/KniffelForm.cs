@@ -305,6 +305,11 @@ namespace Spielesammlung
                     {
                         gewinner = DialogHighscore.tB_name.Text;
                     }
+                    //Setzt den Gewinner auf "" damit kein Highscoreeinrag ausgeführt wird
+                    else
+                    {
+                        gewinner = "";
+                    }
                     DialogHighscore.Dispose();
                 }
                 else if(gewinner == "Spieler 2")
@@ -314,6 +319,11 @@ namespace Spielesammlung
                     if (DialogHighscore.ShowDialog() == DialogResult.OK)
                     {
                         gewinner = DialogHighscore.tB_name.Text;
+                    }
+                    //Setzt den Gewinner auf "" damit kein Highscoreeinrag ausgeführt wird
+                    else
+                    {
+                        gewinner = "";
                     }
                     DialogHighscore.Dispose();
                 }
