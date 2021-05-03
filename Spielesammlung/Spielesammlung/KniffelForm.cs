@@ -337,6 +337,31 @@ namespace Spielesammlung
                     Highscore.datenEinfuegen(spielename, gewinner, punkte_sieger);
                     MessageBox.Show("Das Spiel ist zu Ende!\n\n" + output + "\n\nDer Punktestand wurde in den Highscore eingetragen!", "Spiel beendet");
                 }
+                //Zurücksetzen des Formulars für eine neue Spielrunde
+                for (int i = 0; i < spieler1.Length; i++)
+                {
+                    spieler1[i] = "";
+                    spieler2[i] = "";
+                }
+                aktuellerspieler = 1;
+                label_spieler.Text = namespieler1;
+                //Deaktiviert standardmäßig die Würfelcheckboxen
+                cB_Wuerfel1.Enabled = false;
+                cB_Wuerfel2.Enabled = false;
+                cB_Wuerfel3.Enabled = false;
+                cB_Wuerfel4.Enabled = false;
+                cB_Wuerfel5.Enabled = false;
+                //Deaktiviert standardmäßig alle Felder (Verhindert das unbeabsichtige Eintragen in Felder, ohne gewürfelt zu haben)
+                AktiviereFelder(false);
+                //Setzt einen Text für das Würfel-Label
+                label_wurf.Text = "Wurf: 0";
+
+                //Setze die Punktelabels auf ""
+                label_punkte_gesamt.Text = "";
+                label_punkte_oben.Text = "";
+                label_punkte_unten.Text = "";
+                label_punkte_oben_nachbonus.Text = "";
+                label_punkte_oben_vorbonus.Text = "";
             }
             else
             {
