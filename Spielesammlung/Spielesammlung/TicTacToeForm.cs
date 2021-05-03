@@ -8,357 +8,300 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//////////////////////////////////////////////////////////////////////////////////////////
+// Letzte Änderung: 30.04.2021
+// Benjamin Meindl
+// Sebastian Taglieber
+// TicTacToeForm.cs
+/////////////////////////////////////////////////////////////////////////////////////////
+
 namespace Spielesammlung
 {
     public partial class TicTacToeForm : Form
     {
-        public int zähler = 1;
-        public int zug = 0;
+        int zähler = 1;
+        int zug = 0;
         public TicTacToeForm()
         {
             InitializeComponent();
-            
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-            
-            
-
-            
-        }
-
-        private void tableLayoutPanel1_MouseClick(object sender, MouseEventArgs e)
-        {
-            
-
-
-
-        }
-
-        private void Tik_Tak_Toe_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            if (button3.Text == "X" || button3.Text == "O")
+        // Button 1 des Spielfeldes
+        private void tikbutton1_Click(object sender, EventArgs e)
+        {   // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton1.Text == "X" || tikbutton1.Text == "O")
             {
-
             }
             else
-            {
-
-            
-              
+            {   //Zählerstand wird überprüft um zu ermitteln, welcher Spieler an der Reihe ist
                 if (zähler == 1)
                 {
-                    button3.Text = "X";
+                    tikbutton1.Text = "X";
                     zähler = 2;
                 }
                 else if (zähler == 2)
                 {
-                    button3.Text = "O";
+                    tikbutton1.Text = "O";
                     zähler = 1;
                 }
-
                 textschreiben();
-                
             }
-            
-            
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (button1.Text == "X" || button1.Text == "O")
+        // Button 2 des Spielfeldes
+        private void tikbutton2_Click(object sender, EventArgs e)
+        {    // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton2.Text == "X" || tikbutton2.Text == "O")
             {
-               
+            }
+            else
+            {   //Zählerstand wird überprüft um zu ermitteln, welcher Spieler an der Reihe ist
+                if (zähler == 1)
+                {
+                    tikbutton2.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    tikbutton2.Text = "O";
+                    zähler = 1;
+                }
+                textschreiben();
+            }
+        }
+        // Button 3 des Spielfeldes
+        private void tikbutton3_Click(object sender, EventArgs e)
+        {    // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton3.Text == "X" || tikbutton3.Text == "O")
+            {
+            }
+            else
+            {   //Zählerstand wird überprüft um zu ermitteln, welcher Spieler an der Reihe ist
+                if (zähler == 1)
+                {
+                    tikbutton3.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    tikbutton3.Text = "O";
+                    zähler = 1;
+                }
+                textschreiben();
+            }
+        }
+        // Button 4 des Spielfeldes
+        private void tikbutton4_Click(object sender, EventArgs e)
+        {    // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton6.Text == "X" || tikbutton6.Text == "O")
+            {
+            }
+            else
+            {   //Zählerstand wird überprüft um zu ermitteln, welcher Spieler an der Reihe ist
+                if (zähler == 1)
+                {
+                    tikbutton6.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    tikbutton6.Text = "O";
+                    zähler = 1;
+                }
+                textschreiben();
+            }
+        }
+        // Button 5 des Spielfeldes
+        private void tikbutton5_Click(object sender, EventArgs e)
+        {    // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton5.Text == "X" || tikbutton5.Text == "O")
+            {
+            }
+            else
+            {   //Zählerstand wird überprüft um zu ermitteln, welcher Spieler an der Reihe ist
+                if (zähler == 1)
+                {
+                    tikbutton5.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    tikbutton5.Text = "O";
+                    zähler = 1;
+                }
+                textschreiben();
+            }
+        }
+        // Button 6 des Spielfeldes
+        private void tikbutton6_Click(object sender, EventArgs e)
+        {    // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton4.Text == "X" || tikbutton4.Text == "O")
+            {
 
-                
-
+            }
+            else
+            {   //Zählerstand wird überprüft um zu ermitteln, welcher Spieler an der Reihe ist
+                if (zähler == 1)
+                {
+                    tikbutton4.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    tikbutton4.Text = "O";
+                    zähler = 1;
+                }
+                textschreiben();
+            }
+        }
+        // Button 7 des Spielfeldes
+        private void tikbutton7_Click(object sender, EventArgs e)
+        {    // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton9.Text == "X" || tikbutton9.Text == "O")
+            {
+            }
+            else
+            {   //Zählerstand wird überprüft um zu ermitteln, welcher Spieler an der Reihe ist
+                if (zähler == 1)
+                {
+                    tikbutton9.Text = "X";
+                    zähler = 2;
+                }
+                else if (zähler == 2)
+                {
+                    tikbutton9.Text = "O";
+                    zähler = 1;
+                }
+                textschreiben();
+            }
+        }
+        // Button 8 des Spielfeldes
+        private void tikbutton8_Click(object sender, EventArgs e)
+        {    // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton8.Text == "X" || tikbutton8.Text == "O")
+            {
             }
             else
             {
                 if (zähler == 1)
                 {
-                    button1.Text = "X";
+                    tikbutton8.Text = "X";
                     zähler = 2;
                 }
                 else if (zähler == 2)
                 {
-                    button1.Text = "O";
+                    tikbutton8.Text = "O";
                     zähler = 1;
                 }
                 textschreiben();
             }
-            
-
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (button2.Text == "X" || button2.Text == "O")
+        // Button 9 des Spielfeldes
+        private void tikbutton9_Click(object sender, EventArgs e)
+        {    // If-Abfrage prüft ob im Namen des Buttons bereits X oder O steht.
+            if (tikbutton7.Text == "X" || tikbutton7.Text == "O")
             {
-               
-
             }
             else
-            {
+            {   //Zählerstand wird überprüft um zu ermitteln, welcher Spieler an der Reihe ist        
                 if (zähler == 1)
                 {
-                    button2.Text = "X";
+                    tikbutton7.Text = "X";
                     zähler = 2;
                 }
                 else if (zähler == 2)
                 {
-                    button2.Text = "O";
+                    tikbutton7.Text = "O";
                     zähler = 1;
                 }
-
                 textschreiben();
             }
         }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (button6.Text == "X" || button6.Text == "O")
-            {
-               
-            }
-            else
-            {
-                if (zähler == 1)
-                {
-                    button6.Text = "X";
-                    zähler = 2;
-                }
-                else if (zähler == 2)
-                {
-                    button6.Text = "O";
-                    zähler = 1;
-                }
-
-
-                textschreiben();
-            }
-            
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (button5.Text == "X" || button5.Text == "O")
-            {
-
-            }
-            else
-            {
-
-            
-                if (zähler == 1)
-                {
-                    button5.Text = "X";
-                    zähler = 2;
-                }
-                else if (zähler == 2)
-                {
-                    button5.Text = "O";
-                    zähler = 1;
-                }
-
-                textschreiben();
-
-            }
-            
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (button4.Text == "X" || button4.Text == "O")
-            {
-
-            }
-            else
-            {
-
-            
-                if (zähler == 1)
-                {
-                    button4.Text = "X";
-                    zähler = 2;
-                }
-                else if (zähler == 2)
-                {
-                    button4.Text = "O";
-                    zähler = 1;
-                }
-
-                textschreiben();
-
-            }
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (button9.Text == "X" || button9.Text == "O")
-            {
-
-            }
-            else
-            {
-
-            
-                if (zähler == 1)
-                {
-                    button9.Text = "X";
-                    zähler = 2;
-                }
-                else if (zähler == 2)
-                {
-                    button9.Text = "O";
-                    zähler = 1;
-                }
-
-
-                textschreiben();
-            }
-            
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            if (button8.Text == "X" || button8.Text == "O")
-            {
-
-            }
-            else
-            {
-
-            
-                if (zähler == 1)
-                {
-                    button8.Text = "X";
-                    zähler = 2;
-                }
-                else if (zähler == 2)
-                {
-                    button8.Text = "O";
-                    zähler = 1;
-                }
-
-
-                textschreiben();
-
-            }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (button7.Text == "X" || button7.Text == "O")
-            {
-
-            }
-            else
-            {
-
-            
-                if (zähler == 1)
-                {
-                    button7.Text = "X";
-                    zähler = 2;
-                }
-                else if (zähler == 2)
-                {
-                    button7.Text = "O";
-                    zähler = 1;
-                }
-
-                textschreiben();
-
-            }
-        }
-
+        // Gibt an welcher Spieler dran ist
         private void textschreiben()
         {
+            zug++;
+            gewonnen();
             if (zähler == 1)
             {
-                textBox1.Text = "Spieler 1 ist dran!";
+                Amzuganzeige.Text = "Spieler 1 ist dran!";
             }
             else if (zähler == 2)
             {
-                textBox1.Text = "Spieler 2 ist dran!";
+                Amzuganzeige.Text = "Spieler 2 ist dran!";
             }
-            zug++;
         }
-
+        //Prüft ob ein Spieler gewonnen hat
         private void gewonnen()
         {
-
-
-
             if (zug >= 5)
             {
-                if(button1.Text == "X" && button2.Text == "X" && button3.Text == "X")
-                {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-
-                }
-                if (button6.Text == "X" && button5.Text == "X" && button4.Text == "X")
+                //prüft ob Spieler 1 gewonnen hat
+                if (tikbutton1.Text == "X" && tikbutton2.Text == "X" && tikbutton3.Text == "X")
                 {
                     MessageBox.Show("Spieler 1 hat gewonnen!");
                 }
-                if (button9.Text == "X" && button8.Text == "X" && button7.Text == "X")
+                if (tikbutton4.Text == "X" && tikbutton5.Text == "X" && tikbutton6.Text == "X")
                 {
                     MessageBox.Show("Spieler 1 hat gewonnen!");
                 }
-                if (button1.Text == "X" && button5.Text == "X" && button7.Text == "X")
+                if (tikbutton7.Text == "X" && tikbutton8.Text == "X" && tikbutton9.Text == "X")
                 {
                     MessageBox.Show("Spieler 1 hat gewonnen!");
                 }
-                if (button9.Text == "X" && button5.Text == "X" && button3.Text == "X")
+                if (tikbutton1.Text == "X" && tikbutton5.Text == "X" && tikbutton9.Text == "X")
                 {
                     MessageBox.Show("Spieler 1 hat gewonnen!");
                 }
-                if (button2.Text == "X" && button5.Text == "X" && button8.Text == "X")
+                if (tikbutton7.Text == "X" && tikbutton5.Text == "X" && tikbutton3.Text == "X")
                 {
                     MessageBox.Show("Spieler 1 hat gewonnen!");
                 }
-                if (button3.Text == "X" && button4.Text == "X" && button7.Text == "X")
+                if (tikbutton2.Text == "X" && tikbutton5.Text == "X" && tikbutton8.Text == "X")
                 {
                     MessageBox.Show("Spieler 1 hat gewonnen!");
                 }
-
-
-
-
-
-
+                if (tikbutton3.Text == "X" && tikbutton6.Text == "X" && tikbutton9.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+                }
+                if (tikbutton1.Text == "X" && tikbutton4.Text == "X" && tikbutton7.Text == "X")
+                {
+                    MessageBox.Show("Spieler 1 hat gewonnen!");
+                }
+                //Prüft ob Spieler 2 gewonnen hat
+                if (tikbutton1.Text == "O" && tikbutton2.Text == "O" && tikbutton3.Text == "O")
+                {
+                    MessageBox.Show("Spieler 2 hat gewonnen!");
+                }
+                if (tikbutton4.Text == "O" && tikbutton5.Text == "O" && tikbutton6.Text == "O")
+                {
+                    MessageBox.Show("Spieler 2 hat gewonnen!");
+                }
+                if (tikbutton7.Text == "O" && tikbutton8.Text == "O" && tikbutton9.Text == "O")
+                {
+                    MessageBox.Show("Spieler 2 hat gewonnen!");
+                }
+                if (tikbutton1.Text == "O" && tikbutton5.Text == "O" && tikbutton9.Text == "O")
+                {
+                    MessageBox.Show("Spieler 2 hat gewonnen!");
+                }
+                if (tikbutton7.Text == "O" && tikbutton5.Text == "O" && tikbutton3.Text == "O")
+                {
+                    MessageBox.Show("Spieler 2 hat gewonnen!");
+                }
+                if (tikbutton2.Text == "O" && tikbutton5.Text == "O" && tikbutton8.Text == "O")
+                {
+                    MessageBox.Show("Spieler 2 hat gewonnen!");
+                }
+                if (tikbutton3.Text == "O" && tikbutton6.Text == "O" && tikbutton9.Text == "O")
+                {
+                    MessageBox.Show("Spieler 2 hat gewonnen!");
+                }
+                if (tikbutton1.Text == "O" && tikbutton4.Text == "O" && tikbutton7.Text == "O")
+                {
+                    MessageBox.Show("Spieler 2 hat gewonnen!");
+                }
             }
-
-            else
-            {
-
-            }
-
-
-
         }
-           
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

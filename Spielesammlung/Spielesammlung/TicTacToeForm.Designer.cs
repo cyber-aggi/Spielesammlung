@@ -29,147 +29,144 @@ namespace Spielesammlung
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tikbutton1 = new System.Windows.Forms.Button();
+            this.tikbutton2 = new System.Windows.Forms.Button();
+            this.tikbutton3 = new System.Windows.Forms.Button();
+            this.tikbutton6 = new System.Windows.Forms.Button();
+            this.tikbutton5 = new System.Windows.Forms.Button();
+            this.tikbutton4 = new System.Windows.Forms.Button();
+            this.tikbutton9 = new System.Windows.Forms.Button();
+            this.tikbutton8 = new System.Windows.Forms.Button();
+            this.tikbutton7 = new System.Windows.Forms.Button();
+            this.Amzuganzeige = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // tikbutton1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(199, 108);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 65);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tikbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton1.Location = new System.Drawing.Point(265, 133);
+            this.tikbutton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton1.Name = "tikbutton1";
+            this.tikbutton1.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton1.TabIndex = 0;
+            this.tikbutton1.UseVisualStyleBackColor = true;
+            this.tikbutton1.Click += new System.EventHandler(this.tikbutton1_Click);
             // 
-            // button2
+            // tikbutton2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(263, 108);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 65);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.tikbutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton2.Location = new System.Drawing.Point(351, 133);
+            this.tikbutton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton2.Name = "tikbutton2";
+            this.tikbutton2.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton2.TabIndex = 1;
+            this.tikbutton2.UseVisualStyleBackColor = true;
+            this.tikbutton2.Click += new System.EventHandler(this.tikbutton2_Click);
             // 
-            // button3
+            // tikbutton3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(328, 108);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 65);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.tikbutton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton3.Location = new System.Drawing.Point(437, 133);
+            this.tikbutton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton3.Name = "tikbutton3";
+            this.tikbutton3.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton3.TabIndex = 2;
+            this.tikbutton3.UseVisualStyleBackColor = true;
+            this.tikbutton3.Click += new System.EventHandler(this.tikbutton3_Click);
             // 
-            // button4
+            // tikbutton6
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(328, 178);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 65);
-            this.button4.TabIndex = 5;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.tikbutton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton6.Location = new System.Drawing.Point(437, 219);
+            this.tikbutton6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton6.Name = "tikbutton6";
+            this.tikbutton6.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton6.TabIndex = 5;
+            this.tikbutton6.UseVisualStyleBackColor = true;
+            this.tikbutton6.Click += new System.EventHandler(this.tikbutton6_Click);
             // 
-            // button5
+            // tikbutton5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(263, 178);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 65);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.tikbutton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton5.Location = new System.Drawing.Point(351, 219);
+            this.tikbutton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton5.Name = "tikbutton5";
+            this.tikbutton5.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton5.TabIndex = 4;
+            this.tikbutton5.UseVisualStyleBackColor = true;
+            this.tikbutton5.Click += new System.EventHandler(this.tikbutton5_Click);
             // 
-            // button6
+            // tikbutton4
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(199, 178);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 65);
-            this.button6.TabIndex = 3;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.tikbutton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton4.Location = new System.Drawing.Point(265, 219);
+            this.tikbutton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton4.Name = "tikbutton4";
+            this.tikbutton4.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton4.TabIndex = 3;
+            this.tikbutton4.UseVisualStyleBackColor = true;
+            this.tikbutton4.Click += new System.EventHandler(this.tikbutton4_Click);
             // 
-            // button7
+            // tikbutton9
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(328, 248);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(60, 65);
-            this.button7.TabIndex = 8;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.tikbutton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton9.Location = new System.Drawing.Point(437, 305);
+            this.tikbutton9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton9.Name = "tikbutton9";
+            this.tikbutton9.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton9.TabIndex = 8;
+            this.tikbutton9.UseVisualStyleBackColor = true;
+            this.tikbutton9.Click += new System.EventHandler(this.tikbutton9_Click);
             // 
-            // button8
+            // tikbutton8
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(263, 248);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(60, 65);
-            this.button8.TabIndex = 7;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.tikbutton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton8.Location = new System.Drawing.Point(351, 305);
+            this.tikbutton8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton8.Name = "tikbutton8";
+            this.tikbutton8.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton8.TabIndex = 7;
+            this.tikbutton8.UseVisualStyleBackColor = true;
+            this.tikbutton8.Click += new System.EventHandler(this.tikbutton8_Click);
             // 
-            // button9
+            // tikbutton7
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(199, 248);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(60, 65);
-            this.button9.TabIndex = 6;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.tikbutton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tikbutton7.Location = new System.Drawing.Point(265, 305);
+            this.tikbutton7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tikbutton7.Name = "tikbutton7";
+            this.tikbutton7.Size = new System.Drawing.Size(80, 80);
+            this.tikbutton7.TabIndex = 6;
+            this.tikbutton7.UseVisualStyleBackColor = true;
+            this.tikbutton7.Click += new System.EventHandler(this.tikbutton7_Click);
             // 
-            // textBox1
+            // Amzuganzeige
             // 
-            this.textBox1.Location = new System.Drawing.Point(218, 54);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Spieler 1 ist dran!";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.Amzuganzeige.Location = new System.Drawing.Point(291, 66);
+            this.Amzuganzeige.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Amzuganzeige.Name = "Amzuganzeige";
+            this.Amzuganzeige.Size = new System.Drawing.Size(208, 22);
+            this.Amzuganzeige.TabIndex = 9;
+            this.Amzuganzeige.Text = "Spieler 1 ist dran!";
             // 
             // TicTacToeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 388);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(863, 478);
+            this.Controls.Add(this.Amzuganzeige);
+            this.Controls.Add(this.tikbutton9);
+            this.Controls.Add(this.tikbutton8);
+            this.Controls.Add(this.tikbutton7);
+            this.Controls.Add(this.tikbutton6);
+            this.Controls.Add(this.tikbutton5);
+            this.Controls.Add(this.tikbutton4);
+            this.Controls.Add(this.tikbutton3);
+            this.Controls.Add(this.tikbutton2);
+            this.Controls.Add(this.tikbutton1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TicTacToeForm";
             this.Text = "Tic-Tac-Toe";
-            this.Load += new System.EventHandler(this.Tik_Tak_Toe_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,15 +174,15 @@ namespace Spielesammlung
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button tikbutton1;
+        private System.Windows.Forms.Button tikbutton2;
+        private System.Windows.Forms.Button tikbutton3;
+        private System.Windows.Forms.Button tikbutton6;
+        private System.Windows.Forms.Button tikbutton5;
+        private System.Windows.Forms.Button tikbutton4;
+        private System.Windows.Forms.Button tikbutton9;
+        private System.Windows.Forms.Button tikbutton8;
+        private System.Windows.Forms.Button tikbutton7;
+        private System.Windows.Forms.TextBox Amzuganzeige;
     }
 }
