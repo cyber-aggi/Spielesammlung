@@ -25,4 +25,9 @@ Eintragen mit `Highscore.datenEinfuegen(spielename, gewinner, punkte_sieger);`
     {
     	gewinner = DialogHighscore.tB_name.Text;
     }
+    //Setzt den Gewinner auf "" damit kein Highscoreeinrag ausgeführt wird
+    else
+    {
+        gewinner = "";
+    }
     DialogHighscore.Dispose();
