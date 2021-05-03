@@ -35,7 +35,7 @@
             this.RegelnButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Spieler1Name_Textbox = new System.Windows.Forms.TextBox();
+            this.Spieler1Name_TextBox = new System.Windows.Forms.TextBox();
             this.Spieler2Name_TextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
@@ -60,6 +60,7 @@
             this.Spiele_Liste.Name = "Spiele_Liste";
             this.Spiele_Liste.Size = new System.Drawing.Size(628, 479);
             this.Spiele_Liste.TabIndex = 1;
+            this.Spiele_Liste.DoubleClick += new System.EventHandler(this.Spiele_Liste_DoubleClick);
             // 
             // StartenButton
             // 
@@ -109,12 +110,12 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Spieler 2";
             // 
-            // Spieler1Name_Textbox
+            // Spieler1Name_TextBox
             // 
-            this.Spieler1Name_Textbox.Location = new System.Drawing.Point(150, 48);
-            this.Spieler1Name_Textbox.Name = "Spieler1Name_Textbox";
-            this.Spieler1Name_Textbox.Size = new System.Drawing.Size(163, 31);
-            this.Spieler1Name_Textbox.TabIndex = 7;
+            this.Spieler1Name_TextBox.Location = new System.Drawing.Point(150, 48);
+            this.Spieler1Name_TextBox.Name = "Spieler1Name_TextBox";
+            this.Spieler1Name_TextBox.Size = new System.Drawing.Size(163, 31);
+            this.Spieler1Name_TextBox.TabIndex = 7;
             // 
             // Spieler2Name_TextBox
             // 
@@ -125,7 +126,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Spieler1Name_Textbox);
+            this.groupBox1.Controls.Add(this.Spieler1Name_TextBox);
             this.groupBox1.Controls.Add(this.Spieler2Name_TextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -165,7 +166,7 @@
         private System.Windows.Forms.Button RegelnButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox Spieler1Name_Textbox;
+        private System.Windows.Forms.TextBox Spieler1Name_TextBox;
         private System.Windows.Forms.TextBox Spieler2Name_TextBox;
         private System.Windows.Forms.GroupBox groupBox1;
     }

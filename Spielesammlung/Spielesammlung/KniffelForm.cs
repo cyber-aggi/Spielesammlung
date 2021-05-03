@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Name: Paul Rosenberg
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +15,28 @@ namespace Spielesammlung
     {
         private string[] spieler1 = new string[19];
         private string[] spieler2 = new string[19];
+        private int aktuellerspieler = 1;
+        private string namespieler1;
+        private string namespieler2;
+        private string spielename;
 
-        public KniffelForm()
+        public KniffelForm(string p_spielename = "Kniffel", string spieler1 = "Spieler 1", string spieler2 = "Spieler 2")
         {
             InitializeComponent();
+
+            this.spielename = p_spielename;
+
+            //Spielernamen in Variablen übertragen
+            if(spieler1 == "" || spieler1 is null || spieler2 == "" || spieler2 is null)
+            {
+                namespieler1 = "Spieler 1";
+                namespieler2 = "Spieler 2";
+            } else
+            {
+                namespieler1 = spieler1;
+                namespieler2 = spieler2;
+            }
+            label_spieler.Text = namespieler1;
 
             //Deaktiviert standardmäßig die Würfelcheckboxen
             cB_Wuerfel1.Enabled = false;
@@ -234,7 +253,7 @@ namespace Spielesammlung
 
             //Überprüft, ob der nächste Spieler noch freie Felder hat
             bool fertig = false;
-            if(label_spieler.Text == "1")
+            if(aktuellerspieler == 1)
             {
                 fertig = true;
                 foreach (string it in spieler2)
@@ -259,23 +278,59 @@ namespace Spielesammlung
             if(fertig)
             {
                 string output = "";
+                string gewinner;
+                int punkte_sieger = 0;
                 if(spieler1[18] == spieler2[18])
                 {
                     output = "Es steht unentschieden mit " + spieler1[18] + " Punkten.\nHerzlichen Glückwunsch!";
+                    gewinner = "";
                 } else if(Convert.ToInt32(spieler1[18]) > Convert.ToInt32(spieler2[18]))
                 {
-                    output = "Spieler 1 hat mit " + spieler1[18] + " Punkten gegen Spieler 2 mit " + spieler2[18] + " Punkten gewonnen!\nHerzlichen Glückwunsch!";
+                    output = namespieler1 + " hat mit " + spieler1[18] + " Punkten gegen " + namespieler2 + " mit " + spieler2[18] + " Punkten gewonnen!\nHerzlichen Glückwunsch!";
+                    gewinner = namespieler1;
+                    punkte_sieger = Convert.ToInt32(spieler1[18]);
                 }
                 else
                 {
-                    output = "Spieler 2 hat mit " + spieler2[18] + " Punkten gegen Spieler 1 mit " + spieler1[18] + " Punkten gewonnen!\nHerzlichen Glückwunsch!";
+                    output = namespieler2 + " hat mit " + spieler2[18] + " Punkten gegen " + namespieler1 + " mit " + spieler1[18] + " Punkten gewonnen!\nHerzlichen Glückwunsch!";
+                    gewinner = namespieler2;
+                    punkte_sieger = Convert.ToInt32(spieler2[18]);
                 }
-
-                MessageBox.Show("Das Spiel ist zu Ende!\n\n" + output, "Spiel beendet");
+                //Formular zur Eingabe von einem Namen für den Highscore
+                if (gewinner == "Spieler 1")
+                {
+                    //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
+                    HighscoreNameForm DialogHighscore = new HighscoreNameForm(gewinner);
+                    if(DialogHighscore.ShowDialog() == DialogResult.OK)
+                    {
+                        gewinner = DialogHighscore.tB_name.Text;
+                    }
+                    DialogHighscore.Dispose();
+                }
+                else if(gewinner == "Spieler 2")
+                {
+                    //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
+                    HighscoreNameForm DialogHighscore = new HighscoreNameForm(gewinner);
+                    if (DialogHighscore.ShowDialog() == DialogResult.OK)
+                    {
+                        gewinner = DialogHighscore.tB_name.Text;
+                    }
+                    DialogHighscore.Dispose();
+                }
+                //Wenn das Spiel Unendschieden ist, gibt wird kein Highscoreeintrag erstellt
+                if (gewinner == "")
+                {
+                    MessageBox.Show("Das Spiel ist zu Ende!\n\n" + output + "\n\nEs wurde kein Punktestand in den Highscore eingetragen!", "Spiel beendet");
+                }
+                else
+                {
+                    Highscore.datenEinfuegen(spielename, gewinner, punkte_sieger);
+                    MessageBox.Show("Das Spiel ist zu Ende!\n\n" + output + "\n\nDer Punktestand wurde in den Highscore eingetragen!", "Spiel beendet");
+                }
             }
             else
             {
-                if(label_spieler.Text == "1")
+                if(aktuellerspieler == 1)
                 {
                     //Speichert die Werte von Spieler1 aus dem Formular im Array
                     spieler1[0] = Btn_Oben_1.Text;
@@ -317,6 +372,8 @@ namespace Spielesammlung
                     label_punkte_oben.Text = spieler2[16];
                     label_punkte_unten.Text = spieler2[17];
                     label_punkte_gesamt.Text = spieler2[18];
+                    //Änderungen der Spielernamen in der Label-Anzeige
+                    label_spieler.Text = namespieler2;
                 }
                 else
                 {
@@ -360,15 +417,15 @@ namespace Spielesammlung
                     label_punkte_oben.Text = spieler1[16];
                     label_punkte_unten.Text = spieler1[17];
                     label_punkte_gesamt.Text = spieler1[18];
+                    //Änderungen der Spielernamen in der Label-Anzeige
+                    label_spieler.Text = namespieler1;
                 }
 
                 //Deaktiviert standardmäßig alle Felder, bis einmal gewürfelt wurde
                 AktiviereFelder(false);
 
-                //Wechseln des Spielers in der Label-Anzeige
-                if (label_spieler.Text != "") {
-                    label_spieler.Text = Convert.ToString((Convert.ToInt32(label_spieler.Text)%2)+1);
-                }
+                //Wechsel des Spielers in der aktuellerSpieler Variablen
+                aktuellerspieler = (aktuellerspieler%2)+1;
 
                 //Zurücksetzen aller entsprechenden Buttons und Labels
                 cB_Wuerfel1.Checked = false;
