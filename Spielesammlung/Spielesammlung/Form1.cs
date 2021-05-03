@@ -25,7 +25,7 @@ namespace Spielesammlung
         private void HighscoreButton_Click(object sender, EventArgs e)
         {
             //Erzeugt ein neues Fenster um den Highscore anzuzeigen
-            Childform_Highscore = new Form_Highscore();
+            Childform_Highscore = new Form_Highscore(Spiele_Liste.SelectedItem);
             Childform_Highscore.Show();
         }
 
