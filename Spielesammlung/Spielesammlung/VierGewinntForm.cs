@@ -127,7 +127,7 @@ namespace Spielesammlung
             return 0;            
         }
 
-        private void DrawBlock(int col)
+        public void DrawBlock(int col)
         {
 
             /*Noch zu machen:
