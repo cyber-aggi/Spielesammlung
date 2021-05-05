@@ -43,19 +43,16 @@ namespace Spielesammlung
             {
                 VierGewinntForm Childform_VierGewinnt = new VierGewinntForm();
                 Childform_VierGewinnt.Show();
-                MessageBox.Show("Viel Spaß beim Spielen!");
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Tic-Tac-Toe")
             {
                 TicTacToeForm Childform_TicTacToe = new TicTacToeForm();
                 Childform_TicTacToe.Show();
-                MessageBox.Show("Viel Spaß beim Spielen!");
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Kniffel")
             {
                 KniffelForm Childform_Kniffel = new KniffelForm(Convert.ToString(Spiele_Liste.SelectedItem), Spieler1Name_TextBox.Text, Spieler2Name_TextBox.Text);
                 Childform_Kniffel.Show();
-                MessageBox.Show("Viel Spaß beim Spielen!");
             }
         }
 
