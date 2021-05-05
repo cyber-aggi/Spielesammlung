@@ -73,16 +73,16 @@ namespace Spielesammlung
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gB_unten = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.gB_oben.SuspendLayout();
             this.gB_unten.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +90,7 @@ namespace Spielesammlung
             // cB_Wuerfel1
             // 
             this.cB_Wuerfel1.AutoSize = true;
-            this.cB_Wuerfel1.Location = new System.Drawing.Point(441, 29);
+            this.cB_Wuerfel1.Location = new System.Drawing.Point(442, 36);
             this.cB_Wuerfel1.Name = "cB_Wuerfel1";
             this.cB_Wuerfel1.Size = new System.Drawing.Size(28, 27);
             this.cB_Wuerfel1.TabIndex = 0;
@@ -109,7 +109,7 @@ namespace Spielesammlung
             // cB_Wuerfel2
             // 
             this.cB_Wuerfel2.AutoSize = true;
-            this.cB_Wuerfel2.Location = new System.Drawing.Point(530, 29);
+            this.cB_Wuerfel2.Location = new System.Drawing.Point(551, 36);
             this.cB_Wuerfel2.Name = "cB_Wuerfel2";
             this.cB_Wuerfel2.Size = new System.Drawing.Size(28, 27);
             this.cB_Wuerfel2.TabIndex = 2;
@@ -118,7 +118,7 @@ namespace Spielesammlung
             // cB_Wuerfel3
             // 
             this.cB_Wuerfel3.AutoSize = true;
-            this.cB_Wuerfel3.Location = new System.Drawing.Point(631, 29);
+            this.cB_Wuerfel3.Location = new System.Drawing.Point(654, 36);
             this.cB_Wuerfel3.Name = "cB_Wuerfel3";
             this.cB_Wuerfel3.Size = new System.Drawing.Size(28, 27);
             this.cB_Wuerfel3.TabIndex = 3;
@@ -127,7 +127,7 @@ namespace Spielesammlung
             // cB_Wuerfel4
             // 
             this.cB_Wuerfel4.AutoSize = true;
-            this.cB_Wuerfel4.Location = new System.Drawing.Point(736, 29);
+            this.cB_Wuerfel4.Location = new System.Drawing.Point(760, 36);
             this.cB_Wuerfel4.Name = "cB_Wuerfel4";
             this.cB_Wuerfel4.Size = new System.Drawing.Size(28, 27);
             this.cB_Wuerfel4.TabIndex = 4;
@@ -136,7 +136,7 @@ namespace Spielesammlung
             // cB_Wuerfel5
             // 
             this.cB_Wuerfel5.AutoSize = true;
-            this.cB_Wuerfel5.Location = new System.Drawing.Point(862, 29);
+            this.cB_Wuerfel5.Location = new System.Drawing.Point(879, 36);
             this.cB_Wuerfel5.Name = "cB_Wuerfel5";
             this.cB_Wuerfel5.Size = new System.Drawing.Size(28, 27);
             this.cB_Wuerfel5.TabIndex = 5;
@@ -163,7 +163,8 @@ namespace Spielesammlung
             // label_Wuerfel1
             // 
             this.label_Wuerfel1.AutoSize = true;
-            this.label_Wuerfel1.Location = new System.Drawing.Point(396, 77);
+            this.label_Wuerfel1.Location = new System.Drawing.Point(407, 78);
+            this.label_Wuerfel1.MinimumSize = new System.Drawing.Size(92, 25);
             this.label_Wuerfel1.Name = "label_Wuerfel1";
             this.label_Wuerfel1.Size = new System.Drawing.Size(92, 25);
             this.label_Wuerfel1.TabIndex = 8;
@@ -173,7 +174,8 @@ namespace Spielesammlung
             // label_Wuerfel2
             // 
             this.label_Wuerfel2.AutoSize = true;
-            this.label_Wuerfel2.Location = new System.Drawing.Point(505, 77);
+            this.label_Wuerfel2.Location = new System.Drawing.Point(518, 79);
+            this.label_Wuerfel2.MinimumSize = new System.Drawing.Size(92, 25);
             this.label_Wuerfel2.Name = "label_Wuerfel2";
             this.label_Wuerfel2.Size = new System.Drawing.Size(92, 25);
             this.label_Wuerfel2.TabIndex = 9;
@@ -183,7 +185,8 @@ namespace Spielesammlung
             // label_Wuerfel3
             // 
             this.label_Wuerfel3.AutoSize = true;
-            this.label_Wuerfel3.Location = new System.Drawing.Point(615, 78);
+            this.label_Wuerfel3.Location = new System.Drawing.Point(626, 79);
+            this.label_Wuerfel3.MinimumSize = new System.Drawing.Size(92, 25);
             this.label_Wuerfel3.Name = "label_Wuerfel3";
             this.label_Wuerfel3.Size = new System.Drawing.Size(92, 25);
             this.label_Wuerfel3.TabIndex = 10;
@@ -193,7 +196,8 @@ namespace Spielesammlung
             // label_Wuerfel4
             // 
             this.label_Wuerfel4.AutoSize = true;
-            this.label_Wuerfel4.Location = new System.Drawing.Point(720, 77);
+            this.label_Wuerfel4.Location = new System.Drawing.Point(731, 78);
+            this.label_Wuerfel4.MinimumSize = new System.Drawing.Size(92, 25);
             this.label_Wuerfel4.Name = "label_Wuerfel4";
             this.label_Wuerfel4.Size = new System.Drawing.Size(92, 25);
             this.label_Wuerfel4.TabIndex = 11;
@@ -203,7 +207,8 @@ namespace Spielesammlung
             // label_Wuerfel5
             // 
             this.label_Wuerfel5.AutoSize = true;
-            this.label_Wuerfel5.Location = new System.Drawing.Point(837, 76);
+            this.label_Wuerfel5.Location = new System.Drawing.Point(848, 77);
+            this.label_Wuerfel5.MinimumSize = new System.Drawing.Size(92, 25);
             this.label_Wuerfel5.Name = "label_Wuerfel5";
             this.label_Wuerfel5.Size = new System.Drawing.Size(92, 25);
             this.label_Wuerfel5.TabIndex = 12;
@@ -213,7 +218,8 @@ namespace Spielesammlung
             // label_info_behalten
             // 
             this.label_info_behalten.AutoSize = true;
-            this.label_info_behalten.Location = new System.Drawing.Point(235, 27);
+            this.label_info_behalten.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label_info_behalten.Location = new System.Drawing.Point(233, 36);
             this.label_info_behalten.Name = "label_info_behalten";
             this.label_info_behalten.Size = new System.Drawing.Size(175, 25);
             this.label_info_behalten.TabIndex = 13;
@@ -528,6 +534,15 @@ namespace Spielesammlung
             this.gB_unten.TabStop = false;
             this.gB_unten.Text = "Unten";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(40, 408);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(119, 25);
+            this.label19.TabIndex = 37;
+            this.label19.Text = "Endsumme";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -536,6 +551,24 @@ namespace Spielesammlung
             this.label13.Size = new System.Drawing.Size(86, 25);
             this.label13.TabIndex = 36;
             this.label13.Text = "Chance";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 378);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(162, 25);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "ges. oberer Teil";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 348);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(168, 25);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "ges. unterer Teil";
             // 
             // label12
             // 
@@ -590,33 +623,6 @@ namespace Spielesammlung
             this.label7.Size = new System.Drawing.Size(136, 25);
             this.label7.TabIndex = 30;
             this.label7.Text = "Dreier Pasch";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 348);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(168, 25);
-            this.label17.TabIndex = 35;
-            this.label17.Text = "ges. unterer Teil";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 378);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(162, 25);
-            this.label18.TabIndex = 36;
-            this.label18.Text = "ges. oberer Teil";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(40, 408);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(119, 25);
-            this.label19.TabIndex = 37;
-            this.label19.Text = "Endsumme";
             // 
             // KniffelForm
             // 

@@ -47,7 +47,7 @@
             this.HighscoreButton.Margin = new System.Windows.Forms.Padding(6);
             this.HighscoreButton.Name = "HighscoreButton";
             this.HighscoreButton.Size = new System.Drawing.Size(286, 57);
-            this.HighscoreButton.TabIndex = 0;
+            this.HighscoreButton.TabIndex = 4;
             this.HighscoreButton.Text = "Highscore öffnen";
             this.HighscoreButton.UseVisualStyleBackColor = true;
             this.HighscoreButton.Click += new System.EventHandler(this.HighscoreButton_Click);
@@ -59,7 +59,7 @@
             this.Spiele_Liste.Location = new System.Drawing.Point(136, 179);
             this.Spiele_Liste.Name = "Spiele_Liste";
             this.Spiele_Liste.Size = new System.Drawing.Size(628, 479);
-            this.Spiele_Liste.TabIndex = 1;
+            this.Spiele_Liste.TabIndex = 0;
             this.Spiele_Liste.DoubleClick += new System.EventHandler(this.Spiele_Liste_DoubleClick);
             // 
             // StartenButton
@@ -77,7 +77,7 @@
             this.LadenButton.Location = new System.Drawing.Point(136, 102);
             this.LadenButton.Name = "LadenButton";
             this.LadenButton.Size = new System.Drawing.Size(234, 57);
-            this.LadenButton.TabIndex = 3;
+            this.LadenButton.TabIndex = 5;
             this.LadenButton.Text = "Spieleliste neuladen";
             this.LadenButton.UseVisualStyleBackColor = true;
             this.LadenButton.Click += new System.EventHandler(this.LadenButton_Click);
@@ -87,7 +87,7 @@
             this.RegelnButton.Location = new System.Drawing.Point(390, 102);
             this.RegelnButton.Name = "RegelnButton";
             this.RegelnButton.Size = new System.Drawing.Size(272, 57);
-            this.RegelnButton.TabIndex = 4;
+            this.RegelnButton.TabIndex = 3;
             this.RegelnButton.Text = "Spielregeln";
             this.RegelnButton.UseVisualStyleBackColor = true;
             this.RegelnButton.Click += new System.EventHandler(this.RegelnButton_Click);
@@ -115,14 +115,14 @@
             this.Spieler1Name_TextBox.Location = new System.Drawing.Point(150, 48);
             this.Spieler1Name_TextBox.Name = "Spieler1Name_TextBox";
             this.Spieler1Name_TextBox.Size = new System.Drawing.Size(163, 31);
-            this.Spieler1Name_TextBox.TabIndex = 7;
+            this.Spieler1Name_TextBox.TabIndex = 0;
             // 
             // Spieler2Name_TextBox
             // 
             this.Spieler2Name_TextBox.Location = new System.Drawing.Point(150, 105);
             this.Spieler2Name_TextBox.Name = "Spieler2Name_TextBox";
             this.Spieler2Name_TextBox.Size = new System.Drawing.Size(163, 31);
-            this.Spieler2Name_TextBox.TabIndex = 8;
+            this.Spieler2Name_TextBox.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -133,7 +133,7 @@
             this.groupBox1.Location = new System.Drawing.Point(797, 341);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(339, 162);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Spielernamen";
             // 
