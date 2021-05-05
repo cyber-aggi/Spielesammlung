@@ -31,7 +31,6 @@
             this.HighscoreButton = new System.Windows.Forms.Button();
             this.Spiele_Liste = new System.Windows.Forms.ListBox();
             this.StartenButton = new System.Windows.Forms.Button();
-            this.LadenButton = new System.Windows.Forms.Button();
             this.RegelnButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,16 +70,6 @@
             this.StartenButton.Text = "Spiel starten";
             this.StartenButton.UseVisualStyleBackColor = true;
             this.StartenButton.Click += new System.EventHandler(this.StartenButton_Click);
-            // 
-            // LadenButton
-            // 
-            this.LadenButton.Location = new System.Drawing.Point(136, 102);
-            this.LadenButton.Name = "LadenButton";
-            this.LadenButton.Size = new System.Drawing.Size(234, 57);
-            this.LadenButton.TabIndex = 5;
-            this.LadenButton.Text = "Spieleliste neuladen";
-            this.LadenButton.UseVisualStyleBackColor = true;
-            this.LadenButton.Click += new System.EventHandler(this.LadenButton_Click);
             // 
             // RegelnButton
             // 
@@ -144,7 +133,6 @@
             this.ClientSize = new System.Drawing.Size(1258, 765);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.RegelnButton);
-            this.Controls.Add(this.LadenButton);
             this.Controls.Add(this.StartenButton);
             this.Controls.Add(this.Spiele_Liste);
             this.Controls.Add(this.HighscoreButton);
@@ -162,7 +150,6 @@
         private System.Windows.Forms.Button HighscoreButton;
         private System.Windows.Forms.ListBox Spiele_Liste;
         private System.Windows.Forms.Button StartenButton;
-        private System.Windows.Forms.Button LadenButton;
         private System.Windows.Forms.Button RegelnButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

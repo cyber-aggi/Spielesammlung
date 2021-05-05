@@ -59,10 +59,7 @@ namespace Spielesammlung
             }
         }
 
-        private void LadenButton_Click(object sender, EventArgs e)
-        {
-            LoadGames();
-        }
+        
 
         //Methode zum Laden der Spiele
         private void LoadGames()
