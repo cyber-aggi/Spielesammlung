@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Spielesammlung
 {
+
+    /*Fehler:
+     * Button ausgrauen wenn spalte voll
+    */
     public partial class VierGewinntForm : Form
     {
 
@@ -106,7 +110,7 @@ namespace Spielesammlung
         private int Endstop_for_block(int col)
         {
             //Schaut in der Spalte von unten nach oben nach ob ein Block schon gesetzt wurde
-            for(int row = TLPcolor.GetLength(0)-2; row > 0; row--)
+            for(int row = TLPcolor.GetLength(1)-1; row >= 0; row--)
             {              
                 //gibt die unterste stelle aus der spalte zurück an der sich noch kein Block befindet
                 if (TLPcolor[col, row] == 0)
@@ -148,6 +152,7 @@ namespace Spielesammlung
                 bgColors[col, tmp_endstop] = Color.Yellow;
             }
             //Lädt das Grid neu udn wechselt spieler
+            pruef_spalte_voll();
             Spielerwechsel();
             VierGewinntTableLayoutPanel.Refresh();
             gewinnen(col, tmp_endstop);
@@ -236,8 +241,9 @@ namespace Spielesammlung
                     }
                 }
             }
-            tmp_str = "";
+
             //vertikal
+            tmp_str = "";
             for (int horz = 0; horz < TLPcolor.GetLength(1); horz++)
             {
                 for (int vert = 0; vert < TLPcolor.GetLength(0); vert++)
@@ -270,7 +276,148 @@ namespace Spielesammlung
                 }
             }
 
+            //diagonal unten links
+                for (int row = 0; row < TLPcolor.GetLength(0) - 3; row++)
+                {
+                    for (int col = 3; col < TLPcolor.GetLength(1); col++)
+                    {
+                        int element = TLPcolor[row,col];
+                        if (element == TLPcolor[row + 1,col - 1] &&
+                            element == TLPcolor[row + 2,col - 2] &&
+                            element == TLPcolor[row + 3,col - 3])
+                        {
+                            if (element == 1)
+                            {
+                                MessageBox.Show("Spieler 1 hat gewonnen");
+                            }
+                            else if (element == 2)
+                            {
+                                MessageBox.Show("Spieler 2 hat gewonnen");
+                            }
+                        }
+                    }
+                }
 
+           //diagonale unten rechts
+                for (int row = 0; row < TLPcolor.GetLength(0) - 3; row++)
+                {
+                    for (int col = 0; col < TLPcolor.GetLength(1) - 3; col++)
+                    {
+                        int element = TLPcolor[row, col];
+                        if (element == TLPcolor[row + 1,col + 1] &&
+                            element == TLPcolor[row + 2,col + 2] &&
+                            element == TLPcolor[row + 3,col + 3])
+                        {
+                            if (element == 1)
+                            {
+                                MessageBox.Show("Spieler 1 hat gewonnen");
+                            }
+                            else if (element == 2)
+                            {
+                                MessageBox.Show("Spieler 2 hat gewonnen");
+                            }
+                    }
+                    }
+                }
+        }
+        private void pruef_spalte_voll()
+        {
+            for(int col = 0; col <= TLPcolor.GetLength(1); col++)
+            {
+
+                //bgColors[0, 0] = Color.Green;
+                int tmp = TLPcolor[col, 0];
+                if (TLPcolor[col, 0] != 0)
+                {
+                    Button_ausgrauen(col);
+                }
+            }
+        }
+        private void Button_ausgrauen(int button)
+        {
+            button++;
+            switch (button)
+            {
+                case 1:
+                    {
+                        Spalte1Button.Enabled = false;
+                        break;
+                    }
+                case 2:
+                    {
+                        Spalte2Button.Enabled = false;
+                        break;
+                    }
+                case 3:
+                    {
+                        Spalte3Button.Enabled = false;
+                        break;
+                    }
+                case 4:
+                    {
+                        Spalte4Button.Enabled = false;
+                        break;
+                    }
+                case 5:
+                    {
+                        Spalte5Button.Enabled = false;
+                        break;
+                    }
+                case 6:
+                    {
+                        Spalte6Button.Enabled = false;
+                        break;
+                    }
+                case 7:
+                    {
+                        Spalte7Button.Enabled = false;
+                        break;
+                    }
+                default:
+                    break;
+
+            }
+
+        }
+
+        //Setzt das Spielfeld zurück, ohne vorher zu fragen
+        /*
+         * 
+         *
+         */
+        private void enable_all_buttons()
+        {
+            foreach (Control c in Controls)
+            {
+                Button b = c as Button;
+                if (b != null)
+                {
+                    b.Enabled = true;
+                }
+            }
+        }
+        private void NewGameButton_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Dies wird das komplette Spielfeld leeren und allen nicht gespeicherten Fortschritt verwerfen. Bestätigen?", "Spiel neustarten", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                for (int depth = 0; depth < bgColors.GetLength(0); depth++)
+                {
+                    //Breite füllen mit dem SystemColors.Control
+                    for (int width = 0; width < bgColors.GetLength(1); width++)
+                    {
+                        bgColors[depth, width] = Color.Empty;
+                    }
+                }
+                VierGewinntTableLayoutPanel.Refresh();
+                Colorfill();
+                enable_all_buttons();
+            }
+            else
+            {
+                this.Activate();
+            }
+            
         }
     }
 }
