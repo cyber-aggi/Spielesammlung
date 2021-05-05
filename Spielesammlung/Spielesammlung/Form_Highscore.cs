@@ -67,6 +67,17 @@ namespace Spielesammlung
                     lW_Highscore.Items.Add(item);
                 }
                 
+                //Spaltenbreite an Tabelleninhalt anpassen (Tabellenüberschriften Lesbarer machen)
+                lW_Highscore.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                if (lW_Highscore.Columns[0].Width < 70)
+                {
+                    lW_Highscore.Columns[0].Width = 70;
+                }
+                if (lW_Highscore.Columns[2].Width < 80)
+                {
+                    lW_Highscore.Columns[2].Width = 80;
+                }
+                
                 //Rückmeldung an den Benutzer
                 MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
             }
