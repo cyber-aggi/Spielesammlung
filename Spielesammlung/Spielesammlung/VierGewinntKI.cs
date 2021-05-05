@@ -17,11 +17,12 @@ namespace Spielesammlung
 {
     class VierGewinntKI
     {
+        //Attribute
         //Spieler1 -> rot
         //Spieler2 -> gelb (ki)
         int spalteNaechterZug;
         private Random rnd; //für zufällige Züge
-        private int[] obersteSteine; //ein Array, indem der Oberste Stein jeder Zeile gespeichert ist
+        //private int[] obersteSteine; //ein Array, indem der Oberste Stein jeder Zeile gespeichert ist
         private int spaltenAnzahl;
         private int zeilenAnazhl;
         private Dictionary<Tuple<int, int>, int> spielbrett;
@@ -63,6 +64,7 @@ namespace Spielesammlung
             new Tuple<int, int> ( 1, 1),    //nach rechts unten -> Index 7
         };
 
+        //Konstruktor
         public VierGewinntKI(VierGewinntForm ui)
         {
             //Benutzeroberfläche, auf der das Spiel angezeigt wird, wird über den Konstruktor übergeben
@@ -79,14 +81,14 @@ namespace Spielesammlung
             //instanziieren von Spielbrett
             spielbrett = new Dictionary<Tuple<int, int>, int>();
 
-            //Instanziiern von obersteSteine
-            obersteSteine = new int[spaltenAnzahl];
-            //Initialisieren von obersteSteine
-            for (int i = 0; i < spaltenAnzahl; i++)
-            {
-                //-1 bedeutet, dass kein Stein in der Spalte liegt
-                obersteSteine[i] = -1;
-            }
+            ////Instanziiern von obersteSteine
+            //obersteSteine = new int[spaltenAnzahl];
+            ////Initialisieren von obersteSteine
+            //for (int i = 0; i < spaltenAnzahl; i++)
+            //{
+            //    //-1 bedeutet, dass kein Stein in der Spalte liegt
+            //    obersteSteine[i] = -1;
+            //}
 
             //Initialisieren von 'felderUndIndexe'
             felderUndIndexe = new Dictionary<Tuple<int, int>, List<int>>();
@@ -115,21 +117,20 @@ namespace Spielesammlung
             //} while (obersteSteine[aktuellSpalte] >= zeilenAnazhl - 1);
 
             Computer();
-            obersteSteine[spalteNaechterZug]++;
-            SetzteStein(Tuple.Create(spalteNaechterZug, obersteSteine[spalteNaechterZug]), false);
+            //obersteSteine[spalteNaechterZug]++;
+            //SetzteStein(Tuple.Create(spalteNaechterZug, ErmittleErsteFreieZeile(spalteNaechterZug)), false);
             ui.DrawBlock(spalteNaechterZug);
         }
 
-        public void GebeZug(int spalte) //kann man durch eine Eigenschaft 'ObersteSteine' ersetzen
+        public void GebeZug(int spalte)
         {
-            obersteSteine[spalte]++;
-            SetzteStein(Tuple.Create(spalte, obersteSteine[spalte]), true);
+            SetzteStein(Tuple.Create(spalte, ErmittleErsteFreieZeile(spalte)), true);
         }
 
-        public bool SpielfeldVoll()
-        {
-            return obersteSteine.All(obersterStein => obersterStein >= zeilenAnazhl - 1);
-        }
+        //public bool SpielfeldVoll()
+        //{
+        //    return obersteSteine.All(obersterStein => obersterStein >= zeilenAnazhl - 1);
+        //}
 
         public Tuple<int, int>[] QuadPositionen(int spalte, int zeile, Tuple<int, int> richtung) //Methodennamen anpassen
         //erstellt einen Quad von der durch 'spalte' und 'zeile' definierten Position aus in die Richtung 'richtung' 
@@ -218,6 +219,7 @@ namespace Spielesammlung
 
             bool gewonnen = false; //über die Quads kann man direkt prüfen, ob ein Spieler gewonnen hat
             spielbrett[position] = spieler ? 1 : 2;
+            //obersteSteine[position.Item1]++;
 
             foreach (int index in felderUndIndexe[position])
             {
@@ -235,6 +237,7 @@ namespace Spielesammlung
         //die KI probiert einen Stein zu setzten, bewertet das Spielbrett danach und löscht den Zug wieder -> deswegen braucht man diese Methode
         {
             spielbrett.Remove(position);
+            //obersteSteine[position.Item1]--;
             foreach (int index in felderUndIndexe[position])
             {
                 quads[index][spieler ? 0 : 1]--;
@@ -279,15 +282,9 @@ namespace Spielesammlung
             List<Tuple<int, int>> zuege = new List<Tuple<int, int>>();
             for (int spalte = 0; spalte < spaltenAnzahl; spalte++)
             {
-                if (!(obersteSteine[spalte] < zeilenAnazhl - 1))
-                {
-                    continue;
-                }
-                else
-                {
-                    int zeile = obersteSteine[spalte] + 1;
-                    zuege.Add(Tuple.Create(spalte, zeile));
-                }
+                if (!PruefeSpalte(spalte)) continue;
+                int zeile = ErmittleErsteFreieZeile(spalte);
+                zuege.Add(Tuple.Create(spalte, zeile));
             }
 
             return zuege;
@@ -308,7 +305,7 @@ namespace Spielesammlung
             foreach (Tuple<int, int> zug in ErmittleZuege())
             {
                 gewonnen = SetzteStein(zug, false);
-                score = MiniMax(4, -999999, 999999, false, gewonnen);
+                score = MiniMax(6, -999999, 999999, false, gewonnen);
                 LoescheStein(zug, false); //dadurch wird  das Spielfeld wieder zurückgesetzt
                 bewerteteZuege.Add(Tuple.Create(score, zug));
             }
@@ -363,6 +360,36 @@ namespace Spielesammlung
             }
 
             return wert;
+        }
+
+        public int ErmittleErsteFreieZeile(int spalte)
+        {
+            for (int zeile = zeilenAnazhl - 1; zeile > -1; zeile--)
+            {
+                if (!(spielbrett.ContainsKey(Tuple.Create(spalte, zeile))))
+                //wenn die Position nicht im Spielfeld vorhanden ist
+                {
+                    return zeile;
+                }
+            }
+
+            return -1;
+        }
+
+        public bool PruefeSpalte(int spalte)
+        {
+            if (spielbrett.ContainsKey(Tuple.Create(spalte, 0)))
+            {
+                return false;
+            }
+            if (spalte >= 0 && spalte < spaltenAnzahl)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
