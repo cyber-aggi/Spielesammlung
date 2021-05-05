@@ -26,7 +26,7 @@ namespace Spielesammlung
 
         private void HighscoreButton_Click(object sender, EventArgs e)
         {
-            //Erzeugt ein neues Fenster um den Highscore anzuzeigen
+            //Erzeugt ein neues Fenster um den Highscore anzuzeigen & Übergibt falls ein Spiel ausgewählt ist dieses an das Form
             Childform_Highscore = new Form_Highscore(Convert.ToString(Spiele_Liste.SelectedItem));
             Childform_Highscore.Show();
         }
@@ -58,19 +58,21 @@ namespace Spielesammlung
 
         
 
-        //Methode zum Laden der Spiele
+        //PR: Methode zum Laden der Spiele
         private void LoadGames()
         {
+            //Löscht die bestehende Spieleliste
             Spiele_Liste.Items.Clear();
             //Lesen der Spieleliste aus der Properties / Settings Datei
             string spiele = Properties.Settings.Default.spiele;
             String[] value = null;
             //Splitten der Informationen in ein Array
             value = spiele.Split(';');
+            //Sortiert das Array, damit die Spiele in alphabetischer Reihenfolge angezeigt werden
             Array.Sort(value);
             foreach (string v in value)
             {
-                //Array zur Combobox hinzufügen, wenn der Arrayeintrag nicht leer ist
+                //Array zur Combobox hinzufügen, wenn der String nicht leer ist
                 if (v != "")
                 {
                     Spiele_Liste.Items.Add(v);
@@ -144,7 +146,7 @@ namespace Spielesammlung
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "")
             {
-                MessageBox.Show("Bitte wähle ein Spiel aus!");
+                MessageBox.Show("Bitte wähle zuerst ein Spiel aus, bevor die Spielregeln angezeigt werden können!");
             }
         }
 

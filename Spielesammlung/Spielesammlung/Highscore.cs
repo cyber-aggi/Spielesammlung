@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Name: Christoph Wilcken
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,11 +49,6 @@ namespace Spielesammlung
 
             return daten.ToArray();
         }
-
-        /*internal static string[] datenLesen(string text)
-        {
-            throw new NotImplementedException();
-        }*/
 
         //Diese Methode fügt Daten in die Datenbank ein.
         //Es wird das Spiel, der Benutzer und der Score übergeben

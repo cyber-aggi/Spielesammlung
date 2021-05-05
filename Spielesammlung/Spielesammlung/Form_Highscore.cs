@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Name: Paul Rosenberg
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,6 +66,17 @@ namespace Spielesammlung
                     item.SubItems.Add(row[2]);
                     item.SubItems.Add(row[1]);
                     lW_Highscore.Items.Add(item);
+                }
+                
+                //Spaltenbreite an Tabelleninhalt anpassen (Tabellenüberschriften Lesbarer machen)
+                lW_Highscore.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                if (lW_Highscore.Columns[0].Width < 70)
+                {
+                    lW_Highscore.Columns[0].Width = 70;
+                }
+                if (lW_Highscore.Columns[2].Width < 80)
+                {
+                    lW_Highscore.Columns[2].Width = 80;
                 }
                 
                 //Rückmeldung an den Benutzer
