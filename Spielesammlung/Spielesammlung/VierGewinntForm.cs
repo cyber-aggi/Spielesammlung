@@ -29,6 +29,8 @@ namespace Spielesammlung
         private string namespieler2;
         private string spielename;
 
+        VierGewinntKI KI;
+
 
         public VierGewinntForm(string p_spielename = "Vier-Gewinnt", string spieler1 = "Spieler 1", string spieler2 = "Spieler 2")
         {
@@ -47,6 +49,9 @@ namespace Spielesammlung
                 namespieler1 = spieler1;
                 namespieler2 = spieler2;
             }
+
+            KI = new VierGewinntKI(this);
+
             Colorfill();
             spieler_start();
         }
@@ -54,42 +59,49 @@ namespace Spielesammlung
         private void Spalte1Button_Click(object sender, EventArgs e)
         {
             //column: 0 ,row: 1
+            KI.GebeZug(0);
             DrawBlock(0);
         }
 
         private void Spalte2Button_Click(object sender, EventArgs e)
         {
             //column: 1 ,row: 1
+            KI.GebeZug(1);
             DrawBlock(1);
         }
 
         private void Spalte3Button_Click(object sender, EventArgs e)
         {
             //column: 2 ,row: 1
+            KI.GebeZug(2);
             DrawBlock(2);
         }
 
         private void Spalte4Button_Click(object sender, EventArgs e)
         {
             //column: 3 ,row: 1
+            KI.GebeZug(3);
             DrawBlock(3);
         }
 
         private void Spalte5Button_Click(object sender, EventArgs e)
         {
             //column: 4 ,row: 1
+            KI.GebeZug(4);
             DrawBlock(4);
         }
 
         private void Spalte6Button_Click(object sender, EventArgs e)
         {
             //column: 5 ,row: 1
+            KI.GebeZug(5);
             DrawBlock(5);
         }
 
         private void Spalte7Button_Click(object sender, EventArgs e)
         {
             //column: 6 ,row: 1
+            KI.GebeZug(6);
             DrawBlock(6);
         }
 
@@ -182,6 +194,7 @@ namespace Spielesammlung
             {
                 AnzeigeLabel.Text = "Es ist dran: " + namespieler1;
                 spieler_bool = true;
+                KI.MacheZug();
                 return;
             }
 
@@ -196,7 +209,8 @@ namespace Spielesammlung
         private int random_start(int i)
         {
             var rand = new Random();
-            return rand.Next(i);
+            //return rand.Next(i);
+            return 1;
         }
 
         private void spieler_start()
@@ -468,7 +482,6 @@ namespace Spielesammlung
         }
         private void NewGameButton_Click(object sender, EventArgs e)
         {
-
             if (MessageBox.Show("Dies wird das komplette Spielfeld leeren und allen nicht gespeicherten Fortschritt verwerfen. Bestätigen?", "Spiel neustarten", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 for (int depth = 0; depth < bgColors.GetLength(0); depth++)
@@ -487,6 +500,8 @@ namespace Spielesammlung
             {
                 this.Activate();
             }
+
+            KI = new VierGewinntKI(this);
             
         }
 
