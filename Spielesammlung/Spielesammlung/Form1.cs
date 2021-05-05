@@ -41,7 +41,7 @@ namespace Spielesammlung
             //Erzeugt ein neues Fenster um das Spiel anzuzeigen
             if (Convert.ToString(Spiele_Liste.SelectedItem) == "Vier-Gewinnt")
             {
-                VierGewinntForm Childform_VierGewinnt = new VierGewinntForm();
+                VierGewinntForm Childform_VierGewinnt = new VierGewinntForm(Convert.ToString(Spiele_Liste.SelectedItem), Spieler1Name_TextBox.Text, Spieler2Name_TextBox.Text);
                 Childform_VierGewinnt.Show();
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Tic-Tac-Toe")
