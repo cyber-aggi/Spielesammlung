@@ -142,6 +142,7 @@ namespace Spielesammlung
             this.NewGameButton.TabIndex = 8;
             this.NewGameButton.Text = "Neues Spiel starten";
             this.NewGameButton.UseVisualStyleBackColor = true;
+            this.NewGameButton.Click += new System.EventHandler(this.NewGameButton_Click);
             // 
             // AnzeigeLabel
             // 
