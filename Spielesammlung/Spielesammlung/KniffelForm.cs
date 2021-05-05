@@ -23,10 +23,10 @@ namespace Spielesammlung
         public KniffelForm(string p_spielename = "Kniffel", string spieler1 = "Spieler 1", string spieler2 = "Spieler 2")
         {
             InitializeComponent();
-
+            //Speichert den übergebenen Spielenamen in einer Variable (erforderlich für den Highscore-Eintrag)
             this.spielename = p_spielename;
 
-            //Spielernamen in Variablen übertragen
+            //Spielernamen in Variablen übertragen (falls keine Übergeben wurden, Platzhalter einfügen)
             if(spieler1 == "" || spieler1 is null || spieler2 == "" || spieler2 is null)
             {
                 namespieler1 = "Spieler 1";
@@ -49,7 +49,7 @@ namespace Spielesammlung
             //Setzt einen Text für das Würfel-Label
             label_wurf.Text = "Wurf: 0";
 
-            //Setze die Punktelabels auf ""
+            //Setze die Punktelabels auf einen leeren String
             label_punkte_gesamt.Text = "";
             label_punkte_oben.Text = "";
             label_punkte_unten.Text = "";
@@ -60,6 +60,7 @@ namespace Spielesammlung
         //Würfel-Engine -> für nicht ausgewählte Würfel, wird ein neuer Zufallswert gebildet
         private void Btn_Wuerfeln_Click(object sender, EventArgs e)
         {
+            //Prüft ob der Würfel nicht ausgewählt wurde und trägt einen neuen Zufallswert ein
             Random rnd = new Random();
             if (!cB_Wuerfel1.Checked)
             {
@@ -104,6 +105,7 @@ namespace Spielesammlung
         private int Anzahl_Wuerfel(int zahl)
         {
             int anzahl = 0;
+            //Überprüft Würfel für Würfel und erhöht falls die Zahlen gleich sind anzahl um 1
             if (label_Wuerfel1.Text == Convert.ToString(zahl))
             {
                 anzahl += 1;
@@ -131,6 +133,7 @@ namespace Spielesammlung
         private void CheckBonus()
         {
             int summe = 0;
+            //Überprüfen ob die Felder bereits ausgefüllt und nicht gestrichen worden sind -> summiert dann die Werte
             if(Btn_Oben_1.Text != "" && Btn_Oben_1.Text != "-")
             {
                 summe += Convert.ToInt32(Btn_Oben_1.Text);
@@ -155,6 +158,7 @@ namespace Spielesammlung
             {
                 summe += Convert.ToInt32(Btn_Oben_6.Text);
             }
+            //Trägt die Werte in die entsprechenden Labels in der Oberfläche ein
             label_punkte_oben_vorbonus.Text = Convert.ToString(summe);
             //Wenn die Summe größer oder gleich 63 ist, bekommt man einen Bonus von 35
             if(summe >= 63)
@@ -164,6 +168,7 @@ namespace Spielesammlung
             }
             label_punkte_oben_nachbonus.Text = Convert.ToString(summe);
             label_punkte_oben.Text = Convert.ToString(summe);
+            //Aktualisieren des Gesamt-Summen-Feldes
             SummeGesamt();
         }
 
@@ -199,12 +204,13 @@ namespace Spielesammlung
             {
                 summe += Convert.ToInt32(Btn_Unten_Chance.Text);
             }
-
+            //Trägt den Wert in das entsprechenden Label in der Oberfläche ein
             label_punkte_unten.Text = Convert.ToString(summe);
+            //Aktualisieren des Gesamt-Summen-Feldes
             SummeGesamt();
         }
 
-        //Ermittelt aus dem oberen und unterem Teil die Gesamtpunktzahl
+        //Ermittelt aus dem oberen und unterem Teil die Gesamtpunktzahl (nur die Zwischensummen werden verwendet)
         private void SummeGesamt()
         {
             if(label_punkte_oben.Text != "" && label_punkte_unten.Text != "") {
@@ -264,6 +270,7 @@ namespace Spielesammlung
                     }
                 }
             }
+            //Überprüfung, falls gerade Spieler 2 an der Reihe ist für Spieler 1
             else
             {
                 fertig = true;
@@ -275,27 +282,33 @@ namespace Spielesammlung
                     }
                 }
             }
+            //Wenn ein der nachfolgende Spieler kein freies Feld mehr hat, wird das Spiel ausgewertet und die Spieler informiert
             if(fertig)
             {
                 string output = "";
                 string gewinner;
                 int punkte_sieger = 0;
+                //Erstellen der Meldungen an den Benutzer, falls das Spiel unentschieden ausgegangen ist
                 if(spieler1[18] == spieler2[18])
                 {
                     output = "Es steht unentschieden mit " + spieler1[18] + " Punkten.\nHerzlichen Glückwunsch!";
                     gewinner = "";
-                } else if(Convert.ToInt32(spieler1[18]) > Convert.ToInt32(spieler2[18]))
+                }
+                //Erstellen der Meldungen an den Benutzer, falls Spieler 1 gegen Spieler 2 gewonnen hat
+                else if (Convert.ToInt32(spieler1[18]) > Convert.ToInt32(spieler2[18]))
                 {
                     output = namespieler1 + " hat mit " + spieler1[18] + " Punkten gegen " + namespieler2 + " mit " + spieler2[18] + " Punkten gewonnen!\nHerzlichen Glückwunsch!";
                     gewinner = namespieler1;
                     punkte_sieger = Convert.ToInt32(spieler1[18]);
                 }
+                //Erstellen der Meldungen an den Benutzer, falls Spieler 1 gegen Spieler 2 gewonnen hat
                 else
                 {
                     output = namespieler2 + " hat mit " + spieler2[18] + " Punkten gegen " + namespieler1 + " mit " + spieler1[18] + " Punkten gewonnen!\nHerzlichen Glückwunsch!";
                     gewinner = namespieler2;
                     punkte_sieger = Convert.ToInt32(spieler2[18]);
                 }
+
                 //Formular zur Eingabe von einem Namen für den Highscore
                 if (gewinner == "Spieler 1")
                 {
@@ -356,7 +369,7 @@ namespace Spielesammlung
                 //Setzt einen Text für das Würfel-Label
                 label_wurf.Text = "Wurf: 0";
 
-                //Setze die Punktelabels auf ""
+                //Setze die Punktelabels auf einen leeren String
                 label_punkte_gesamt.Text = "";
                 label_punkte_oben.Text = "";
                 label_punkte_unten.Text = "";
@@ -546,7 +559,7 @@ namespace Spielesammlung
             NextPlayer();
         }
 
-        //Bildet die Summe alle Würfelaugen
+        //Bildet die Summe alle Würfelaugen und gibt den Wert zurück
         private int ZaehleWuerfel()
         {
             int summe = 0;
@@ -655,6 +668,7 @@ namespace Spielesammlung
             {
                 Btn_Unten_FullHouse.Text = "25";
             }
+            //Falls kein Full-House erreicht wurde, wird das Feld gestrichen
             else
             {
                 Btn_Unten_FullHouse.Text = "-";
@@ -676,7 +690,7 @@ namespace Spielesammlung
                 }
             }
 
-            //Trägt falls kleinestrasse true ist, 30 Punkte in das Feld ein
+            //Trägt falls kleinestrasse true ist, 30 Punkte in das Feld ein, ansonsten einen Strich
             if (kleinestrasse)
             {
                 Btn_Unten_KleineStrasse.Text = "30";
@@ -702,7 +716,7 @@ namespace Spielesammlung
                 }
             }
 
-            //Trägt falls grossetrasse true ist 40 Punkte in das Feld ein
+            //Trägt falls grossetrasse true ist 40 Punkte in das Feld ein, ansonsten wird das Feld gestrichen
             if (grossestrasse)
             {
                 Btn_Unten_GrosseStrasse.Text = "40";
