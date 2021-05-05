@@ -22,11 +22,27 @@ namespace Spielesammlung
         int zähler = 1;
         int zug = 0;
         string gewinner = "";
-        public TicTacToeForm()
+        private string namespieler1;
+        private string namespieler2;
+        private string spielename;
+        public TicTacToeForm(string p_spielename = "TicTacToe", string spieler1 = "Spieler 1", string spieler2 = "Spieler 2")
         {
             InitializeComponent();
+            //Spielernamen in Variablen übertragen (falls keine Übergeben wurden, Platzhalter einfügen)
+            if(spieler1 == "" || spieler1 is null || spieler2 == "" || spieler2 is null)
+            {
+                namespieler1 = "Spieler 1";
+                namespieler2 = "Spieler 2";
+            } else
+            {
+                namespieler1 = spieler1;
+                namespieler2 = spieler2;
+            }
+            Amzuganzeige.Text = namespieler1 + " ist dran!";
         }
 
+
+        
         // Button 1 des Spielfeldes
         private void tikbutton1_Click(object sender, EventArgs e)
         {
@@ -88,11 +104,11 @@ namespace Spielesammlung
             gewonnen();
             if (zähler == 1)
             {
-                Amzuganzeige.Text = "Spieler 1 ist dran!";
+                Amzuganzeige.Text = namespieler1 + " ist dran!";
             }
             else if (zähler == 2)
             {
-                Amzuganzeige.Text = "Spieler 2 ist dran!";
+                Amzuganzeige.Text = namespieler2 + " ist dran!";
             }
         }
         // Setzt einen Spielstein auf das ausgesuchte Spielfeld
@@ -136,99 +152,99 @@ namespace Spielesammlung
                 //prüft ob Spieler 1 gewonnen hat
                 if (tikbutton1.Text == "X" && tikbutton2.Text == "X" && tikbutton3.Text == "X")
                 {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-                    gewinner = "Spieler1";
+                    MessageBox.Show(namespieler1 + " hat gewonnen!");
+                    gewinner = namespieler1;
                     zurücksetzen();
                 }
                 if (tikbutton4.Text == "X" && tikbutton5.Text == "X" && tikbutton6.Text == "X")
                 {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-                    gewinner = "Spieler1";
+                    MessageBox.Show(namespieler1 + " hat gewonnen!");
+                    gewinner = namespieler1;
                     zurücksetzen();
                 }
                 if (tikbutton7.Text == "X" && tikbutton8.Text == "X" && tikbutton9.Text == "X")
                 {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-                    gewinner = "Spieler1";
+                    MessageBox.Show(namespieler1 + " hat gewonnen!");
+                    gewinner = namespieler1;
                     zurücksetzen();
                 }
                 if (tikbutton1.Text == "X" && tikbutton5.Text == "X" && tikbutton9.Text == "X")
                 {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-                    gewinner = "Spieler1";
+                    MessageBox.Show(namespieler1 + " hat gewonnen!");
+                    gewinner = namespieler1;
                     zurücksetzen();
                 }
                 if (tikbutton7.Text == "X" && tikbutton5.Text == "X" && tikbutton3.Text == "X")
                 {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-                    gewinner = "Spieler1";
+                    MessageBox.Show(namespieler1 + " hat gewonnen!");
+                    gewinner = namespieler1;
                     zurücksetzen();
                 }
                 if (tikbutton2.Text == "X" && tikbutton5.Text == "X" && tikbutton8.Text == "X")
                 {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-                    gewinner = "Spieler1";
+                    MessageBox.Show(namespieler1 + " hat gewonnen!");
+                    gewinner = namespieler1;
                     zurücksetzen();
                 }
                 if (tikbutton3.Text == "X" && tikbutton6.Text == "X" && tikbutton9.Text == "X")
                 {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-                    gewinner = "Spieler1";
+                    MessageBox.Show(namespieler1 + " hat gewonnen!");
+                    gewinner = namespieler1;
                     zurücksetzen();
                 }
                 if (tikbutton1.Text == "X" && tikbutton4.Text == "X" && tikbutton7.Text == "X")
                 {
-                    MessageBox.Show("Spieler 1 hat gewonnen!");
-                    gewinner = "Spieler1";
+                    MessageBox.Show(namespieler1 + " hat gewonnen!");
+                    gewinner = namespieler1;
                     zurücksetzen();
                 }
                 //Prüft ob Spieler 2 gewonnen hat
                 if (tikbutton1.Text == "O" && tikbutton2.Text == "O" && tikbutton3.Text == "O")
                 {
-                    MessageBox.Show("Spieler 2 hat gewonnen!");
-                    gewinner = "Spieler2";
+                    MessageBox.Show(namespieler2 + " hat gewonnen!");
+                    gewinner = namespieler2;
                     zurücksetzen();
                 }
                 if (tikbutton4.Text == "O" && tikbutton5.Text == "O" && tikbutton6.Text == "O")
                 {
-                    MessageBox.Show("Spieler 2 hat gewonnen!");
-                    gewinner = "Spieler2";
+                    MessageBox.Show(namespieler2 + " hat gewonnen!");
+                    gewinner = namespieler2;
                     zurücksetzen();
                 }
                 if (tikbutton7.Text == "O" && tikbutton8.Text == "O" && tikbutton9.Text == "O")
                 {
-                    MessageBox.Show("Spieler 2 hat gewonnen!");
-                    gewinner = "Spieler2";
+                    MessageBox.Show(namespieler2 + " hat gewonnen!");
+                    gewinner = namespieler2;
                     zurücksetzen();
                 }
                 if (tikbutton1.Text == "O" && tikbutton5.Text == "O" && tikbutton9.Text == "O")
                 {
-                    MessageBox.Show("Spieler 2 hat gewonnen!");
-                    gewinner = "Spieler2";
+                    MessageBox.Show(namespieler2 + " hat gewonnen!");
+                    gewinner = namespieler2;
                     zurücksetzen();
                 }
                 if (tikbutton7.Text == "O" && tikbutton5.Text == "O" && tikbutton3.Text == "O")
                 {
-                    MessageBox.Show("Spieler 2 hat gewonnen!");
-                    gewinner = "Spieler2";
+                    MessageBox.Show(namespieler2 + " hat gewonnen!");
+                    gewinner = namespieler2;
                     zurücksetzen();
                 }
                 if (tikbutton2.Text == "O" && tikbutton5.Text == "O" && tikbutton8.Text == "O")
                 {
-                    MessageBox.Show("Spieler 2 hat gewonnen!");
-                    gewinner = "Spieler2";
+                    MessageBox.Show(namespieler2 + " hat gewonnen!");
+                    gewinner = namespieler2;
                     zurücksetzen();
                 }
                 if (tikbutton3.Text == "O" && tikbutton6.Text == "O" && tikbutton9.Text == "O")
                 {
-                    MessageBox.Show("Spieler 2 hat gewonnen!");
-                    gewinner = "Spieler2";
+                    MessageBox.Show(namespieler2 + " hat gewonnen!");
+                    gewinner = namespieler2;
                     zurücksetzen();
                 }
                 if (tikbutton1.Text == "O" && tikbutton4.Text == "O" && tikbutton7.Text == "O")
                 {
-                    MessageBox.Show("Spieler 2 hat gewonnen!");
-                    gewinner = "Spieler2";
+                    MessageBox.Show(namespieler2 + " hat gewonnen!");
+                    gewinner = namespieler2;
                     zurücksetzen();
                 }
             }
@@ -245,7 +261,7 @@ namespace Spielesammlung
         //Nach dem Spielende wird das Spielfeld zurückgesetzt;
         private void zurücksetzen()
         {
-            if (gewinner == "Spieler1")
+            if (gewinner == "Spieler 1")
             {
                 //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
                 HighscoreNameForm DialogHighscore = new HighscoreNameForm(gewinner);
@@ -260,7 +276,7 @@ namespace Spielesammlung
                 }
                 DialogHighscore.Dispose();
             }
-            else if (gewinner == "Spieler2")
+            else if (gewinner == "Spieler 2")
             {
                 //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
                 HighscoreNameForm DialogHighscore = new HighscoreNameForm(gewinner);
@@ -274,6 +290,10 @@ namespace Spielesammlung
                     gewinner = "";
                 }
                 DialogHighscore.Dispose();
+            }
+            if(gewinner != "") 
+            { 
+                Highscore.datenEinfuegen(spielename, gewinner, Punktzahl()); 
             }
             zähler = 1;
             zug = 0;
