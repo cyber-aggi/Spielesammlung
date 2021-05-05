@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Name: Lena Krieger
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,11 @@ namespace Spielesammlung
     {
         private Form_Highscore Childform_Highscore;
         
+
         public Form1()
         {
             InitializeComponent();
-            //Läd die Spiele direkt beim Start der Anwendung
+            //Lädt die Spiele direkt beim Start der Anwendung
             LoadGames();
         }
 
@@ -41,26 +43,20 @@ namespace Spielesammlung
             {
                 VierGewinntForm Childform_VierGewinnt = new VierGewinntForm();
                 Childform_VierGewinnt.Show();
-                MessageBox.Show("Viel Spaß beim Spielen!");
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Tic-Tac-Toe")
             {
                 TicTacToeForm Childform_TicTacToe = new TicTacToeForm();
                 Childform_TicTacToe.Show();
-                MessageBox.Show("Viel Spaß beim Spielen!");
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Kniffel")
             {
                 KniffelForm Childform_Kniffel = new KniffelForm(Convert.ToString(Spiele_Liste.SelectedItem), Spieler1Name_TextBox.Text, Spieler2Name_TextBox.Text);
                 Childform_Kniffel.Show();
-                MessageBox.Show("Viel Spaß beim Spielen!");
             }
         }
 
-        private void LadenButton_Click(object sender, EventArgs e)
-        {
-            LoadGames();
-        }
+        
 
         //PR: Methode zum Laden der Spiele
         private void LoadGames()
@@ -132,7 +128,7 @@ namespace Spielesammlung
                     "3. Hast du alle drei Würfe in einer Runde gemacht, wählst du das Feld aus, in dem deine Punkte gutgeschrieben werden sollen. \n" +
                     " Keine Sorge, den richtigen Wert berechnen wir dir dann. \n" +
                     "4. Hast du im oberen Teil mindestens 63 Punkte erreicht, berechnen wir dir einen 35 Punkte Bonus. \n" +
-                    "5. Kannst du mal kein Feld füllen, klickst du einfach ein anderes unausgefülltes Feld an, es wird nun ausgegraut und mit 0 Punkten berechnet. \n\n" +
+                    "5. Kannst du mal kein Feld füllen, klickst du einfach ein unausgefülltes Feld an, es wird nun ausgegraut und mit 0 Punkten berechnet. \n\n" +
                     "Die Felder: \n" +
                     "1. Oberer Bereich - Zahlenfelder, bedeuten die benannten Zahlen.Im Einser Feld zählen z.B.nur die Einser die du gewürfelt hast. \n" +
                     "2. Dreierpasch - alle Zahlen zählen, es müssen aber mindestens drei gleiche Zahlen dabei sein. \n" +
@@ -154,6 +150,7 @@ namespace Spielesammlung
             }
         }
 
+        //Startet ein Spiel bei einem Doppelklick auf das jeweilige Spiel
         private void Spiele_Liste_DoubleClick(object sender, EventArgs e)
         {
             StarteSpiel();
