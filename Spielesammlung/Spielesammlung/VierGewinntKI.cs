@@ -22,7 +22,6 @@ namespace Spielesammlung
         //Spieler2 -> gelb (ki)
         int spalteNaechterZug;
         private Random rnd; //für zufällige Züge
-        //private int[] obersteSteine; //ein Array, indem der Oberste Stein jeder Zeile gespeichert ist
         private int spaltenAnzahl;
         private int zeilenAnazhl;
         private Dictionary<Tuple<int, int>, int> spielbrett;
@@ -81,15 +80,6 @@ namespace Spielesammlung
             //instanziieren von Spielbrett
             spielbrett = new Dictionary<Tuple<int, int>, int>();
 
-            ////Instanziiern von obersteSteine
-            //obersteSteine = new int[spaltenAnzahl];
-            ////Initialisieren von obersteSteine
-            //for (int i = 0; i < spaltenAnzahl; i++)
-            //{
-            //    //-1 bedeutet, dass kein Stein in der Spalte liegt
-            //    obersteSteine[i] = -1;
-            //}
-
             //Initialisieren von 'felderUndIndexe'
             felderUndIndexe = new Dictionary<Tuple<int, int>, List<int>>();
             for (int i = 0; i < spaltenAnzahl * zeilenAnazhl; i++)
@@ -104,21 +94,7 @@ namespace Spielesammlung
 
         public void MacheZug()
         {
-            //int aktuellSpalte;
-
-            //do
-            //{
-            //    if (SpielfeldVoll())
-            //        throw new IndexOutOfRangeException("Das Spielfeld ist voll!");
-
-            //    //wähle zufällig, in welche Spalte ein Stein gesetzt werden sollen
-            //    aktuellSpalte = rnd.Next(0, 7);
-            //    //ist diese Spalte voll, wird einfach eine neue Zufallszahl gewählt
-            //} while (obersteSteine[aktuellSpalte] >= zeilenAnazhl - 1);
-
             Computer();
-            //obersteSteine[spalteNaechterZug]++;
-            //SetzteStein(Tuple.Create(spalteNaechterZug, ErmittleErsteFreieZeile(spalteNaechterZug)), false);
             ui.DrawBlock(spalteNaechterZug);
         }
 
@@ -126,11 +102,6 @@ namespace Spielesammlung
         {
             SetzteStein(Tuple.Create(spalte, ErmittleErsteFreieZeile(spalte)), true);
         }
-
-        //public bool SpielfeldVoll()
-        //{
-        //    return obersteSteine.All(obersterStein => obersterStein >= zeilenAnazhl - 1);
-        //}
 
         public Tuple<int, int>[] QuadPositionen(int spalte, int zeile, Tuple<int, int> richtung) //Methodennamen anpassen
         //erstellt einen Quad von der durch 'spalte' und 'zeile' definierten Position aus in die Richtung 'richtung' 
@@ -219,7 +190,6 @@ namespace Spielesammlung
 
             bool gewonnen = false; //über die Quads kann man direkt prüfen, ob ein Spieler gewonnen hat
             spielbrett[position] = spieler ? 1 : 2;
-            //obersteSteine[position.Item1]++;
 
             foreach (int index in felderUndIndexe[position])
             {
@@ -237,7 +207,6 @@ namespace Spielesammlung
         //die KI probiert einen Stein zu setzten, bewertet das Spielbrett danach und löscht den Zug wieder -> deswegen braucht man diese Methode
         {
             spielbrett.Remove(position);
-            //obersteSteine[position.Item1]--;
             foreach (int index in felderUndIndexe[position])
             {
                 quads[index][spieler ? 0 : 1]--;
@@ -289,11 +258,6 @@ namespace Spielesammlung
 
             return zuege;
         }
-
-        //public bool Spieler(Tuple<int, int> position, bool spieler)
-        //{
-        //    return SetzteStein(position, spieler);
-        //}
 
         public bool Computer()
         {
