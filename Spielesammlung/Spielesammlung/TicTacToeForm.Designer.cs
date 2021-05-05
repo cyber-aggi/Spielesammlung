@@ -44,7 +44,7 @@ namespace Spielesammlung
             // tikbutton1
             // 
             this.tikbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tikbutton1.Location = new System.Drawing.Point(265, 133);
+            this.tikbutton1.Location = new System.Drawing.Point(265, 137);
             this.tikbutton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tikbutton1.Name = "tikbutton1";
             this.tikbutton1.Size = new System.Drawing.Size(80, 80);
@@ -55,7 +55,7 @@ namespace Spielesammlung
             // tikbutton2
             // 
             this.tikbutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tikbutton2.Location = new System.Drawing.Point(351, 133);
+            this.tikbutton2.Location = new System.Drawing.Point(351, 137);
             this.tikbutton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tikbutton2.Name = "tikbutton2";
             this.tikbutton2.Size = new System.Drawing.Size(80, 80);
@@ -66,7 +66,7 @@ namespace Spielesammlung
             // tikbutton3
             // 
             this.tikbutton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tikbutton3.Location = new System.Drawing.Point(437, 133);
+            this.tikbutton3.Location = new System.Drawing.Point(437, 137);
             this.tikbutton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tikbutton3.Name = "tikbutton3";
             this.tikbutton3.Size = new System.Drawing.Size(80, 80);
@@ -77,7 +77,7 @@ namespace Spielesammlung
             // tikbutton6
             // 
             this.tikbutton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tikbutton6.Location = new System.Drawing.Point(437, 219);
+            this.tikbutton6.Location = new System.Drawing.Point(437, 221);
             this.tikbutton6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tikbutton6.Name = "tikbutton6";
             this.tikbutton6.Size = new System.Drawing.Size(80, 80);
@@ -88,7 +88,7 @@ namespace Spielesammlung
             // tikbutton5
             // 
             this.tikbutton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tikbutton5.Location = new System.Drawing.Point(351, 219);
+            this.tikbutton5.Location = new System.Drawing.Point(351, 221);
             this.tikbutton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tikbutton5.Name = "tikbutton5";
             this.tikbutton5.Size = new System.Drawing.Size(80, 80);
@@ -99,7 +99,7 @@ namespace Spielesammlung
             // tikbutton4
             // 
             this.tikbutton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tikbutton4.Location = new System.Drawing.Point(265, 219);
+            this.tikbutton4.Location = new System.Drawing.Point(265, 221);
             this.tikbutton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tikbutton4.Name = "tikbutton4";
             this.tikbutton4.Size = new System.Drawing.Size(80, 80);
