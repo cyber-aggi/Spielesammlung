@@ -22,53 +22,63 @@ namespace Spielesammlung
         //true entspricht Spieler 2
         private bool spieler_bool = false;
 
+        VierGewinntKI ki;
+
 
         public VierGewinntForm()
         {
             InitializeComponent();
             Colorfill();
             spieler_start();
+            ki = new VierGewinntKI(this);
         }
 
         private void Spalte1Button_Click(object sender, EventArgs e)
         {
             //column: 0 ,row: 1
+            ki.GebeZug(0);
             DrawBlock(0);
         }
 
         private void Spalte2Button_Click(object sender, EventArgs e)
         {
             //column: 1 ,row: 1
+            ki.GebeZug(1);
             DrawBlock(1);
         }
 
         private void Spalte3Button_Click(object sender, EventArgs e)
         {
             //column: 2 ,row: 1
+            ki.GebeZug(2);
             DrawBlock(2);
         }
 
         private void Spalte4Button_Click(object sender, EventArgs e)
         {
             //column: 3 ,row: 1
+            ki.GebeZug(3);
             DrawBlock(3);
         }
 
         private void Spalte5Button_Click(object sender, EventArgs e)
         {
             //column: 4 ,row: 1
+            ki.GebeZug(4);
             DrawBlock(4);
         }
 
         private void Spalte6Button_Click(object sender, EventArgs e)
         {
             //column: 5 ,row: 1
+            ki.GebeZug(5);
             DrawBlock(5);
         }
 
         private void Spalte7Button_Click(object sender, EventArgs e)
         {
-            //column: 6 ,row: 1
+            //column: 6 ,row: 1            
+            ki.GebeZug(6);
             DrawBlock(6);
         }
 
@@ -84,7 +94,7 @@ namespace Spielesammlung
         private void Colorfill()
         {
             //Tiefe füllen mit dem SystemColors.Control
-            for(int depth = 0; depth < bgColors.GetLength(0); depth++)
+            for (int depth = 0; depth < bgColors.GetLength(0); depth++)
             {
                 //Breite füllen mit dem SystemColors.Control
                 for (int width = 0; width < bgColors.GetLength(1); width++)
@@ -96,7 +106,7 @@ namespace Spielesammlung
             //Füllt das Boolean Feld
             for (int i = 0; i < TLPcolor.GetLength(0); i++)
             {
-                for(int j = 0; j < TLPcolor.GetLength(1); j++)
+                for (int j = 0; j < TLPcolor.GetLength(1); j++)
                 {
                     TLPcolor[i, j] = 0;
                 }
@@ -106,11 +116,11 @@ namespace Spielesammlung
         private int Endstop_for_block(int col)
         {
             //Schaut in der Spalte von unten nach oben nach ob ein Block schon gesetzt wurde
-            for(int row = TLPcolor.GetLength(0)-2; row > 0; row--)
-            {              
+            for (int row = TLPcolor.GetLength(0) - 2; row > 0; row--)
+            {
                 //gibt die unterste stelle aus der spalte zurück an der sich noch kein Block befindet
                 if (TLPcolor[col, row] == 0)
-                    {
+                {
                     //setzt im array den wert auf den Spieler der den Stein gelegt hat, dass dort nun ein Block ist
                     if (spieler_bool == false)
                     {
@@ -122,9 +132,9 @@ namespace Spielesammlung
                         TLPcolor[col, row] = 2;
                         return row;
                     }
-                    }
+                }
             }
-            return 0;            
+            return 0;
         }
 
         public void DrawBlock(int col)
@@ -141,7 +151,8 @@ namespace Spielesammlung
             if (spieler_bool == false)
             {
                 bgColors[col, tmp_endstop] = Color.Red;
-            }else
+            }
+            else
             //Wenn Spieler 2 dann Gelb
             if (spieler_bool == true)
             {
@@ -160,6 +171,7 @@ namespace Spielesammlung
             {
                 AnzeigeLabel.Text = "Es ist dran: Spieler 2";
                 spieler_bool = true;
+                ki.MacheZug();
                 return;
             }
 
@@ -174,12 +186,13 @@ namespace Spielesammlung
         private int random_start(int i)
         {
             var rand = new Random();
-            return rand.Next(i);
+            //return rand.Next(i);
+            return 1;
         }
 
         private void spieler_start()
         {
-            if (random_start(101)%2 == 0)
+            if (random_start(101) % 2 == 0)
             {
                 Spielerwechsel();
             }
@@ -187,12 +200,12 @@ namespace Spielesammlung
         }
         private bool pruef_string(string temp)
         {
-            if(temp == "1111")
+            if (temp == "1111")
             {
                 MessageBox.Show("Spieler 1 hat gewonnen");
                 return true;
             }
-            else if(temp == "2222")
+            else if (temp == "2222")
             {
                 MessageBox.Show("Spieler 2 hat gewonnen");
                 return true;
@@ -215,7 +228,7 @@ namespace Spielesammlung
                     {
                         //wenn das letzte Zeichen des strings dem jetzigen Feld entspricht wird die zahl wieder eingesetzt
                         int pruef_int = Convert.ToInt32(Char.GetNumericValue(tmp_str[(tmp_str.Length - 1)]));
-                        if ( pruef_int == tmp_int)
+                        if (pruef_int == tmp_int)
                         {
                             tmp_str += tmp_int;
                         }
@@ -230,7 +243,7 @@ namespace Spielesammlung
                     {
                         tmp_str += tmp_int;
                     }
-                    if(pruef_string(tmp_str))
+                    if (pruef_string(tmp_str))
                     {
                         return;
                     }
