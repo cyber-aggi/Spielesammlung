@@ -46,7 +46,7 @@ namespace Spielesammlung
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Tic-Tac-Toe")
             {
-                TicTacToeForm Childform_TicTacToe = new TicTacToeForm();
+                TicTacToeForm Childform_TicTacToe = new TicTacToeForm(Convert.ToString(Spiele_Liste.SelectedItem), Spieler1Name_TextBox.Text, Spieler2Name_TextBox.Text);
                 Childform_TicTacToe.Show();
             }
             else if (Convert.ToString(Spiele_Liste.SelectedItem) == "Kniffel")
