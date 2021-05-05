@@ -85,7 +85,6 @@ namespace Spielesammlung
         private void textschreiben()
         {
             zug++;
-            MessageBox.Show(Convert.ToString(zug));
             gewonnen();
             if (zähler == 1)
             {
@@ -288,6 +287,12 @@ namespace Spielesammlung
                     bla.Text = "";
                 }
             }
+        }
+        public int Punktzahl()
+        {
+            int punkte = 0;
+            punkte = 100 / zug; 
+            return punkte;
         }
     }
 }
