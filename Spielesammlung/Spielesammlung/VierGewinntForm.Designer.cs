@@ -151,7 +151,7 @@ namespace Spielesammlung
             this.AnzeigeLabel.Name = "AnzeigeLabel";
             this.AnzeigeLabel.Size = new System.Drawing.Size(103, 13);
             this.AnzeigeLabel.TabIndex = 9;
-            this.AnzeigeLabel.Text = "Es ist dran: Spieler 1";
+            this.AnzeigeLabel.Text = "Es ist dran: ";
             // 
             // VierGewinntForm
             // 

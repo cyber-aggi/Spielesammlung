@@ -12,7 +12,7 @@ namespace Spielesammlung
 {
 
     /*Fehler:
-     * Button ausgrauen wenn spalte voll
+     *
     */
     public partial class VierGewinntForm : Form
     {
@@ -25,11 +25,28 @@ namespace Spielesammlung
         //False entspricht Spieler 1
         //true entspricht Spieler 2
         private bool spieler_bool = false;
+        private string namespieler1;
+        private string namespieler2;
+        private string spielename;
 
 
-        public VierGewinntForm()
+        public VierGewinntForm(string p_spielename = "Vier-Gewinnt", string spieler1 = "Spieler 1", string spieler2 = "Spieler 2")
         {
             InitializeComponent();
+            //Speichert den übergebenen Spielenamen in einer Variable (erforderlich für den Highscore-Eintrag)
+            this.spielename = p_spielename;
+
+            //Spielernamen in Variablen übertragen (falls keine Übergeben wurden, Platzhalter einfügen)
+            if (spieler1 == "" || spieler1 is null || spieler2 == "" || spieler2 is null)
+            {
+                namespieler1 = "Spieler 1";
+                namespieler2 = "Spieler 2";
+            }
+            else
+            {
+                namespieler1 = spieler1;
+                namespieler2 = spieler2;
+            }
             Colorfill();
             spieler_start();
         }
@@ -163,14 +180,14 @@ namespace Spielesammlung
         {
             if (spieler_bool == false)
             {
-                AnzeigeLabel.Text = "Es ist dran: Spieler 2";
+                AnzeigeLabel.Text = "Es ist dran: " + namespieler1;
                 spieler_bool = true;
                 return;
             }
 
             if (spieler_bool == true)
             {
-                AnzeigeLabel.Text = "Es ist dran: Spieler 1";
+                AnzeigeLabel.Text = "Es ist dran: " + namespieler2;
                 spieler_bool = false;
                 return;
             }
@@ -194,12 +211,12 @@ namespace Spielesammlung
         {
             if(temp == "1111")
             {
-                MessageBox.Show("Spieler 1 hat gewonnen");
+                spieler_gewonnen(1);
                 return true;
             }
             else if(temp == "2222")
             {
-                MessageBox.Show("Spieler 2 hat gewonnen");
+                spieler_gewonnen(2);
                 return true;
             }
             return false;
@@ -288,11 +305,11 @@ namespace Spielesammlung
                         {
                             if (element == 1)
                             {
-                                MessageBox.Show("Spieler 1 hat gewonnen");
+                                spieler_gewonnen(1);
                             }
                             else if (element == 2)
                             {
-                                MessageBox.Show("Spieler 2 hat gewonnen");
+                                spieler_gewonnen(2);
                             }
                         }
                     }
@@ -310,15 +327,68 @@ namespace Spielesammlung
                         {
                             if (element == 1)
                             {
-                                MessageBox.Show("Spieler 1 hat gewonnen");
-                            }
+                                spieler_gewonnen(1);
+                        }
                             else if (element == 2)
                             {
-                                MessageBox.Show("Spieler 2 hat gewonnen");
+                                spieler_gewonnen(2);
                             }
                     }
                     }
                 }
+        }
+        private void spieler_gewonnen(int gewinner)
+        {
+            string gew_spiel = "";
+            if (gewinner == 1)
+            {
+                gew_spiel = namespieler1;
+            } 
+            else if(gewinner == 2)
+            {
+                gew_spiel = namespieler2;
+            }
+            MessageBox.Show(gew_spiel + " hat gewonnen");
+
+            //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
+            HighscoreNameForm DialogHighscore = new HighscoreNameForm(gew_spiel);
+            if (DialogHighscore.ShowDialog() == DialogResult.OK)
+            {
+                gew_spiel = DialogHighscore.tB_name.Text;
+            }
+            //Setzt den Gewinner auf "" damit kein Highscoreeinrag ausgeführt wird
+            else
+            {
+                gew_spiel = "";
+            }
+            DialogHighscore.Dispose();
+
+            if (gew_spiel == "")
+            {
+                MessageBox.Show("Das Spiel ist zu Ende!\n\n" + "\n\nEs wurde kein Punktestand in den Highscore eingetragen!", "Spiel beendet");
+            }
+            else
+            {
+                Highscore.datenEinfuegen(spielename, gew_spiel, Punkte_berechnen(gewinner));
+                MessageBox.Show("Das Spiel ist zu Ende!\n\n" + "\n\nDer Punktestand wurde in den Highscore eingetragen!", "Spiel beendet");
+            }
+
+
+        }
+        private int Punkte_berechnen(int spieler)
+        {
+            int counter = 0;
+            for (int i = 0; i < TLPcolor.GetLength(0); i++)
+            {
+                for (int j = 0; j < TLPcolor.GetLength(1); j++)
+                {
+                    if (TLPcolor[i, j] == spieler)
+                    {
+                        counter++;
+                    }
+                }
+            }
+            return 42-counter;
         }
         private void pruef_spalte_voll()
         {
@@ -419,5 +489,7 @@ namespace Spielesammlung
             }
             
         }
+
+
     }
 }
