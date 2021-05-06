@@ -38,19 +38,6 @@ namespace Spielesammlung
         ///Key -> die Koordinaten eines Feldes
         ///Value --> der Index jedes Quads, zu dem dieses Feld gehört
 
-        //int[][] richtungen = new int[8][] //es gibt 8 Richtung jede in 2 Dimensionen -> 2 ints
-        //{
-        //    // {spalte, zeile}
-        //    new int [2] { -1, -1},  //nach links oben   -> Index 0
-        //    new int [2] { 0, -1},   //nach oben         -> Index 1
-        //    new int [2] { 1, -1},   //nach rechts oben  -> Index 2
-        //    new int [2] { -1, 0},   //nach links        -> Index 3
-        //    new int [2] { 1, 0},    //nach rechts       -> Index 4
-        //    new int [2] { -1, 1},   //nach links unten  -> Index 5
-        //    new int [2] { 0, 1},    //nach unten        -> Index 6
-        //    new int [2] { 1, 1},    //nach rechts unten -> Index 7
-        //};
-
         readonly Tuple<int, int>[] richtungen = new Tuple<int, int>[8] //es gibt 8 Richtungen
         {
             new Tuple<int, int>(-1, -1),  //nach links oben   -> Index 0
@@ -214,7 +201,7 @@ namespace Spielesammlung
         }
 
         public int Bewerte()
-        //bewertet nicht Zug, sondern Position
+        //bewertet nicht Zug, sondern gesamtes Spielfeld
         {
             int score = 0; //siehe Ende der Funktion
             //jeden auf dem Spielbrett gesetzten Stein durchgehen
@@ -259,7 +246,7 @@ namespace Spielesammlung
             return zuege;
         }
 
-        public bool Computer()
+        public bool Computer() //-> ein Zug der KI
         {
             List<Tuple<int, Tuple<int, int>>> bewerteteZuege = new List<Tuple<int, Tuple<int, int>>>();
             int score;
@@ -285,11 +272,19 @@ namespace Spielesammlung
         private int MiniMax(int suchtiefe, int alpha, int beta, bool spieler, bool gewonnen)
         {
             ///Minimax probiert einen Zug aus und wechselt dann die Seiten, bis die Suchtiefe erreicht ist
+            ///erst wenn die Suchtiefe erreicht ist wird eine Bewertung vorgenommen
+            ///es wird also nicht jeder Zug bewertet, sondern das gesamte Spielfeld, nachdem die Suchtiefe erreicht wurde
             //wenn schon jemand gewonnen hat, muss der Algorithmus nicht mehr ausgeführt werden
             if (gewonnen)
             {
+                //wenn ein Zug zum Sieg führt, wird eine sehr hohe Zahl zurückgegeben, anstatt das Spielfeld
+                //zu bewerten, damit auf jeden Fall dieser Zug der Vorrang gegeben wird
                 return spieler ? 99999 + suchtiefe : -99999 - suchtiefe;
-                //suchtiefe sorgt dafür, dass das Programm immer den schnellsten Weg zum Sieg wählt
+                //'suchtiefe' sorgt dafür, dass das Programm immer den schnellsten Weg zum Sieg wählt
+                //das funktioniert, da 'suchtiefe' umso größer ist, je weniger Züge bereits probiert wurden
+                //also je weniger der Algorithmus 'in die Zukununft geschaut hat' -> je näher der Sieg ist
+                //wenn man Suchtiefe auf die sehr hohe Zahl drauf addiert wird ein Zug, der schneller zum Sieg
+                //führt einen höheren Score bekommen
             }
             //wenn die gewünschte Suchtiefe erreicht ist oder das Spielfeld voll ist, kann das Spielfeld bewertet werden
             if (suchtiefe == 0 || spielbrett.Count() == spaltenAnzahl * zeilenAnazhl)
@@ -299,9 +294,12 @@ namespace Spielesammlung
 
             spieler = !spieler;
 
-            int wert = spieler ? -999999 : 999999;
+            int wert = spieler ? -999999 : 999999; //Initialisirung von 'wert'
+            //Spieler 1 -> sehr niedrig, da Spieler 1 nach dem höchsten Wert sucht -> wird auf jeden Fall überschrieben, was bei 0 nicht umbedingt passieren würde
+            //Spieler 2 -> sehr hoch, da Spieler 2 nach dem niedrigsten Wert sucht -> wird auf jeden Fall überschrieben, was bei 0 nicht umbedingt passieren würde
             int score = 0;
 
+            //jeden Zug ausprobieren
             foreach (Tuple<int, int> zug in ErmittleZuege())
             {
                 gewonnen = SetzteStein(zug, spieler);
