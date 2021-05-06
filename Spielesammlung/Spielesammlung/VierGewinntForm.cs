@@ -355,19 +355,20 @@ namespace Spielesammlung
             }
             MessageBox.Show(gew_spiel + " hat gewonnen");
 
-            //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
-            HighscoreNameForm DialogHighscore = new HighscoreNameForm(gew_spiel);
-            if (DialogHighscore.ShowDialog() == DialogResult.OK)
-            {
-                gew_spiel = DialogHighscore.tB_name.Text;
+            if(gew_spiel == "Spieler 1" || gew_spiel == "Spieler 2") { 
+                //Öffnet ein Dialogfeld, um einen Namen für Spieler 1 (Gewinner einzutragen)
+                HighscoreNameForm DialogHighscore = new HighscoreNameForm(gew_spiel);
+                if (DialogHighscore.ShowDialog() == DialogResult.OK)
+                {
+                    gew_spiel = DialogHighscore.tB_name.Text;
+                }
+                //Setzt den Gewinner auf "" damit kein Highscoreeinrag ausgeführt wird
+                else
+                {
+                    gew_spiel = "";
+                }
+                DialogHighscore.Dispose();
             }
-            //Setzt den Gewinner auf "" damit kein Highscoreeinrag ausgeführt wird
-            else
-            {
-                gew_spiel = "";
-            }
-            DialogHighscore.Dispose();
-
             if (gew_spiel == "")
             {
                 MessageBox.Show("Das Spiel ist zu Ende!\n\n" + "\n\nEs wurde kein Punktestand in den Highscore eingetragen!", "Spiel beendet");
