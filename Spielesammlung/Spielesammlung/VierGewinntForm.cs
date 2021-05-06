@@ -158,6 +158,7 @@ namespace Spielesammlung
              */
             //setzt für die Blöcke die Farbe Rot
             //Wenn Spieler 1 dann Rot
+            Spielerwechsel();
             int tmp_endstop = Endstop_for_block(col);
             if (spieler_bool == false)
             {
@@ -169,8 +170,7 @@ namespace Spielesammlung
                 bgColors[col, tmp_endstop] = Color.Yellow;
             }
             //Lädt das Grid neu udn wechselt spieler
-            pruef_spalte_voll();
-            Spielerwechsel();
+            pruef_spalte_voll(); 
             VierGewinntTableLayoutPanel.Refresh();
             gewinnen(col, tmp_endstop);
 
@@ -203,6 +203,11 @@ namespace Spielesammlung
         {
             if (random_start(101)%2 == 0)
             {
+                Spielerwechsel();
+            }
+            else
+            {
+                spieler_bool = true;
                 Spielerwechsel();
             }
 
