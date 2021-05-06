@@ -28,7 +28,7 @@ namespace Spielesammlung
                 con.ConnectionString = ocsb.ConnectionString;
                 con.Open();
                 oraCom.Connection = con;
-                string sql = "select benutzer, score, zeit from highscore where spiel = '"+spiel + "'";
+                string sql = "select benutzer, score, zeit from highscore where spiel = '"+spiel + "' ORDER BY score DESC, zeit ASC FETCH FIRST 10 ROWS ONLY";
                 oraCom.CommandText = sql;
                 oraDR = oraCom.ExecuteReader();
                 while (oraDR.Read())
