@@ -28,8 +28,10 @@ namespace Spielesammlung
         public TicTacToeForm(string p_spielename = "TicTacToe", string spieler1 = "Spieler 1", string spieler2 = "Spieler 2")
         {
             InitializeComponent();
+            //PR: Speichert den übergebenen Spielenamen in einer Variable (erforderlich für den Highscore-Eintrag)
+            this.spielename = p_spielename;
             //Spielernamen in Variablen übertragen (falls keine Übergeben wurden, Platzhalter einfügen)
-            if(spieler1 == "" || spieler1 is null || spieler2 == "" || spieler2 is null)
+            if (spieler1 == "" || spieler1 is null || spieler2 == "" || spieler2 is null)
             {
                 namespieler1 = "Spieler 1";
                 namespieler2 = "Spieler 2";
