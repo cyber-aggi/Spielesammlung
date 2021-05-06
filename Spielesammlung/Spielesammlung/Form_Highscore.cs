@@ -32,12 +32,6 @@ namespace Spielesammlung
                 }
             }
 
-            //Wenn ein Spielname übergeben wird, wird dieser direkt ausgewählt
-            if(spielname != "")
-            {
-                cB_spieleliste.Text = spielname;
-            }
-            
             //Hinzufügen von Tabellenüberschriften
             lW_Highscore.Columns.Clear();
             lW_Highscore.Columns.Add("Spielername");
@@ -45,6 +39,14 @@ namespace Spielesammlung
             lW_Highscore.Columns.Add("Punktestand");
             lW_Highscore.View = View.Details;
             lW_Highscore.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+            //Wenn ein Spielname übergeben wird, wird dieser direkt ausgewählt
+            if (spielname != "")
+            {
+                cB_spieleliste.Text = spielname;
+                //Läd den Highscore, falls ein Spielname angegeben wurde
+                loadHighscore();
+            }
         }
 
         private void Btn_load_Click(object sender, EventArgs e)
@@ -55,6 +57,16 @@ namespace Spielesammlung
             }
             else
             {
+                loadHighscore();                
+                //Rückmeldung an den Benutzer
+                MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
+            }
+        }
+
+        //Läd HighscoreDaten für das aktuell ausgewählte Spiel aus der Datenbank
+        private void loadHighscore()
+        {
+            if(cB_spieleliste.Text != "") {
                 //Leert die Listbox bevor neue Einträge aus der Datenbank geholt werden
                 lW_Highscore.Items.Clear();
 
@@ -67,20 +79,20 @@ namespace Spielesammlung
                     item.SubItems.Add(row[1]);
                     lW_Highscore.Items.Add(item);
                 }
-                
                 //Spaltenbreite an Tabelleninhalt anpassen (Tabellenüberschriften Lesbarer machen)
                 lW_Highscore.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
                 if (lW_Highscore.Columns[0].Width < 70)
                 {
                     lW_Highscore.Columns[0].Width = 70;
                 }
+                if (lW_Highscore.Columns[1].Width < 43)
+                {
+                    lW_Highscore.Columns[1].Width = 43;
+                }
                 if (lW_Highscore.Columns[2].Width < 80)
                 {
                     lW_Highscore.Columns[2].Width = 80;
                 }
-                
-                //Rückmeldung an den Benutzer
-                MessageBox.Show("Daten wurden erfolgreich geladen!", "Information");
             }
         }
 
