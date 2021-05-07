@@ -17,11 +17,11 @@ namespace Spielesammlung
 {
     class VierGewinntKI
     {
+        #region Attribute
         //Attribute
         //Spieler1 -> rot
         //Spieler2 -> gelb (ki)
         int spalteNaechterZug;
-        private Random rnd; //für zufällige Züge
         private int spaltenAnzahl;
         private int zeilenAnazhl;
         private Dictionary<Tuple<int, int>, int> spielbrett;
@@ -50,14 +50,13 @@ namespace Spielesammlung
             new Tuple<int, int> ( 1, 1),    //nach rechts unten -> Index 7
         };
 
+        #endregion
+
         //Konstruktor
         public VierGewinntKI(VierGewinntForm ui)
         {
             //Benutzeroberfläche, auf der das Spiel angezeigt wird, wird über den Konstruktor übergeben
             this.ui = ui;
-
-            //Instanziieren von rnd
-            rnd = new Random();
 
             //Initialisieren von spalten- und zeilenAnzahl
             //Standardmäßig ist ein Spielbrett 7x6 Felder groß
