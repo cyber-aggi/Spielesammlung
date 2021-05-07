@@ -50,49 +50,49 @@ namespace Spielesammlung
             Colorfill();
             spieler_start();
         }
-
+        //Klick Spalte 1
         private void Spalte1Button_Click(object sender, EventArgs e)
         {
             //column: 0 ,row: 1
             DrawBlock(0);
         }
-
+        //Klick Spalte 2
         private void Spalte2Button_Click(object sender, EventArgs e)
         {
             //column: 1 ,row: 1
             DrawBlock(1);
         }
-
+        //Klick Spalte 3
         private void Spalte3Button_Click(object sender, EventArgs e)
         {
             //column: 2 ,row: 1
             DrawBlock(2);
         }
-
+        //Klick Spalte 4
         private void Spalte4Button_Click(object sender, EventArgs e)
         {
             //column: 3 ,row: 1
             DrawBlock(3);
         }
-
+        //Klick Spalte 5
         private void Spalte5Button_Click(object sender, EventArgs e)
         {
             //column: 4 ,row: 1
             DrawBlock(4);
         }
-
+        //Klick Spalte 6
         private void Spalte6Button_Click(object sender, EventArgs e)
         {
             //column: 5 ,row: 1
             DrawBlock(5);
         }
-
+        //Klick Spalte 7
         private void Spalte7Button_Click(object sender, EventArgs e)
         {
             //column: 6 ,row: 1
             DrawBlock(6);
         }
-
+        //Aktion wenn das Table Panel Layout aktualisiert wird
         private void VierGewinntTableLayoutPanel_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
             //Füllt die Rechtecke aus.
@@ -101,7 +101,7 @@ namespace Spielesammlung
                 e.Graphics.FillRectangle(b, e.CellBounds);
             }
         }
-
+        //Füllt die Arrays bei Start und neustart des spiels
         private void Colorfill()
         {
             //Tiefe füllen mit dem SystemColors.Control
@@ -123,7 +123,7 @@ namespace Spielesammlung
                 }
             }
         }
-
+        //Ermittelt wie voll eine Spalte ist und gibt den nächsten freien Block zurück
         private int Endstop_for_block(int col)
         {
             //Schaut in der Spalte von unten nach oben nach ob ein Block schon gesetzt wurde
@@ -147,7 +147,7 @@ namespace Spielesammlung
             }
             return 0;            
         }
-
+        //Zeichnet die Blöcke ein
         public void DrawBlock(int col)
         {
 
@@ -175,7 +175,7 @@ namespace Spielesammlung
             gewinnen(col, tmp_endstop);
 
         }
-
+        //Wechselt den Spieler durch
         private void Spielerwechsel()
         {
             if (spieler_bool == false)
@@ -192,13 +192,13 @@ namespace Spielesammlung
                 return;
             }
         }
-
+        //Bestimmt eine Zufallszahl für den Start
         private int random_start(int i)
         {
             var rand = new Random();
             return rand.Next(i);
         }
-
+        //Überprüft welcher spieler startet
         private void spieler_start()
         {
             if (random_start(101)%2 == 0)
@@ -212,6 +212,7 @@ namespace Spielesammlung
             }
 
         }
+        //Überprüft den Gewinn String für diagonale und counter diagonale
         private bool pruef_string(string temp)
         {
             if(temp == "1111")
@@ -226,7 +227,7 @@ namespace Spielesammlung
             }
             return false;
         }
-
+        //Beeinhaltet die Gewinnsituationen: vertikal, horizontal, diagonale, counter diagonale
         private void gewinnen(int ue_ver, int ue_hor)
         {
             string tmp_str = "";
@@ -342,6 +343,7 @@ namespace Spielesammlung
                     }
                 }
         }
+        //Gibt aus welcher Spieler gewonnen hat und öffnet DB Dialog
         private void spieler_gewonnen(int gewinner)
         {
             string gew_spiel = "";
@@ -381,6 +383,7 @@ namespace Spielesammlung
 
 
         }
+        //Berechnet die Punkte für den Highscore -> Gesamtzüge-Eigene Züge
         private int Punkte_berechnen(int spieler)
         {
             int counter = 0;
@@ -396,6 +399,7 @@ namespace Spielesammlung
             }
             return 42-counter;
         }
+        //Überprueft ob eine Spalte voll ist
         private void pruef_spalte_voll()
         {
             for(int col = 0; col <= TLPcolor.GetLength(1); col++)
@@ -409,6 +413,7 @@ namespace Spielesammlung
                 }
             }
         }
+        //Graut den Button aus
         private void Button_ausgrauen(int button)
         {
             button++;
@@ -455,12 +460,7 @@ namespace Spielesammlung
             }
 
         }
-
-        //Setzt das Spielfeld zurück, ohne vorher zu fragen
-        /*
-         * 
-         *
-         */
+        //Aktiviert beim Neustart des Spieles alle Buttons wieder
         private void enable_all_buttons()
         {
             foreach (Control c in Controls)
@@ -472,6 +472,7 @@ namespace Spielesammlung
                 }
             }
         }
+        //Aktivitäten die der NewGame Button ausführt
         private void NewGameButton_Click(object sender, EventArgs e)
         {
 
