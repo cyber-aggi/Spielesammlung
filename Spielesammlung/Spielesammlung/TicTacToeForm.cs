@@ -25,7 +25,7 @@ namespace Spielesammlung
         private string namespieler1;
         private string namespieler2;
         private string spielename;
-        public TicTacToeForm(string p_spielename = "TicTacToe", string spieler1 = "Spieler 1", string spieler2 = "Spieler 2")
+        public TicTacToeForm(string p_spielename = "Tic-Tac-Toe", string spieler1 = "Spieler 1", string spieler2 = "Spieler 2")
         {
             InitializeComponent();
             //PR: Speichert den übergebenen Spielenamen in einer Variable (erforderlich für den Highscore-Eintrag)
